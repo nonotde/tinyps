@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TinyPS — Local-first Image Editor for Chrome &amp; Edge</title>
+<meta name="description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.7 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--txt)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:var(--acc);text-decoration:none}
+header{padding:26px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#4da3ff,#2d6fd0);display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+nav a{margin-left:18px;color:var(--txt3)}
+nav a:hover{color:var(--acc)}
+.hero{text-align:center;padding:46px 0 30px}
+.hero h1{font-size:34px;line-height:1.3}
+.hero h1 span{color:var(--acc)}
+.hero p.sub{color:var(--txt3);font-size:17px;margin:14px auto 26px;max-width:640px}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.badge{background:var(--accBg);color:var(--acc);border:1px solid rgba(77,163,255,.35);border-radius:20px;padding:4px 14px;font-size:13px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:11px 26px;font-weight:600;font-size:15px}
+.btn.outline{background:transparent;border:1px solid var(--border);color:var(--txt)}
+.btn:hover{opacity:.9}
+.note{text-align:center;color:var(--txt3);font-size:13px;margin-bottom:40px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:10px 0 50px}
+.shots img{width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block}
+h2{font-size:24px;text-align:center;margin:20px 0 26px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-bottom:54px}
+.feat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px}
+.feat b{display:block;margin-bottom:6px}
+.feat p{color:var(--txt3);font-size:13.5px}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:26px}
+.plan{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center}
+.plan.pro{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.plan h3{font-size:15px;color:var(--txt3);margin-bottom:10px}
+.price{font-size:30px;font-weight:700;margin-bottom:4px}
+.price small{font-size:13px;color:var(--txt3);font-weight:400}
+.plan ul{list-style:none;text-align:left;margin:14px 0;font-size:13.5px;color:var(--txt3)}
+.plan ul li{padding:3px 0 3px 22px;position:relative}
+.plan ul li::before{content:'✓';position:absolute;left:0;color:var(--acc)}
+.paynote{text-align:center;color:var(--txt3);font-size:13px;margin-bottom:56px}
+footer{border-top:1px solid var(--border);padding:26px 0 40px;color:var(--txt3);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{margin-right:16px}
+.zh{background:var(--bg2);border-radius:var(--radius);padding:18px 22px;color:var(--txt3);font-size:14px;margin-bottom:50px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo"><span class="mark">🖼️</span>Tiny<span style="color:var(--acc)">PS</span></div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#pro">Pro</a>
+    <a href="activate.html">Activate</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1> Edit, compress &amp; convert images<br>— entirely inside your browser</h1>
+  <p class="sub">TinyPS is a local-first image editor for Chrome and Edge. Resize, crop, fill, watermark, and remove backgrounds with on-device AI — then export to JPEG, PNG, WebP, BMP or GIF. Your images never leave your device.</p>
+  <div class="badges">
+    <span class="badge">🔒 100% on-device</span>
+    <span class="badge">🚫 No uploads · No tracking</span>
+    <span class="badge">🤖 Local AI background removal</span>
+    <span class="badge">🌍 10 languages</span>
+    <span class="badge">🆓 Free core, optional Pro</span>
+  </div>
+  <div class="cta">
+    <a class="btn" href="https://chrome.google.com/webstore/search/TinyPS">Install for Chrome</a>
+    <a class="btn outline" href="https://microsoftedge.microsoft.com/addons/search/TinyPS">Install for Edge</a>
+  </div>
+  <p class="note">Also via right-click → “Edit image with TinyPS” on any web image.</p>
+  <div class="shots">
+    <img src="assets/screenshot1.png" alt="TinyPS dark UI">
+    <img src="assets/screenshot2.png" alt="Editing with layers">
+    <img src="assets/screenshot3.png" alt="Export view">
+  </div>
+</section>
+
+<h2 id="features">Everything a quick image tool should do</h2>
+<div class="feats">
+  <div class="feat"><b>✂️ Crop &amp; geometry</b><p>Preset ratios (1:1, 4:3, 16:9…) plus Pro free-form crop; rotate, flip, precise X/Y/W/H, draggable layers.</p></div>
+  <div class="feat"><b>🎨 Layers that behave like Photoshop</b><p>Paste images, text and fill shapes as movable, lockable, reorderable layers; merge anytime.</p></div>
+  <div class="feat"><b>🪄 AI background removal <span style="color:var(--acc)">Pro</span></b><p>u2netp salient-object segmentation running fully on your machine — no cloud, no queue, no uploads.</p></div>
+  <div class="feat"><b>🗜️ Smart compression</b><p>Quality slider, true lossless passthrough (0% re-encoding when untouched), metadata stripping, target file size.</p></div>
+  <div class="feat"><b>🔁 Format conversion</b><p>JPEG · PNG · WebP · BMP · GIF — including formats Chrome cannot export natively, via built-in encoders.</p></div>
+  <div class="feat"><b>📦 Multi-page batch</b><p>Work on many images with per-page settings, then export them all as one ZIP.</p></div>
+  <div class="feat"><b>🧱 Canvas &amp; fill <span style="color:var(--acc)">Pro</span></b><p>Custom canvas sizes with transparency, solid-color and mosaic fill layers, eyedropper picking.</p></div>
+  <div class="feat"><b>↩️ Full history</b><p>Undo / redo / reset for every operation, isolated per page.</p></div>
+</div>
+
+<h2 id="pro">Free core · optional Pro</h2>
+<div class="pricing">
+  <div class="plan">
+    <h3>Free</h3>
+    <div class="price">$0</div>
+    <ul>
+      <li>All core editing &amp; conversion</li>
+      <li>Preset-ratio crop, rotate, resize</li>
+      <li>Text layers, filters, compression</li>
+      <li>Batch ZIP export</li>
+    </ul>
+  </div>
+  <div class="plan pro">
+    <h3>Pro — Lifetime</h3>
+    <div class="price">$24.90 <small>one-time</small></div>
+    <ul>
+      <li>Everything in Free</li>
+      <li>Free-form crop</li>
+      <li>Fill layers (color / mosaic / eyedropper)</li>
+      <li>AI background removal</li>
+      <li>Up to 3 devices, forever</li>
+    </ul>
+  </div>
+  <div class="plan">
+    <h3>Pro — Monthly</h3>
+    <div class="price">$1.99 <small>/ month</small></div>
+    <ul>
+      <li>All Pro features</li>
+      <li>Cancel anytime</li>
+    </ul>
+  </div>
+  <div class="plan">
+    <h3>Pro — Yearly</h3>
+    <div class="price">$9.90 <small>/ year</small></div>
+    <ul>
+      <li>All Pro features</li>
+      <li>≈ 2 months free vs monthly</li>
+      <li>Cancel anytime</li>
+    </ul>
+  </div>
+</div>
+<p class="paynote">Secure checkout by Creem · Alipay / WeChat Pay supported on the Lifetime plan (one-time) · cards &amp; PayPal for subscriptions</p>
+
+<div class="zh">
+  <b>中文说明</b> —— TinyPS 是一款纯本地运行的浏览器图片编辑器（Chrome / Edge）：压缩、缩放、裁剪、填充、文字图层、本地 AI 去除背景，导出 JPEG/PNG/WebP/BMP/GIF。
+  核心功能永久免费；Pro（自由裁剪、填充图层、AI 去背景）可选月付 $1.99、年付 $9.9 或终身买断 $24.9。终身档支持支付宝 / 微信支付。图片全程不出你的设备。
+</div>
+
+<footer>
+  <div>© 2026 TinyPS</div>
+  <div>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="activate.html">How to Activate</a>
+    <a href="mailto:nonotde@qq.com">Support</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
