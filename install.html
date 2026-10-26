@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>TinyPS 手动安装指南（Chrome）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--acc:#4da3ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.8 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#14161a;color:#e8eaed}
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
+a{color:var(--acc)}
+h1{font-size:26px;margin-bottom:6px}
+.sub{color:#9aa0a8;font-size:14px;margin-bottom:28px}
+.step{background:#1d2026;border:1px solid #2c313a;border-radius:14px;padding:22px 26px;margin:18px 0}
+.step h2{font-size:18px;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.n{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(77,163,255,.15);border:1px solid rgba(77,163,255,.45);color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+.step p{color:#c7ccd4;font-size:15px;margin-bottom:12px}
+.step img{width:100%;border-radius:10px;border:1px solid #2c313a;display:block;margin:8px 0}
+code{background:#14161a;border:1px solid #2c313a;padding:2px 8px;border-radius:6px;font-size:14px;color:#7ec2ff}
+.kbd{display:inline-block;border:1px solid #3c424c;border-bottom-width:3px;border-radius:6px;padding:0 8px;font-size:13px;background:#26292f}
+.note{background:rgba(77,163,255,.08);border:1px solid rgba(77,163,255,.3);border-radius:10px;padding:12px 16px;font-size:14px;color:#9fc6ef;margin-top:10px}
+.warn{background:rgba(255,193,7,.08);border:1px solid rgba(255,193,7,.35);border-radius:10px;padding:12px 16px;font-size:14px;color:#ffd66e;margin-top:10px}
+.dl{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 22px;font-weight:600;text-decoration:none;margin:4px 0 8px}
+h2.faq{font-size:19px;margin:34px 0 6px}
+.faq .step{padding:16px 22px}
+.en{border-top:1px solid #2c313a;margin-top:44px;padding-top:22px;color:#9aa0a8;font-size:14px}
+footer{border-top:1px solid #2c313a;margin-top:44px;padding:22px 0;color:#9aa0a8;font-size:13px}
+footer a{margin-right:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>TinyPS 手动安装指南</h1>
+<p class="sub">适用于无法访问 Chrome 应用商店的用户 · 全程约 2 分钟 · <a href="index.html">← 返回首页</a></p>
+
+<div class="step">
+  <h2><span class="n">1</span>下载并解压扩展文件</h2>
+  <p>点击下载扩展包（zip，约 7MB），下载完成后<strong>双击解压</strong>，得到一个名为 <code>tinyps-extension</code> 的文件夹。请记住它存放的位置（通常在"下载"目录里）。</p>
+  <a class="dl" href="downloads/tinyps-extension-v1.0.0.zip" download>⬇️ 下载 TinyPS 扩展包</a>
+  <div class="note">解压后文件夹内应能看到 <code>manifest.json</code> 文件——这说明你解压对了。不要删掉或改名这个文件夹，扩展将一直从这里运行。</div>
+</div>
+
+<div class="step">
+  <h2><span class="n">2</span>打开扩展管理页，开启「开发者模式」</h2>
+  <p>在 Chrome 地址栏输入 <code>chrome://extensions</code> 并回车，进入扩展管理页面。然后打开<strong>右上角的「开发者模式」开关</strong>：</p>
+  <img src="assets/install-step2.png" alt="在 chrome://extensions 打开开发者模式">
+  <div class="warn">开启后页面左上角会多出三个按钮，这是正常的，说明开发者模式已生效。</div>
+</div>
+
+<div class="step">
+  <h2><span class="n">3</span>点击「加载已解压的扩展程序」，选择文件夹</h2>
+  <p>点击左上角的 <strong>「加载已解压的扩展程序」</strong>按钮：</p>
+  <img src="assets/install-step3.png" alt="点击加载已解压的扩展程序">
+  <p>在弹出的对话框中，选中第 1 步解压出的 <code>tinyps-extension</code> 文件夹（选中包含 <code>manifest.json</code> 的那一层），点击「选择」：</p>
+  <img src="assets/install-step3b.png" alt="选择 tinyps-extension 文件夹">
+</div>
+
+<div class="step">
+  <h2><span class="n">4</span>安装成功 🎉</h2>
+  <p>扩展列表中出现 TinyPS 卡片即安装成功。点击浏览器工具栏的拼图图标 🧩，把 TinyPS <strong>固定到工具栏</strong>，以后点图标即可打开编辑器；在任意网页图片上右键还能直接"用 TinyPS 编辑图片"。</p>
+  <img src="assets/install-step4.png" alt="TinyPS 出现在扩展列表中，安装成功">
+</div>
+
+<h2 class="faq">常见问题</h2>
+<div class="step">
+  <p><strong>Chrome 每次启动都提示"请停用开发者模式扩展"？</strong><br>这是 Chrome 对所有手动安装扩展的常规提醒，点"取消"忽略即可，不影响使用。</p>
+  <p style="margin-top:10px"><strong>能关闭「开发者模式」吗？</strong><br>不能。关闭后 TinyPS 会被 Chrome 停用，请保持开启。</p>
+  <p style="margin-top:10px"><strong>有新版本怎么更新？</strong><br>下载新版本 zip，删掉旧文件夹、解压新的，再到 <code>chrome://extensions</code> 重复第 3 步选中新文件夹即可（或点卡片上的"更新"）。</p>
+  <p style="margin-top:10px"><strong>Edge 浏览器也这样装吗？</strong><br>一样。把地址换成 <code>edge://extensions</code>，其余步骤完全相同。</p>
+  <p style="margin-top:10px"><strong>卸载方法？</strong><br>在 TinyPS 卡片上点「移除」，然后删除解压的文件夹。</p>
+</div>
+
+<div class="en">
+<b>English quick guide:</b> 1) Download &amp; unzip the extension package. 2) Open <code>chrome://extensions</code> and turn on <b>Developer mode</b> (top-right). 3) Click <b>Load unpacked</b> (top-left) and select the unzipped <code>tinyps-extension</code> folder (the one containing manifest.json). 4) TinyPS appears in the list — pin it from the puzzle icon 🧩. Keep Developer mode on; to update, unzip a new package and load it again. Works the same in Edge via <code>edge://extensions</code>.
+</div>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="support.html">Support</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+</footer>
+
+</div>
+</body>
+</html>
