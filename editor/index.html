@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TinyPS — Image Editor</title>
+<meta name="description" content="TinyPS — Compress, resize, convert, and enhance your images. 100% offline, no uploads, runs in your browser.">
+<link rel="icon" href="../icons/icon32.png">
+<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<header class="header">
+  <div class="logo">
+    <div class="logo-mark" aria-hidden="true"></div>
+    <div data-i18n="brand">Tiny<span>PS</span></div>
+  </div>
+  <div class="header-actions">
+    <button class="btn btn-sm pro-btn" id="proBtn" title="TinyPS Pro">✨ Pro</button>
+    <select class="lang-select" id="langSelect">
+      <option value="en">EN</option><option value="zh">简体中文</option><option value="zh-tw">繁體中文</option><option value="ja">日本語</option><option value="ko">한국어</option>
+      <option value="fa">FA</option><option value="ar">AR</option>
+      <option value="fr">FR</option><option value="de">DE</option><option value="ru">RU</option>
+    </select>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+    <button class="icon-btn" id="infoBtn" data-i18n-title="btn.info">ℹ️</button>
+  </div>
+</header>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-tabs">
+      <button class="stab active" data-stab="edit" data-i18n="stab.edit">Edit</button>
+      <button class="stab" data-stab="export" data-i18n="stab.export">Export</button>
+    </div>
+
+    <!-- EDIT TAB -->
+    <div class="tab-content active" id="tabEdit">
+      <div class="panel" data-pin="1" id="uploadPanel">
+        <div class="panel-title" data-i18n="panel.upload">Load Images</div>
+        <div class="dropzone" id="dropZone">
+          <div class="upload-zone-icon" style="font-size:26px;margin-bottom:6px">📁</div>
+          <div class="upload-zone-text" data-i18n="upload.dropzone">Drop images or click</div>
+          <div class="upload-zone-hint" data-i18n="upload.hint">PNG, JPG, WebP, BMP, GIF</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.compression">Compression</div>
+        <div class="ctrl">
+          <div class="ctrl-label"><span data-i18n="ctrl.quality">Quality</span><span class="ctrl-val" id="qVal">85%</span></div>
+          <input type="range" id="qSlider" min="1" max="100" value="85">
+        </div>
+        <label class="toggle"><input type="checkbox" id="losslessToggle" checked><span data-i18n="ctrl.lossless">Lossless</span></label>
+        <label class="toggle"><input type="checkbox" id="stripMeta" checked><span data-i18n="ctrl.stripMeta">Strip metadata</span></label>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.layers">Layers</div>
+        <div id="layerList" class="layer-list"></div>
+        <div style="display:flex;gap:4px;margin-top:6px">
+          <button class="btn btn-outline btn-sm" id="mergeBtn" data-i18n="btn.merge" style="flex:1">Merge</button>
+          <button class="btn btn-outline btn-sm" id="dupBtn" data-i18n="btn.dup" style="flex:1">Duplicate</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.canvas">Canvas</div>
+        <div class="ctrl">
+          <div class="dim-row"><span data-i18n="ctrl.w">W</span><input type="number" class="inp" id="cWInp" min="1" placeholder="auto"><span>px</span></div>
+        </div>
+        <div class="ctrl">
+          <div class="dim-row"><span data-i18n="ctrl.h">H</span><input type="number" class="inp" id="cHInp" min="1" placeholder="auto"><span>px</span></div>
+        </div>
+        <div style="display:flex;gap:4px;margin-top:4px;align-items:center">
+          <button class="lock-btn on" id="cLockBtn">🔗</button>
+          <span style="font-size:9px;color:var(--txt3)" data-i18n="ctrl.aspectRatio">Lock ratio</span>
+        </div>
+        <button class="btn btn-outline btn-sm" id="cFitBtn" data-i18n="btn.fitImage" style="width:100%;margin-top:6px">Fit to image</button>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.resize">Resize Image</div>
+        <div class="ctrl">
+          <div style="display:flex;gap:4px">
+            <div class="dim-row" style="flex:1"><span>X</span><input type="number" class="inp" id="xInp" placeholder="0"><span>px</span></div>
+            <div class="dim-row" style="flex:1"><span>Y</span><input type="number" class="inp" id="yInp" placeholder="0"><span>px</span></div>
+          </div>
+        </div>
+        <div class="ctrl">
+          <div style="display:flex;gap:4px">
+            <div class="dim-row" style="flex:1"><span data-i18n="ctrl.w">W</span><input type="number" class="inp" id="wInp" min="1"><span>px</span></div>
+            <div class="dim-row" style="flex:1"><span data-i18n="ctrl.h">H</span><input type="number" class="inp" id="hInp" min="1"><span>px</span></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:4px;margin-top:4px;align-items:center">
+          <button class="lock-btn on" id="lockBtn">🔗</button>
+          <span style="font-size:9px;color:var(--txt3)" data-i18n="ctrl.aspectRatio">Lock ratio</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.crop">Crop</div>
+        <div style="display:flex;gap:3px;flex-wrap:wrap" id="cropPresets">
+          <button class="btn btn-sm btn-outline" data-ar="1">1:1</button>
+          <button class="btn btn-sm btn-outline" data-ar="4/3">4:3</button>
+          <button class="btn btn-sm btn-outline" data-ar="16/9">16:9</button>
+          <button class="btn btn-sm btn-outline" data-ar="3/2">3:2</button>
+          <button class="btn btn-sm btn-outline" data-ar="9/16">9:16</button>
+          <button class="btn btn-sm btn-outline" data-ar="free" id="freeCropBtn" data-i18n="crop.free">Free</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.rotate">Rotate / Flip</div>
+        <div style="display:flex;gap:3px;flex-wrap:wrap">
+          <button class="btn btn-sm btn-outline" data-rot="90">↻ 90°</button>
+          <button class="btn btn-sm btn-outline" data-rot="180">↻ 180°</button>
+          <button class="btn btn-sm btn-outline" data-rot="270">↻ 270°</button>
+          <button class="btn btn-sm btn-outline" data-flip="h">↔ H</button>
+          <button class="btn btn-sm btn-outline" data-flip="v">↕ V</button>
+        </div>
+      </div>
+      <div class="panel" data-pro>
+        <div class="panel-title" data-i18n="panel.fill">Fill</div>
+        <div style="display:flex;gap:4px">
+          <button class="btn btn-outline btn-sm" id="fillBtn" data-i18n="btn.fill" style="flex:1">Fill</button>
+          <button class="btn btn-outline btn-sm" id="fillPickBtn" data-i18n-title="btn.pickColor" style="width:34px;flex-shrink:0;display:flex;align-items:center;justify-content:center">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>
+          </button>
+        </div>
+        <div class="ctrl">
+          <div class="dim-row"><span data-i18n="ctrl.fillOpacity">Opacity</span><input type="number" class="inp" id="fillOpacity" min="0" max="100" value="100"><span>%</span></div>
+        </div>
+        <div class="ctrl">
+          <div class="dim-row" id="fillModeRow">
+            <label class="radio-lbl"><input type="radio" name="fillMode" id="fillColorMode" checked><span data-i18n="ctrl.fillColor">Color</span></label>
+            <input type="color" id="fillColor" class="color-inp" value="#ffffff">
+            <label class="radio-lbl"><input type="radio" name="fillMode" id="fillMosaicMode"><span data-i18n="ctrl.fillMosaic">Mosaic</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-pro>
+        <div class="panel-title" data-i18n="panel.bgremove">Background</div>
+        <div class="ctrl">
+          <button class="btn btn-outline btn-sm" id="bgrmBtn" data-i18n="btn.bgremove" style="width:100%">Remove Background</button>
+        </div>
+        <div class="hint" data-i18n="hint.bgremove">On-device AI keeps the subject and makes the background transparent. Nothing leaves this machine.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.filters">Filters</div>
+        <select id="filterSel" style="margin-bottom:4px">
+          <option value="none" data-i18n="filter.none">None</option>
+          <option value="grayscale" data-i18n="filter.grayscale">Grayscale</option>
+          <option value="sepia" data-i18n="filter.sepia">Sepia</option>
+          <option value="invert" data-i18n="filter.invert">Invert</option>
+          <option value="brightness" data-i18n="filter.brightness">Brightness</option>
+          <option value="contrast" data-i18n="filter.contrast">Contrast</option>
+          <option value="blur" data-i18n="filter.blur">Blur</option>
+          <option value="saturate" data-i18n="filter.saturate">Saturate</option>
+        </select>
+        <div class="ctrl" id="filterAmtWrap" style="display:none">
+          <div class="ctrl-label"><span data-i18n="ctrl.amount">Amount</span><span class="ctrl-val" id="filterAmtVal">100%</span></div>
+          <input type="range" id="filterAmt" min="0" max="200" value="100">
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.watermark">Watermark</div>
+        <div class="ctrl">
+          <button class="btn btn-outline btn-sm" id="wmAddBtn" data-i18n="ctrl.addWM" style="width:100%">Add text</button>
+        </div>
+        <div class="ctrl"><input class="inp" id="wmText" placeholder="TinyPS" value="TinyPS"></div>
+        <div class="dim-row" id="wmStyleRow">
+          <input type="color" id="wmColor" class="color-inp" value="#808080" data-i18n-title="ctrl.fillColor">
+          <input type="number" class="inp" id="wmSize" min="8" max="200" value="36"><span>px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPORT TAB -->
+    <div class="tab-content" id="tabExport">
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.format">Output Format</div>
+        <div class="ctrl">
+          <select id="fmtSelect">
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+            <option value="image/webp" selected>WebP</option>
+            <option value="image/bmp">BMP</option>
+            <option value="image/gif">GIF</option>
+          </select>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.targetSize">Target File Size</div>
+        <label class="toggle"><input type="checkbox" id="targetSizeOn"><span data-i18n="ctrl.autoAdjust">Auto-fit to max</span></label>
+        <div class="ctrl"><div class="dim-row"><input type="number" class="inp" id="targetSizeInp" placeholder="500" min="1" disabled><span>KB</span></div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-title" data-i18n="panel.output">Output</div>
+        <div style="display:flex;gap:4px;margin-top:6px">
+          <button class="btn btn-green" id="downloadBtn" disabled style="flex:1" data-i18n="btn.download">💾 Download</button>
+          <button class="btn btn-outline" id="copyBtn" disabled data-i18n-title="btn.copy">📋</button>
+          <button class="btn btn-outline" id="base64Btn" disabled data-i18n-title="btn.base64">🔤</button>
+        </div>
+        <div style="display:flex;gap:4px;margin-top:4px">
+          <button class="btn btn-outline btn-sm" id="downloadAllBtn" disabled data-i18n="btn.downloadAll" style="width:100%">📦 Batch ZIP</button>
+        </div>
+      </div>
+      <div class="shortcut-hint" id="shortcutHint"></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="preview-bar">
+      <button class="icon-btn" id="undoBtn" data-i18n-title="btn.undo" disabled>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+      </button>
+      <button class="icon-btn" id="redoBtn" data-i18n-title="btn.redo" disabled>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </button>
+      <button class="icon-btn" id="resetBtn" data-i18n-title="btn.reset" disabled>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+      </button>
+      <span class="preview-info" id="viewInfo" data-i18n="view.noImage">No image</span>
+    </div>
+
+    <div class="preview-body" id="previewBody">
+      <div class="placeholder" id="placeholder">
+        <div class="upload-zone-icon">🖼️</div>
+        <div class="upload-zone-text" data-i18n="upload.empty">No image yet</div>
+        <div class="upload-zone-hint" data-i18n="upload.dropHint">Load from the panel, or drop / paste (Ctrl+V) here</div>
+        <span class="placeholder-tag" data-i18n="placeholder.sub">Compress · Resize · Convert · Filter</span>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" multiple hidden>
+      <div id="singleView" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;overflow:hidden">
+        <canvas id="singleCanvas" aria-label="preview"></canvas>
+      </div>
+      <div class="zoom-bar" id="zoomBar">
+        <input type="range" id="viewZoomSlider" min="0" max="100" step="1" value="50" aria-label="zoom">
+        <input type="number" id="viewZoomInp" class="inp" min="5" max="800" value="100">
+        <span>%</span>
+      </div>
+    </div>
+
+    <div class="batch-strip" id="batchStrip" style="display:none"></div>
+
+    <div class="info-bar">
+      <span data-i18n="info.file">File:</span> <strong id="fName">—</strong>
+      <div class="divider"></div>
+      <span data-i18n="info.original">Orig:</span> <strong id="origSize">—</strong>
+      <div class="divider"></div>
+      <span data-i18n="info.output">Out:</span> <strong id="outSize">—</strong>
+      <div class="divider"></div>
+      <span data-i18n="info.saved">Saved:</span> <strong><span class="saving" id="savingBadge">—</span></strong>
+      <div class="divider"></div>
+      <span data-i18n="info.dims">Dims:</span> <strong id="dimsDisplay">—</strong>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="imgInfoModal">
+  <div class="modal">
+    <h3 data-i18n="modal.infoTitle">📷 Image Info</h3>
+    <div class="info-grid">
+      <span class="lbl" data-i18n="infoGrid.name">Name</span><span class="val" id="iiName">—</span>
+      <span class="lbl" data-i18n="infoGrid.format">Format</span><span class="val" id="iiFormat">—</span>
+      <span class="lbl" data-i18n="infoGrid.dims">Dimensions</span><span class="val" id="iiDims">—</span>
+      <span class="lbl" data-i18n="infoGrid.fileSize">File Size</span><span class="val" id="iiSize">—</span>
+      <span class="lbl" data-i18n="infoGrid.outSize">Output Size</span><span class="val" id="iiOutSize">—</span>
+      <span class="lbl" data-i18n="infoGrid.compression">Compression</span><span class="val" id="iiComp">—</span>
+      <span class="lbl" data-i18n="infoGrid.colorSpace">Color Space</span><span class="val" id="iiColor">sRGB</span>
+    </div>
+    <button class="btn btn-outline btn-sm" data-close="imgInfoModal" data-i18n="btn.close">Close</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="proModal">
+  <div class="modal">
+    <h3 data-i18n="pro.title">✨ Upgrade to TinyPS Pro</h3>
+    <div class="pro-status" id="proStatus">Free edition</div>
+    <div class="pro-feats">
+      <div data-i18n="pro.feat.crop">✂️ Free crop — select any region with draggable handles</div>
+      <div data-i18n="pro.feat.fill">🎨 Fill layers — solid color &amp; mosaic, eyedropper pick</div>
+      <div data-i18n="pro.feat.bgrm">🪄 AI background removal — fully on-device</div>
+    </div>
+    <div id="proBuyRow" style="display:flex;flex-direction:column;gap:6px">
+      <a class="btn btn-sm" id="proLifetime" target="_blank" rel="noopener" style="width:100%;text-align:center;font-weight:700" data-i18n="pro.lifetime">Lifetime — pay once, yours forever</a>
+      <div style="display:flex;gap:6px">
+        <a class="btn btn-outline btn-sm" id="proMonthly" target="_blank" rel="noopener" style="flex:1;text-align:center" data-i18n="pro.monthly">Monthly</a>
+        <a class="btn btn-outline btn-sm" id="proYearly" target="_blank" rel="noopener" style="flex:1;text-align:center" data-i18n="pro.yearly">Yearly</a>
+      </div>
+    </div>
+    <div class="hint" id="proPayNote" data-i18n="pro.payNote">Alipay · WeChat Pay · PayPal · cards — secure checkout by Creem</div>
+    <div class="hint" id="proNotReady" style="display:none" data-i18n="pro.notReady">Checkout is not configured yet</div>
+    <div class="ctrl">
+      <div class="dim-row"><span data-i18n="pro.licenseLabel">License key (sent by email after purchase)</span></div>
+      <input class="inp" id="proKeyInp" style="width:100%;font-family:monospace;font-size:11px" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" autocomplete="off">
+    </div>
+    <div style="display:flex;gap:6px">
+      <button class="btn btn-sm" id="proActivateBtn" data-i18n="pro.activate" style="flex:1">Activate</button>
+      <button class="btn btn-outline btn-sm" id="proDeactivateBtn" data-i18n="pro.deactivate" style="flex:1;display:none">Deactivate this device</button>
+    </div>
+    <button class="btn btn-outline btn-sm" data-close="proModal" data-i18n="btn.close">Close</button>
+  </div>
+</div>
+<div class="modal-overlay" id="b64Modal">
+  <div class="modal">
+    <h3 data-i18n="modal.b64Title">🔤 Base64 Data URL</h3>
+    <textarea id="b64Output" readonly></textarea>
+    <button class="btn btn-outline btn-sm" id="copyB64Btn" data-i18n="btn.copyB64">📋 Copy</button>
+    <button class="btn btn-outline btn-sm" data-close="b64Modal" data-i18n="btn.close">Close</button>
+  </div>
+</div>
+
+<script src="i18n.js" defer></script>
+<script src="encoders.js" defer></script>
+<script src="zip.js" defer></script>
+<script src="pro.js" defer></script>
+<script src="editor.js" defer></script>
+</body>
+</html>
