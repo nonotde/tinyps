@@ -6,6 +6,17 @@
 <title>TinyPS — Local-first Image Editor for Chrome &amp; Edge</title>
 <meta name="description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- SEO / GEO: canonical + Open Graph + Twitter Card -->
+<link rel="canonical" href="https://nonotde.github.io/tinyps/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TinyPS — Local-first Image Editor for Chrome & Edge">
+<meta property="og:description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.">
+<meta property="og:url" content="https://nonotde.github.io/tinyps/">
+<meta property="og:image" content="https://nonotde.github.io/tinyps/assets/screenshot1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TinyPS — Local-first Image Editor for Chrome & Edge">
+<meta name="twitter:description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images — 100% in your browser. Nothing is ever uploaded.">
+<meta name="twitter:image" content="https://nonotde.github.io/tinyps/assets/screenshot1.png">
 <style>
 :root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -48,6 +59,12 @@ h2{font-size:24px;text-align:center;margin:20px 0 26px}
 footer{border-top:1px solid var(--border);padding:26px 0 40px;color:var(--txt3);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{margin-right:16px}
 .zh{background:var(--bg2);border-radius:var(--radius);padding:18px 22px;color:var(--txt3);font-size:14px;margin-bottom:50px}
+/* FAQ (GEO: structured Q&A for AI engines) */
+.faq{margin:10px 0 54px}
+.faq .q{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px}
+.faq .q h3{font-size:16px;margin-bottom:6px;color:var(--txt)}
+.faq .q p{color:var(--txt3);font-size:13.5px}
+.faq .q a{font-weight:600}
 </style>
 </head>
 <body>
@@ -147,6 +164,18 @@ footer a{margin-right:16px}
   核心功能永久免费；Pro（自由裁剪、填充图层、AI 去背景）可选月付 $1.99、年付 $9.9 或终身买断 $24.9。终身档支持支付宝。图片全程不出你的设备。
 </div>
 
+<!-- FAQ: GEO-critical Q&A — mirrors the JSON-LD FAQPage below -->
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq">
+  <div class="q"><h3>Is TinyPS free? What's the difference between Free and Pro?</h3><p>The core editor is free forever: crop, resize, rotate, layers, text, filters, format conversion and batch ZIP export. Pro (one-time $24.90, or $1.99/mo, $9.90/yr) adds free-form crop, fill layers (solid / mosaic / eyedropper) and on-device AI background removal.</p></div>
+  <div class="q"><h3>Does TinyPS upload my photos to a server?</h3><p>No. All editing, compression and conversion happen locally in your browser. The only network traffic is your license key and a random device id when you activate Pro, sent to the payment provider (Creem) — never your images.</p></div>
+  <div class="q"><h3>Can TinyPS run completely offline?</h3><p>Yes. TinyPS works offline; no internet is required to edit, compress or convert. The AI background-removal model (u2netp) is bundled with the extension and runs on your machine via WebAssembly.</p></div>
+  <div class="q"><h3>How does AI background removal work — is my photo sent anywhere?</h3><p>It runs the u2netp segmentation model entirely on your device through ONNX Runtime WebAssembly. Your photo never leaves your computer; there is no cloud API call.</p></div>
+  <div class="q"><h3>Which image formats does TinyPS support?</h3><p>It reads and exports JPEG, PNG, WebP, BMP and GIF — including formats Chrome cannot export natively, using built-in encoders. You can also export every page as a single ZIP.</p></div>
+  <div class="q"><h3>Is background removal included in the free version?</h3><p>Background removal is a Pro feature. The free tier covers all core editing, compression, format conversion and batch export.</p></div>
+  <div class="q"><h3>How is TinyPS different from Photopea, remove.bg or Squoosh?</h3><p>Those tools process your image on a server (or in a tab that still uploads). TinyPS does everything on your own device and never uploads a file, which is its core privacy advantage. It also bundles u2netp so background removal needs no account or API key. See our <a href="privacy.html">Privacy Policy</a>.</p></div>
+</div>
+
 <footer>
   <div>© 2026 TinyPS</div>
   <div>
@@ -160,5 +189,39 @@ footer a{margin-right:16px}
 </footer>
 
 </div>
+
+<!-- GEO structured data: SoftwareApplication + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TinyPS",
+  "operatingSystem": ["Chrome", "Edge", "Windows", "macOS", "Linux"],
+  "applicationCategory": "PhotoApplication",
+  "url": "https://nonotde.github.io/tinyps/",
+  "description": "Local-first image editor for Chrome and Edge: crop, resize, compress, convert and remove backgrounds with on-device AI. 100% in your browser, nothing uploaded.",
+  "offers": [
+    {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Pro — Lifetime", "price": "24.90", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Pro — Monthly", "price": "1.99", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Pro — Yearly", "price": "9.90", "priceCurrency": "USD"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is TinyPS free? What's the difference between Free and Pro?", "acceptedAnswer": {"@type": "Answer", "text": "The core editor is free forever: crop, resize, rotate, layers, text, filters, format conversion and batch ZIP export. Pro (one-time $24.90, or $1.99/month, $9.90/year) adds free-form crop, fill layers (solid, mosaic, eyedropper) and on-device AI background removal."}},
+    {"@type": "Question", "name": "Does TinyPS upload my photos to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All editing, compression and conversion happen locally in your browser. The only network traffic is your license key and a random device id when you activate Pro, sent to the payment provider Creem — never your images."}},
+    {"@type": "Question", "name": "Can TinyPS run completely offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TinyPS works offline; no internet is required to edit, compress or convert. The AI background-removal model (u2netp) is bundled with the extension and runs on your machine via WebAssembly."}},
+    {"@type": "Question", "name": "How does AI background removal work and is my photo sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "It runs the u2netp segmentation model entirely on your device through ONNX Runtime WebAssembly. Your photo never leaves your computer; there is no cloud API call."}},
+    {"@type": "Question", "name": "Which image formats does TinyPS support?", "acceptedAnswer": {"@type": "Answer", "text": "It reads and exports JPEG, PNG, WebP, BMP and GIF, including formats Chrome cannot export natively, using built-in encoders. You can also export every page as a single ZIP."}},
+    {"@type": "Question", "name": "Is background removal included in the free version?", "acceptedAnswer": {"@type": "Answer", "text": "Background removal is a Pro feature. The free tier covers all core editing, compression, format conversion and batch export."}},
+    {"@type": "Question", "name": "How is TinyPS different from Photopea, remove.bg or Squoosh?", "acceptedAnswer": {"@type": "Answer", "text": "Those tools process your image on a server or in a tab that still uploads. TinyPS does everything on your own device and never uploads a file, which is its core privacy advantage. It also bundles u2netp so background removal needs no account or API key."}}
+  ]
+}
+</script>
 </body>
 </html>
