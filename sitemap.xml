@@ -35,4 +35,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nonotde.github.io/tinyps/remove-background-without-uploading.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nonotde.github.io/tinyps/offline-image-editor.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nonotde.github.io/tinyps/batch-image-editor-no-upload.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nonotde.github.io/tinyps/private-photo-editor-no-signup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nonotde.github.io/tinyps/compress-images-locally.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nonotde.github.io/tinyps/free-photo-editor-chrome-extension.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
