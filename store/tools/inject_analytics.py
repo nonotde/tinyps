@@ -27,29 +27,21 @@ REPO = os.path.dirname(os.path.dirname(HERE))               # .../tinyps/
 CN_HOST = "musicweb"
 CN_ROOT = "/dockerdata/nginx/musicweb/pic.zxxdb.com"
 
-MARK = "TinyPS analytics: baidu"  # 去重标记
+MARK = "TinyPS analytics v2"  # 去重标记（v2 = GoatCounter 静态标签写法）
 
-ANALYTICS_BLOCK = """<!-- TinyPS analytics: baidu (cn only) + goatcounter (all) -->
+ANALYTICS_BLOCK = """<!-- TinyPS analytics v2: baidu (cn only) + goatcounter (all, static) -->
 <script>
-(function(){{
-  // 百度统计：仅国内站 pic.zxxdb.com 加载
-  if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {{
-    var _hmt = _hmt || [];
-    (function(){{
-      var hm = document.createElement('script');
-      hm.src = 'https://hm.baidu.com/hm.js?{baidu}';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(hm, s);
-    }})();
-  }}
-  // GoatCounter：两站共用
-  var gc = document.createElement('script');
-  gc.async = true;
-  gc.setAttribute('data-goatcounter', 'https://{gc}.goatcounter.com/count');
-  gc.src = '//gc.zgo.at/count.js';
-  document.head.appendChild(gc);
-}})();
+if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {{
+  var _hmt = _hmt || [];
+  (function(){{
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?{baidu}';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  }})();
+}}
 </script>
+<script data-goatcounter="https://{gc}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 """
 
 
@@ -57,7 +49,10 @@ def inject_file(path, baidu, gc):
     with open(path, "r", encoding="utf-8") as f:
         html = f.read()
     if MARK in html:
-        return False  # 已注入，跳过
+        return False  # 已是 v2，跳过
+    # 清理旧版（v1）统计块：单个 <script> 包裹百度+动态GC，到第一个 </script> 结束
+    if "TinyPS analytics" in html:
+        html = re.sub(r"<!-- TinyPS analytics.*?</script>\n", "", html, flags=re.S)
     block = ANALYTICS_BLOCK.format(baidu=baidu, gc=gc)
     if "</head>" in html:
         html = html.replace("</head>", block + "\n</head>", 1)
