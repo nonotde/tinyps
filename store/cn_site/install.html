@@ -28,27 +28,20 @@ h2.faq{font-size:19px;margin:34px 0 6px}
 footer{border-top:1px solid #2c313a;margin-top:44px;padding:22px 0;color:#9aa0a8;font-size:13px}
 footer a{margin-right:16px}
 </style>
-<!-- TinyPS analytics: baidu (cn only) + goatcounter (all) -->
+
+<!-- TinyPS analytics v2: baidu (cn only) + goatcounter (all, static) -->
 <script>
-(function(){
-  // 百度统计：仅国内站 pic.zxxdb.com 加载
-  if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
-    var _hmt = _hmt || [];
-    (function(){
-      var hm = document.createElement('script');
-      hm.src = 'https://hm.baidu.com/hm.js?29f3fa897cfa1b515a8464d06e62c065';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  }
-  // GoatCounter：两站共用
-  var gc = document.createElement('script');
-  gc.async = true;
-  gc.setAttribute('data-goatcounter', 'https://tinyps.goatcounter.com/count');
-  gc.src = '//gc.zgo.at/count.js';
-  document.head.appendChild(gc);
-})();
+if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
+  var _hmt = _hmt || [];
+  (function(){
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?29f3fa897cfa1b515a8464d06e62c065';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+}
 </script>
+<script data-goatcounter="https://tinyps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </head>
 <body>
