@@ -1,0 +1,21 @@
+# TinyPS — AlternativeTo 截图说明（英文，逐项粘贴到对应截图）
+
+上传顺序与文件名对应：01-offline → 02-crop → 03-background → 04-export → 05-pro
+（截图路径：store/ready/en/01-offline.png … 05-pro.png）
+
+---
+
+## 01-offline.png
+TinyPS runs fully offline as a Chrome extension — no upload, no account, no tracking. Your photos never leave your computer.
+
+## 02-crop.png
+Crop to preset ratios for free and watch the file size drop instantly; the status bar shows the new size and the savings in real time.
+
+## 03-background.png
+Remove image backgrounds locally with on-device AI — the model runs in WebAssembly, so nothing is ever sent to a server.
+
+## 04-export.png
+Compress to an exact file size and convert between JPEG, PNG, WebP, BMP and GIF, then export every page as one ZIP.
+
+## 05-pro.png
+Core crop and export are free; Pro adds freeform crop, fill layers, an eyedropper and one-click AI background removal.
