@@ -1,9 +1,9 @@
 # OS
 .DS_Store
 
-# Dependencies (tools/ currently only holds node_modules)
+# Dependencies (top-level tools/ currently only holds node_modules)
 node_modules/
-tools/
+/tools/
 
 # Build output
 build/
