@@ -27,9 +27,9 @@ REPO = os.path.dirname(os.path.dirname(HERE))               # .../tinyps/
 CN_HOST = "musicweb"
 CN_ROOT = "/dockerdata/nginx/musicweb/pic.zxxdb.com"
 
-MARK = "TinyPS analytics v2"  # 去重标记（v2 = GoatCounter 静态标签写法）
+MARK = "TinyPS analytics v3"  # 去重标记（v3 = GoatCounter 自托管 count.js，规避 adblock 拦截）
 
-ANALYTICS_BLOCK = """<!-- TinyPS analytics v2: baidu (cn only) + goatcounter (all, static) -->
+ANALYTICS_BLOCK = """<!-- TinyPS analytics v3: baidu (cn only) + goatcounter (all, self-hosted count.js) -->
 <script>
 if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {{
   var _hmt = _hmt || [];
@@ -41,19 +41,19 @@ if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {{
   }})();
 }}
 </script>
-<script data-goatcounter="https://{gc}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://{gc}.goatcounter.com/count" async src="{gcjs}"></script>
 """
 
 
-def inject_file(path, baidu, gc):
+def inject_file(path, baidu, gc, gcjs):
     with open(path, "r", encoding="utf-8") as f:
         html = f.read()
     if MARK in html:
-        return False  # 已是 v2，跳过
-    # 清理旧版（v1）统计块：单个 <script> 包裹百度+动态GC，到第一个 </script> 结束
+        return False  # 已是 v3，跳过
+    # 清理旧版统计块：从标记注释一直删到 </head> 之前（避免漏删多 script 标签）
     if "TinyPS analytics" in html:
-        html = re.sub(r"<!-- TinyPS analytics.*?</script>\n", "", html, flags=re.S)
-    block = ANALYTICS_BLOCK.format(baidu=baidu, gc=gc)
+        html = re.sub(r"<!-- TinyPS analytics.*?(?=</head>)", "", html, flags=re.S)
+    block = ANALYTICS_BLOCK.format(baidu=baidu, gc=gc, gcjs=gcjs)
     if "</head>" in html:
         html = html.replace("</head>", block + "\n</head>", 1)
     else:
@@ -78,16 +78,18 @@ def github_html_files():
 
 
 def target_github(baidu, gc):
+    gcjs = "https://nonotde.github.io/tinyps/count.js"  # 自托管在 GitHub Pages
     files = github_html_files()
     c = 0
     for f in files:
-        if inject_file(f, baidu, gc):
+        if inject_file(f, baidu, gc, gcjs):
             c += 1
     print(f"[github] 注入 {c} 个文件（共 {len(files)} 个部署页）")
     return c
 
 
 def target_cn(baidu, gc):
+    gcjs = "https://pic.zxxdb.com/count.js"  # 自托管在国内站
     local = os.path.join(REPO, "store", "cn_site")
     os.makedirs(local, exist_ok=True)
     # 1) 从服务器拉回全部 html（根 + editor 子目录）
@@ -110,7 +112,7 @@ def target_cn(baidu, gc):
     files.sort()
     c = 0
     for f in files:
-        if inject_file(f, baidu, gc):
+        if inject_file(f, baidu, gc, gcjs):
             c += 1
     print(f"[cn] 注入 {c} 个文件（本地副本，共 {len(files)} 个）")
     # 4) 回传服务器
