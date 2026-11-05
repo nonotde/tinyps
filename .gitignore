@@ -16,3 +16,6 @@ build/
 
 # Python cache
 __pycache__/
+
+# Distributable extension package (contains product source — never publish to GitHub)
+downloads/
