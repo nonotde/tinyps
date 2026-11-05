@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>批量图片编辑器，文件不上传</title>
+<meta name="description" content="一次性批量编辑、缩放、压缩多张图片——全程本地，不上传。TinyPS 在设备上处理每张图并导出 ZIP。">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://pic.zxxdb.com/batch-image-editor-no-upload.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批量图片编辑器，文件不上传">
+<meta property="og:description" content="一次性批量编辑、缩放、压缩多张图片——全程本地，不上传。TinyPS 在设备上处理每张图并导出 ZIP。">
+<meta property="og:url" content="https://pic.zxxdb.com/batch-image-editor-no-upload.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="批量图片编辑器，文件不上传">
+<meta name="twitter:description" content="一次性批量编辑、缩放、压缩多张图片——全程本地，不上传。TinyPS 在设备上处理每张图并导出 ZIP。">
+<style>
+:root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.8 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--txt)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+a{color:var(--acc);text-decoration:none}
+header{padding:24px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo .mark{width:30px;height:30px;border-radius:8px;object-fit:cover;display:inline-block}
+nav a{margin-left:18px;color:var(--txt3);font-size:14px}
+nav a:hover{color:var(--acc)}
+.crumb{color:var(--txt3);font-size:13px;margin:6px 0 26px}
+.crumb a{color:var(--txt3)}
+.crumb a:hover{color:var(--acc)}
+h1{font-size:32px;line-height:1.35;margin-bottom:14px}
+.lead{color:var(--txt3);font-size:17px;margin-bottom:28px}
+h2{font-size:22px;margin:30px 0 12px}
+p{margin:12px 0;color:#cdd2d8}
+p.note{color:var(--txt3);font-size:14px}
+ol.steps{margin:12px 0 12px 22px;color:#cdd2d8}
+ol.steps li{margin:8px 0}
+ul.dots{margin:12px 0 12px 20px;color:#cdd2d8}
+ul.dots li{margin:8px 0}
+.cta{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:20px 22px;margin:28px 0;text-align:center}
+.cta h3{font-size:18px;margin-bottom:10px}
+.cta .btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 22px;font-weight:600;margin:6px 6px 0}
+.cta .btn.outline{background:transparent;border:1px solid var(--border);color:var(--txt)}
+table.cmp{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+table.cmp th,table.cmp td{border:1px solid var(--border);padding:9px 12px;text-align:left}
+table.cmp th{background:var(--bg2);color:var(--txt)}
+table.cmp td.ok{color:#5fd38a}
+table.cmp td.no{color:#ff7a7a}
+.related{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:34px 0}
+.related h3{font-size:16px;margin-bottom:10px}
+.related a{display:block;padding:5px 0;color:var(--acc)}
+.faq{margin:26px 0 10px}
+.faq .q{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:12px}
+.faq .q h3{font-size:16px;margin-bottom:6px;color:var(--txt)}
+.faq .q p{color:var(--txt3);font-size:14px;margin:0}
+footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{margin-right:14px}
+</style>
+<!-- TinyPS analytics: baidu (cn only) + goatcounter (all) -->
+<script>
+(function(){
+  // 百度统计：仅国内站 pic.zxxdb.com 加载
+  if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
+    var _hmt = _hmt || [];
+    (function(){
+      var hm = document.createElement('script');
+      hm.src = 'https://hm.baidu.com/hm.js?29f3fa897cfa1b515a8464d06e62c065';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  }
+  // GoatCounter：两站共用
+  var gc = document.createElement('script');
+  gc.async = true;
+  gc.setAttribute('data-goatcounter', 'https://tinyps.goatcounter.com/count');
+  gc.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(gc);
+})();
+</script>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><img class="mark" src="assets/logo.png" alt="TinyPS logo">Tiny<span style="color:var(--acc)">PS</span></div>
+  <nav><a href='index.html'>首页</a><a href='privacy.html'>隐私</a><a href='install.html'>安装</a><a href='support.html'>支持</a></nav>
+</header>
+<div class='crumb'><a href='index.html'>TinyPS</a> › 指南</div>
+<h1>批量图片编辑器，文件一个都不上传</h1>
+<p class="lead">要缩放 50 张产品图、压缩一整文件夹截图？批量工具通常会把你的文件推到服务器。TinyPS 在设备上处理全部图片，最后给你一个 ZIP——什么都不上传。</p>
+<h2>本地批量编辑</h2>
+TinyPS 把多张图片作为独立页面打开。设置每页的缩放、裁剪、压缩、转换，再一次性导出为单个 ZIP，全程在你的浏览器里完成。
+<h2>你可以私密完成的常见批量任务</h2>
+<ul class='dots'><li>把一整个文件夹缩放成网站用的固定宽度。</li><li>发邮件前压缩一批截图。</li><li>把 PNG 批量转成更省空间的 WebP。</li><li>给多张图片统一加上水印或文字图层。</li></ul>
+<h2>如何不上传地批量编辑</h2>
+<ol class='steps'><li>打开 TinyPS，载入所有要处理的图片。</li><li>为每页设置缩放/裁剪/压缩（或统一用同一设置）。</li><li>在缩略图条里逐页检查。</li><li>点导出，TinyPS 在设备上把全部内容打包成一个 ZIP。</li></ol>
+<h2>本地批量为什么优于云端批量</h2>
+云端批量工具会看到你处理的每一张文件。TinyPS 让文件夹始终不离开你的机器，对客户稿、证件照、未发布产品图尤为重要。
+
+<div class='cta'><h3>试试 TinyPS——本地编辑，什么都不上传</h3><a class='btn' href='https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen'>前往 Chrome 商店安装</a><a class='btn outline' href='editor/'>打开免费在线编辑器</a></div>
+<div class='related'><h3>更多 TinyPS 指南</h3>
+<a href='remove-background-without-uploading.html'>本地去背景，照片一个像素都不上传</a>
+<a href='offline-image-editor.html'>离线图片编辑器：不联网也能修图</a>
+<a href='private-photo-editor-no-signup.html'>隐私图片编辑器：免注册、不追踪</a>
+<a href='compress-images-locally.html'>本地压缩图片——缩小文件不上传</a>
+<a href='free-photo-editor-chrome-extension.html'>免费的 Chrome 图片编辑扩展——本地、无水印</a>
+</div>
+
+<div class="faq-wrap">
+<h2 id="faq">常见问题</h2>
+<div class='faq'>
+<div class='q'><h3>TinyPS 批量导出时会上传我的图片吗？</h3><p>不会。每一页都在你的设备上处理，ZIP 也在浏览器本地生成。</p></div>
+<div class='q'><h3>批量编辑免费吗？</h3><p>免费。多页批量编辑与 ZIP 导出都属于免费核心功能。</p></div>
+<div class='q'><h3>一次能批量处理多少张？</h3><p>取决于你的设备内存，本地处理几十到几百张通常都没问题。</p></div>
+</div>
+
+</div>
+<footer>
+  <div>© 2026 TinyPS</div>
+  <div>
+    <a href="index.html">首页</a>
+    <a href="privacy.html">隐私</a>
+    <a href="install.html">安装</a>
+    <a href="support.html">支持</a>
+  </div>
+</footer>
+</div>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "批量图片编辑器，文件一个都不上传", "description": "一次性批量编辑、缩放、压缩多张图片——全程本地，不上传。TinyPS 在设备上处理每张图并导出 ZIP。", "inLanguage": "zh-CN", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pic.zxxdb.com/batch-image-editor-no-upload.html"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "TinyPS 批量导出时会上传我的图片吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。每一页都在你的设备上处理，ZIP 也在浏览器本地生成。"}}, {"@type": "Question", "name": "批量编辑免费吗？", "acceptedAnswer": {"@type": "Answer", "text": "免费。多页批量编辑与 ZIP 导出都属于免费核心功能。"}}, {"@type": "Question", "name": "一次能批量处理多少张？", "acceptedAnswer": {"@type": "Answer", "text": "取决于你的设备内存，本地处理几十到几百张通常都没问题。"}}]}
+</script>
+</body>
+</html>

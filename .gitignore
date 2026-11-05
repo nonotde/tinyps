@@ -13,3 +13,6 @@ build/
 
 # Backup files
 *.bak
+
+# Python cache
+__pycache__/

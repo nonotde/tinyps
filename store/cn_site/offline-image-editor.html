@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>离线图片编辑器——不联网也能修图</title>
+<meta name="description" content="一款完全离线的浏览器图片编辑器：裁剪、缩放、压缩、格式转换、加文字，零上传、无需联网。">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://pic.zxxdb.com/offline-image-editor.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离线图片编辑器——不联网也能修图">
+<meta property="og:description" content="一款完全离线的浏览器图片编辑器：裁剪、缩放、压缩、格式转换、加文字，零上传、无需联网。">
+<meta property="og:url" content="https://pic.zxxdb.com/offline-image-editor.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="离线图片编辑器——不联网也能修图">
+<meta name="twitter:description" content="一款完全离线的浏览器图片编辑器：裁剪、缩放、压缩、格式转换、加文字，零上传、无需联网。">
+<style>
+:root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.8 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--txt)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+a{color:var(--acc);text-decoration:none}
+header{padding:24px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo .mark{width:30px;height:30px;border-radius:8px;object-fit:cover;display:inline-block}
+nav a{margin-left:18px;color:var(--txt3);font-size:14px}
+nav a:hover{color:var(--acc)}
+.crumb{color:var(--txt3);font-size:13px;margin:6px 0 26px}
+.crumb a{color:var(--txt3)}
+.crumb a:hover{color:var(--acc)}
+h1{font-size:32px;line-height:1.35;margin-bottom:14px}
+.lead{color:var(--txt3);font-size:17px;margin-bottom:28px}
+h2{font-size:22px;margin:30px 0 12px}
+p{margin:12px 0;color:#cdd2d8}
+p.note{color:var(--txt3);font-size:14px}
+ol.steps{margin:12px 0 12px 22px;color:#cdd2d8}
+ol.steps li{margin:8px 0}
+ul.dots{margin:12px 0 12px 20px;color:#cdd2d8}
+ul.dots li{margin:8px 0}
+.cta{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:20px 22px;margin:28px 0;text-align:center}
+.cta h3{font-size:18px;margin-bottom:10px}
+.cta .btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 22px;font-weight:600;margin:6px 6px 0}
+.cta .btn.outline{background:transparent;border:1px solid var(--border);color:var(--txt)}
+table.cmp{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+table.cmp th,table.cmp td{border:1px solid var(--border);padding:9px 12px;text-align:left}
+table.cmp th{background:var(--bg2);color:var(--txt)}
+table.cmp td.ok{color:#5fd38a}
+table.cmp td.no{color:#ff7a7a}
+.related{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:34px 0}
+.related h3{font-size:16px;margin-bottom:10px}
+.related a{display:block;padding:5px 0;color:var(--acc)}
+.faq{margin:26px 0 10px}
+.faq .q{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:12px}
+.faq .q h3{font-size:16px;margin-bottom:6px;color:var(--txt)}
+.faq .q p{color:var(--txt3);font-size:14px;margin:0}
+footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{margin-right:14px}
+</style>
+<!-- TinyPS analytics: baidu (cn only) + goatcounter (all) -->
+<script>
+(function(){
+  // 百度统计：仅国内站 pic.zxxdb.com 加载
+  if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
+    var _hmt = _hmt || [];
+    (function(){
+      var hm = document.createElement('script');
+      hm.src = 'https://hm.baidu.com/hm.js?29f3fa897cfa1b515a8464d06e62c065';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  }
+  // GoatCounter：两站共用
+  var gc = document.createElement('script');
+  gc.async = true;
+  gc.setAttribute('data-goatcounter', 'https://tinyps.goatcounter.com/count');
+  gc.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(gc);
+})();
+</script>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><img class="mark" src="assets/logo.png" alt="TinyPS logo">Tiny<span style="color:var(--acc)">PS</span></div>
+  <nav><a href='index.html'>首页</a><a href='privacy.html'>隐私</a><a href='install.html'>安装</a><a href='support.html'>支持</a></nav>
+</header>
+<div class='crumb'><a href='index.html'>TinyPS</a> › 指南</div>
+<h1>离线图片编辑器：不联网也能修图</h1>
+<p class="lead">如果你的工作涉及敏感图片，一个会联网回传的网页工具就是隐患。TinyPS 是一款完全在浏览器里运行的离线图片编辑器——无服务器、无同步、无泄露。</p>
+<h2>这里说的「离线图片编辑器」是什么</h2>
+TinyPS 以 Chrome/Edge 扩展形式加载，也有免费的浏览器内编辑器。打开后，裁剪、旋转、缩放、图层、文字、滤镜、压缩、转换每一步都在你的设备上完成。拔掉网线也能继续编辑。
+<h2>为什么要在离线状态修图</h2>
+<ul class='dots'><li>隐私：任何文件都不会发往服务器。</li><li>可靠：没有服务器宕机、没有限流、不用排队。</li><li>速度：普通图片本地处理即时完成。</li><li>成本：核心编辑免费，没有按张计费。</li></ul>
+<h2>如何开始离线编辑</h2>
+<ol class='steps'><li>从 Chrome 网上应用店或 Edge 外接程序安装 TinyPS（或打开在线编辑器）。</li><li>打开一张图片——从磁盘，或在任意网页图片上右键选「用 TinyPS 编辑图片」。</li><li>用图层、裁剪、缩放、压缩或转换进行编辑。</li><li>导出为 JPEG/PNG/WebP/BMP/GIF，或多页打包成 ZIP。</li></ol>
+<h2>离线 vs「免费在线编辑器但仍上传」</h2>
+很多「免费编辑器」在标签页里运行却会把文件上传处理。TinyPS 即使在在线编辑器模式下也本地处理，离线保证始终成立。
+
+<div class='cta'><h3>试试 TinyPS——本地编辑，什么都不上传</h3><a class='btn' href='https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen'>前往 Chrome 商店安装</a><a class='btn outline' href='editor/'>打开免费在线编辑器</a></div>
+<div class='related'><h3>更多 TinyPS 指南</h3>
+<a href='remove-background-without-uploading.html'>本地去背景，照片一个像素都不上传</a>
+<a href='batch-image-editor-no-upload.html'>批量图片编辑器，文件一个都不上传</a>
+<a href='private-photo-editor-no-signup.html'>隐私图片编辑器：免注册、不追踪</a>
+<a href='compress-images-locally.html'>本地压缩图片——缩小文件不上传</a>
+<a href='free-photo-editor-chrome-extension.html'>免费的 Chrome 图片编辑扩展——本地、无水印</a>
+</div>
+
+<div class="faq-wrap">
+<h2 id="faq">常见问题</h2>
+<div class='faq'>
+<div class='q'><h3>TinyPS 真的可以完全不联网吗？</h3><p>可以。编辑、压缩、转换都不需要网络，唯一的网络请求是你激活付费功能时的 Pro 许可证校验。</p></div>
+<div class='q'><h3>离线编辑必须安装东西吗？</h3><p>装扩展体验最好，也可以用免费的在线编辑器，它同样在你的浏览器里本地运行。</p></div>
+<div class='q'><h3>离线编辑器支持哪些格式？</h3><p>JPEG、PNG、WebP、BMP、GIF——包含 Chrome 原生无法导出的格式（自研编码器）。</p></div>
+</div>
+
+</div>
+<footer>
+  <div>© 2026 TinyPS</div>
+  <div>
+    <a href="index.html">首页</a>
+    <a href="privacy.html">隐私</a>
+    <a href="install.html">安装</a>
+    <a href="support.html">支持</a>
+  </div>
+</footer>
+</div>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "离线图片编辑器：不联网也能修图", "description": "一款完全离线的浏览器图片编辑器：裁剪、缩放、压缩、格式转换、加文字，零上传、无需联网。", "inLanguage": "zh-CN", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pic.zxxdb.com/offline-image-editor.html"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "TinyPS 真的可以完全不联网吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。编辑、压缩、转换都不需要网络，唯一的网络请求是你激活付费功能时的 Pro 许可证校验。"}}, {"@type": "Question", "name": "离线编辑必须安装东西吗？", "acceptedAnswer": {"@type": "Answer", "text": "装扩展体验最好，也可以用免费的在线编辑器，它同样在你的浏览器里本地运行。"}}, {"@type": "Question", "name": "离线编辑器支持哪些格式？", "acceptedAnswer": {"@type": "Answer", "text": "JPEG、PNG、WebP、BMP、GIF——包含 Chrome 原生无法导出的格式（自研编码器）。"}}]}
+</script>
+</body>
+</html>
