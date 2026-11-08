@@ -1,0 +1,26 @@
+TinyPS — Privacy-First Local Image Editor (Chrome Extension)
+
+TinyPS is a fully local-running image editing extension built for privacy-conscious users. Your photos never leave your device: all processing happens in your browser, on your machine. No uploads, no servers, no accounts, no telemetry.
+
+Key Features
+• Edit any web image in one click — right-click any image on a web page and choose "Edit image with TinyPS" to open it instantly in the local editor.
+• AI background removal — a lightweight on-device model removes backgrounds locally, no network needed.
+• Batch editing — batch crop, resize, apply filters, and convert formats.
+• Local compression — shrink file size dramatically, all on your machine, nothing uploaded.
+• Full toolkit — crop, rotate, filters, adjustments, watermark, and format conversion (JPG / PNG / WEBP / BMP / GIF and more).
+
+What's New
+1. Free crop with Keep-Inside / Keep-Outside — Keep-Outside deletes the area inside the box. Full-width or full-height strips are auto-stitched, and local holes are punched through to transparent, so you can carve out shapes or clear specific regions.
+2. Free Rotate (Pro) — drag the center handle to rotate the image around its center at any angle, with 90° magnetic snap for quick, precise turns.
+3. Watermark text opacity — set text transparency (default 100%). New text now inherits the previous text's rotation state, making multi-line angled watermarks much faster to place.
+4. AVIF export — a new output format encoded locally via WASM. It is lazy-loaded, so it never slows down the app's startup.
+
+How to Use
+• Web images: right-click any image on a page → "Edit image with TinyPS".
+• Local files: open the extension and pick a local image.
+• Online editor: the website's Online Editor also runs entirely locally in your browser.
+
+Privacy Promise
+All computation runs on your device. We do not collect, upload, or store any of your images or edits. No accounts, no telemetry, no third-party data selling.
+
+Supported formats: import JPG / PNG / WEBP / BMP / GIF; export JPG / PNG / WEBP / BMP / GIF / AVIF.

@@ -1,0 +1,26 @@
+TinyPS — Éditeur d'images local respectueux de la vie privée (extension Chrome)
+
+TinyPS est une extension de retouche d'images qui fonctionne entièrement en local, conçue pour les utilisateurs soucieux de leur vie privée. Vos photos ne quittent jamais votre appareil : tout le traitement s'effectue dans votre navigateur, sur votre machine. Aucun téléversement, aucun serveur, aucun compte, aucune télémétrie.
+
+Fonctionnalités principales
+• Modifiez n'importe quelle image web en un clic — faites un clic droit sur une image d'une page web et choisissez « Modifier l'image avec TinyPS » pour l'ouvrir instantanément dans l'éditeur local.
+• Suppression de fond par IA — un modèle léger exécuté sur l'appareil retire les fonds localement, sans réseau.
+• Traitement par lots — recadrez, redimensionnez, appliquez des filtres et convertissez des formats en masse.
+• Compression locale — réduisez considérablement la taille des fichiers, entièrement sur votre machine, rien n'est envoyé.
+• Boîte à outils complète — recadrage, rotation, filtres, réglages, filigrane et conversion de format (JPG / PNG / WEBP / BMP / GIF, etc.).
+
+Nouveautés
+1. Recadrage libre « Conserver l'intérieur / Conserver l'extérieur » — Conserver l'extérieur supprime la zone à l'intérieur du cadre. Les bandes pleine largeur ou pleine hauteur sont automatiquement assemblées, et des trous locaux sont percés en transparence, pour découper des formes ou effacer des zones précises.
+2. Rotation libre (Pro) — faites glisser l'icône centrale pour pivoter l'image autour de son centre selon n'importe quel angle, avec un aimantage à 90° pour des rotations rapides et précises.
+3. Opacité du texte du filigrane — définissez la transparence du texte (100 % par défaut). Le nouveau texte hérite désormais de l'état de rotation du texte précédent, ce qui facilite beaucoup le placement de filigranes obliques multi-lignes.
+4. Export AVIF — un nouveau format de sortie encodé localement via WASM. Il est chargé en lazy loading, donc il ne ralentit jamais le démarrage de l'application.
+
+Mode d'emploi
+• Images web : clic droit sur une image d'une page → « Modifier l'image avec TinyPS ».
+• Fichiers locaux : ouvrez l'extension et choisissez une image locale.
+• Éditeur en ligne : l'Online Editor du site fonctionne également entièrement en local dans votre navigateur.
+
+Promesse de confidentialité
+Tout le calcul s'effectue sur votre appareil. Nous ne collectons, ne téléversons ni ne stockons aucune de vos images ou retouches. Aucun compte, aucune télémétrie, aucune revente de données à des tiers.
+
+Formats pris en charge : import JPG / PNG / WEBP / BMP / GIF ; export JPG / PNG / WEBP / BMP / GIF / AVIF.

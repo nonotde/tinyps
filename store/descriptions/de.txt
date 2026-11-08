@@ -1,0 +1,26 @@
+TinyPS — Datenschutzorientierter lokaler Bildeditor (Chrome-Erweiterung)
+
+TinyPS ist eine vollständig lokal laufende Bildbearbeitungs-Erweiterung für datenschutzbewusste Nutzer. Ihre Fotos verlassen niemals Ihr Gerät: Alle Bearbeitungsschritte erfolgen im Browser, auf Ihrem Rechner. Kein Upload, keine Server, keine Konten, keine Telemetrie.
+
+Kernfunktionen
+• Beliebiges Web-Bild mit einem Klick bearbeiten — Klicken Sie mit der rechten Maustaste auf ein Bild auf einer Webseite und wählen Sie „Bild mit TinyPS bearbeiten", um es sofort im lokalen Editor zu öffnen.
+• KI-Hintergrundentfernung — ein leichtes, geräteinternes Modell entfernt Hintergründe lokal, ohne Netzwerk.
+• Stapelverarbeitung — Bilder stapelweise zuschneiden, skalieren, filtern und konvertieren.
+• Lokale Komprimierung — reduziert die Dateigröße drastisch, komplett auf Ihrem Rechner, nichts wird hochgeladen.
+• Vollständiges Werkzeugset — Zuschneiden, Drehen, Filter, Anpassungen, Wasserzeichen und Formatkonvertierung (JPG / PNG / WEBP / BMP / GIF u. a.).
+
+Neu in dieser Version
+1. Freier Zuschnitt mit „Innen behalten / Außen behalten" — „Außen behalten" löscht den Bereich innerhalb des Rahmens. Vollständige Quer- oder Längsstreifen werden automatisch zusammengefügt, und lokale Löcher werden transparent gepuncht, sodass Sie Formen ausschneiden oder bestimmte Bereiche entfernen können.
+2. Freie Drehung (Pro) — Ziehen Sie das Symbol in der Mitte, um das Bild um seinen Mittelpunkt in einem beliebigen Winkel zu drehen, mit 90°-Magnetraster für schnelle, präzise Drehungen.
+3. Wasserzeichen-Texttransparenz — legen Sie die Texttransparenz fest (Standard 100 %). Neuer Text übernimmt jetzt den Drehstatus des vorherigen Texts, sodass mehrzeilige schräge Wasserzeichen viel schneller platziert werden.
+4. AVIF-Export — ein neues Ausgabeformat, das lokal per WASM codiert wird. Es wird lazy geladen, sodass es den App-Start niemals verlangsamt.
+
+So verwenden Sie es
+• Web-Bilder: Rechtsklick auf ein Bild auf einer Seite → „Bild mit TinyPS bearbeiten".
+• Lokale Dateien: Öffnen Sie die Erweiterung und wählen Sie ein lokales Bild.
+• Online-Editor: Der Online-Editor der Website läuft ebenfalls vollständig lokal in Ihrem Browser.
+
+Datenschutzversprechen
+Alle Berechnungen laufen auf Ihrem Gerät. Wir erfassen, laden oder speichern keine Ihrer Bilder oder Bearbeitungen. Keine Konten, keine Telemetrie, kein Verkauf von Daten an Dritte.
+
+Unterstützte Formate: Import JPG / PNG / WEBP / BMP / GIF; Export JPG / PNG / WEBP / BMP / GIF / AVIF.
