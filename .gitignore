@@ -19,3 +19,6 @@ __pycache__/
 
 # Distributable extension package (contains product source — never publish to GitHub)
 downloads/
+
+# 扩展可读源码（仅本地开发，严禁推送到公开 GitHub 仓库）
+extension/
