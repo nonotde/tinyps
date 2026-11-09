@@ -19,7 +19,7 @@ Les calques font de TinyPS bien plus qu'un outil de retouche : il permet de mene
 Compresser et convertir sans perte de qualité
 - Copie directe sans perte : les fichiers que vous n'avez pas modifiés sont reproduits octet par octet, sans aucune dégradation de qualité liée à un réencodage
 - Visez précisément une taille de fichier cible, supprimez les métadonnées (EXIF) et ajustez la qualité avec un seul curseur
-- Convertissez librement entre JPEG, PNG, WebP, BMP et GIF, avec en plus l'export AVIF
+- Convertissez librement entre les formats d'image courants, avec en plus l'export AVIF
 - Exportez toutes les pages en lot dans un seul ZIP, sans aucun outil externe
 - Le nouvel export AVIF est assuré par un encodeur WASM local, chargé à la demande, sans impact sur le démarrage : il n'est chargé qu'à la première utilisation et ne ralentit pas le lancement de l'extension
 

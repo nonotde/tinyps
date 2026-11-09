@@ -19,7 +19,7 @@ Dank der Ebenen ist TinyPS nicht länger nur ein Korrekturwerkzeug, sondern bew�
 Komprimieren und konvertieren – ohne Qualitätsverlust
 - Verlustfreier Durchlauf: Dateien, die Sie nicht verändert haben, werden Byte für Byte kopiert – so entsteht kein Qualitätsverlust durch eine Neukodierung
 - Zielgröße der Datei exakt ansteuern, Metadaten (EXIF) entfernen und die Qualität mit einem einzigen Schieberegler einstellen
-- Zwischen JPEG, PNG, WebP, BMP und GIF konvertieren, neu ergänzt um den AVIF-Export
+- Zwischen gängigen Bildformaten konvertieren, neu ergänzt um den AVIF-Export
 - Alle Seiten im Stapel in ein einziges ZIP exportieren – ohne jegliche externe Tools
 - Für den neuen AVIF-Export: lokaler WASM-Encoder, wird erst bei Bedarf geladen, kein Einfluss auf die Startzeit – nur bei der ersten Verwendung geladen, der Start der Erweiterung wird nicht verlangsamt
 

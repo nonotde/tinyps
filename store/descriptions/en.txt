@@ -19,7 +19,7 @@ Layers turn TinyPS from a simple touch-up tool into something capable of full co
 Compression and Conversion Without Losing Quality
 - Lossless pass-through: files you haven't edited are copied byte for byte, so there's no quality loss from re-encoding
 - Hit an exact target file size, strip metadata (EXIF), and fine-tune quality with a single slider
-- Convert between JPEG, PNG, WebP, BMP, and GIF, now with AVIF export
+- Convert between all common image formats, now with AVIF export
 - Batch-export every page into a single ZIP, with no external tools required
 - The new AVIF export runs on a local WASM encoder, lazy-loaded, no impact on startup — it's only loaded the first time you use it, so it never slows the extension down
 
