@@ -1,9 +1,9 @@
 ﻿日期,站点,提交地址,对应落地页,状态,备注
-,aisotools,https://aisotools.com,EN,待提交,自动化无需审核直接上线 首选
-,ainavbar,https://ainavbar.ai,EN,待提交,自动化无需审核 首选
-,ai123.cn,https://ai123.cn,EN/CN,待提交,自动化 中文首选
+2026-11-10,aisotools,https://aisotools.com/submit,EN,已提交-审核队列,自动上线(约1分钟)/48h复检；Autofill 自动填表，description 手动补写；free nofollow 永久外链；站点称 free 条目 96% 1分钟内自动上线
+2026-11-10,ainavbar,https://ainavbar.ai/submit,EN,已提交-人工审核,提交成功(Submission Successful!)；人工审核后邮件通知；已附 16:9 截图 screenshot1.png + 1:1 图标 logo.png；slug 规则=去 www 与点号 → /tool/tinyps-top
+2026-11-10,ai123.cn,https://ai123.cn/contribute/,EN/CN,已提交-待审核,WordPress 投稿(AJAX status:1 投稿成功)；category=329 AI工具推荐；中文内容+10个中文标签；待审稿不进公开搜索/REST API；投稿管理需登录
 ,ainai.tools,https://aiai.tools,EN,待提交,容易提交
-,freeaio.com,https://freeaio.com,EN,待提交,自动化
+2026-11-10,freeaio.com,https://freeaio.com/submit-ai-tool/,EN,已提交-人工审核,WPForms form 202 提交成功(Thanks for contacting us!)；描述 454 词(要求400-500)；站主 Leela 人工审核；注意域名在 GoDaddy 待售但站点正常运营
 ,ainavhub.com/cn,https://ainavhub.com/cn,EN/CN,待提交,自动化 中文
 ,verysaas.io,https://verysaas.io,EN,待提交,自动化需审核
 ,aitophub.com,https://aitophub.com,EN,待提交,自动化需审核
