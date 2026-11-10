@@ -121,14 +121,45 @@ def ensure_zone():
     return zid
 
 
+def porkbun_records():
+    """Read the DNS records from Porkbun so they can be mirrored to Cloudflare.
+
+    Without this, moving the nameservers would drop the wildcard A record, the
+    ACME challenge CNAME (which would break certificate renewal) and the
+    google-site-verification TXT (which would break Search Console).
+    """
+    pf = os.path.expanduser("~/.workbuddy/credentials/porkbun.json")
+    if not os.path.exists(pf):
+        return []
+    try:
+        with open(pf, encoding="utf-8") as f:
+            c = json.load(f)
+        body = {"apikey": c.get("apikey"), "secretapikey": c.get("secretapikey")}
+        req = urllib.request.Request(
+            "https://api.porkbun.com/api/json/v3/dns/retrieve/tinyps.top",
+            data=json.dumps(body).encode(),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            d = json.loads(r.read().decode())
+        if d.get("status") == "SUCCESS":
+            return d.get("records") or []
+    except Exception as e:
+        print(f"    (读取 Porkbun 记录失败: {repr(e)[:80]})")
+    return []
+
+
 def ensure_dns(zid):
+    """Create the A records on Cloudflare and mirror every other record
+    (wildcard A, ACME CNAME, GSC TXT, ...) from Porkbun so nothing breaks
+    when the nameservers move over."""
     print("\n=== DNS 记录 ===")
     for name, ip in RECORDS:
         existing = call("GET", f"/zones/{zid}/dns_records?type=A&name={name}")
         if existing.get("success") and existing.get("result"):
             rec = existing["result"][0]
-            print(f"  · {name}: 已存在 (id={rec['id']}, proxied={rec.get('proxied')}, ip={rec.get('content')})")
-            # make sure it points at the right IP and is proxied
+            print(f"  · {name}: 已存在 (proxied={rec.get('proxied')}, ip={rec.get('content')})")
             if rec.get("content") != ip or not rec.get("proxied"):
                 r = call("PUT", f"/zones/{zid}/dns_records/{rec['id']}",
                          {"type": "A", "name": name, "content": ip, "ttl": 1, "proxied": True})
@@ -138,8 +169,40 @@ def ensure_dns(zid):
                      {"type": "A", "name": name, "content": ip, "ttl": 1, "proxied": True})
             ok = r.get("success")
             print(f"  · {name}: {'✓ 已创建 (橙云代理)' if ok else '✗ 失败 ' + str(r.get('errors'))}")
-    # also make sure the IndexNow key file stays reachable
-    print("  · 其他记录（MX/TXT/CNAME 等）保持原样，不动")
+
+    # --- mirror the remaining records from Porkbun ---
+    print("\n  从 Porkbun 同步其余记录（通配 A / ACME / TXT 等）:")
+    others = porkbun_records()
+    if not others:
+        print("    (未读到 Porkbun 记录，跳过)")
+        return
+    have = call("GET", f"/zones/{zid}/dns_records")
+    existing_keys = set()
+    if have.get("success"):
+        for rec in have["result"]:
+            existing_keys.add((rec["type"], rec["name"], rec.get("content", "")))
+    for rec in others:
+        rtype = rec.get("type")
+        content = rec.get("content", "")
+        name = rec.get("name", "")
+        # skip the NS records (Cloudflare manages those itself)
+        if rtype == "NS":
+            continue
+        # the two apex/www A records are handled above
+        if rtype == "A" and name in ("tinyps.top", "www.tinyps.top"):
+            continue
+        cfname = "" if name in ("tinyps.top", "@") else name
+        key = (rtype, cfname or "tinyps.top", content)
+        if key in existing_keys:
+            print(f"    · {rtype} {cfname or '@':30} 已存在，跳过")
+            continue
+        payload = {"type": rtype, "name": cfname, "content": content, "ttl": 300}
+        if rtype == "TXT":
+            payload["content"] = content
+        if rtype == "CNAME":
+            payload["proxied"] = False
+        r = call("POST", f"/zones/{zid}/dns_records", payload)
+        print(f"    · {rtype} {cfname or '@':30} {'✓ 已创建' if r.get('success') else '✗ ' + str(r.get('errors'))[:110]}")
 
 
 def set_settings(zid):
@@ -164,10 +227,21 @@ def set_settings(zid):
 
 def _cache_rules_payload():
     """Cache rules: HTML bypasses the edge (deploys show up instantly),
-    static assets get a 30-day edge TTL."""
-    html_expr = r'(http.request.uri.path matches "(?i)^(?:$|/[^.]*\.html$|/editor/?$|/editor/index\.html$)"'
-    static_expr = r'(http.request.uri.path matches "(?i)\.(?:png|jpg|jpeg|webp|gif|svg|ico|css|js|wasm|onnx|woff2?)$")'
+    static assets get a 30-day edge TTL.
+
+    Schema notes (verified against Cloudflare's OpenAPI spec + live API):
+      * edge_ttl  = {"mode": "bypass_by_default" | "respect_origin" | "override_origin",
+                       "default": <seconds>}   — the field is "default", not "default_ttl"
+      * browser_ttl = {"mode": ..., "default": <seconds>}
+      * a ruleset needs a non-empty "name"
+      * free plan cannot use the "matches" operator (Business/WAF-Advanced only),
+        so patterns use the "wildcard" operator instead:
+            wildcard "*.html"   instead of   matches "(?i)\\.html$"
+    """
+    html_expr = '(http.request.uri.path wildcard "*.html") or (http.request.uri.path eq "/") or (http.request.uri.path wildcard "/editor/*")'
+    static_expr = '(http.request.uri.path wildcard "*.png") or (http.request.uri.path wildcard "*.jpg") or (http.request.uri.path wildcard "*.jpeg") or (http.request.uri.path wildcard "*.webp") or (http.request.uri.path wildcard "*.gif") or (http.request.uri.path wildcard "*.svg") or (http.request.uri.path wildcard "*.ico") or (http.request.uri.path wildcard "*.css") or (http.request.uri.path wildcard "*.js") or (http.request.uri.path wildcard "*.wasm") or (http.request.uri.path wildcard "*.onnx") or (http.request.uri.path wildcard "*.woff2")'
     return {
+        "name": "TinyPS 缓存规则",
         "description": "TinyPS — HTML 不缓存，静态资源长缓存",
         "kind": "zone",
         "phase": "http_request_cache_settings",
@@ -175,14 +249,8 @@ def _cache_rules_payload():
             {
                 "action": "set_cache_settings",
                 "action_parameters": {
-                    "cache_key": {
-                        "custom_key": {
-                            "query_string": {"include": ["all"]},
-                            "headers": {"include": ["*"]},
-                        }
-                    },
-                    # no edge_ttl => cache is bypassed for these paths
-                    "bypass_cache_on_cookie": False,
+                    "edge_ttl": {"mode": "bypass_by_default"},
+                    "browser_ttl": {"mode": "bypass"},
                 },
                 "description": "HTML 绕过边缘缓存（发布即时生效）",
                 "expression": html_expr,
@@ -191,16 +259,10 @@ def _cache_rules_payload():
             {
                 "action": "set_cache_settings",
                 "action_parameters": {
-                    "cache_key": {
-                        "custom_key": {
-                            "query_string": {"include": ["all"]},
-                            "headers": {"include": ["*"]},
-                        }
-                    },
-                    "edge_ttl": {"default_ttl": 2592000},
-                    "browser_ttl": {"default_ttl": 86400, "respect_existing_headers": True},
+                    "edge_ttl": {"mode": "override_origin", "default": 2592000},
+                    "browser_ttl": {"mode": "override_origin", "default": 86400},
                 },
-                "description": "静态资源长缓存 30 天",
+                "description": "静态资源长缓存 30 天（浏览器 1 天）",
                 "expression": static_expr,
                 "enabled": True,
             },
@@ -211,14 +273,28 @@ def _cache_rules_payload():
 def set_cache_rules(zid):
     print("\n=== 缓存规则 ===")
     r = call("GET", f"/zones/{zid}/rulesets?phase=http_request_cache_settings")
+    target = None
     if r.get("success") and r.get("result"):
         for rs in r["result"]:
-            print(f"  已存在缓存规则集 {rs.get('id')}（{len(rs.get('rules', []))} 条）")
-            u = call("PUT", f"/zones/{zid}/rulesets/{rs['id']}", _cache_rules_payload())
-            print(f"  → 已更新规则集: {'✓' if u.get('success') else '✗ ' + str(u.get('errors'))}")
-            return
+            if rs.get("phase") == "http_request_cache_settings":
+                target = rs["id"]
+                print(f"  已存在缓存规则集 {target}（{len(rs.get('rules', []))} 条）")
+                break
+    if target:
+        u = call("PUT", f"/zones/{zid}/rulesets/{target}", _cache_rules_payload())
+        if u.get("success"):
+            for rule in u["result"].get("rules", []):
+                print(f"  ✓ {rule.get('description')}")
+        else:
+            print(f"  ✗ 更新失败: {u.get('errors')}")
+        return
     r = call("POST", f"/zones/{zid}/rulesets", _cache_rules_payload())
-    print(f"  ✓ 已创建缓存规则集: {'成功' if r.get('success') else '✗ ' + str(r.get('errors'))}")
+    if r.get("success"):
+        print(f"  ✓ 已创建缓存规则集:")
+        for rule in r["result"].get("rules", []):
+            print(f"    · {rule.get('description')}")
+    else:
+        print(f"  ✗ 创建失败: {r.get('errors')}")
 
 
 def show_ns():
