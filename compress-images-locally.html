@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Compress Images Locally — Shrink Files Without Uploading</title>
-<meta name="description" content="Compress and shrink images locally with a quality slider, lossless passthrough and metadata stripping — no uploads, fully private.">
+<title>Compress Images Locally — Shrink Files, No Uploads | TinyPS</title>
+<meta name="description" content="Compress images locally with a quality slider, true lossless passthrough and metadata stripping. Shrink JPEG, PNG and WebP files without uploading anything.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="canonical" href="https://www.tinyps.top/compress-images-locally.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Compress Images Locally — Shrink Files Without Uploading">
-<meta property="og:description" content="Compress and shrink images locally with a quality slider, lossless passthrough and metadata stripping — no uploads, fully private.">
+<meta property="og:title" content="Compress Images Locally — Shrink Files, No Uploads | TinyPS">
+<meta property="og:description" content="Compress images locally with a quality slider, true lossless passthrough and metadata stripping. Shrink JPEG, PNG and WebP files without uploading anything.">
 <meta property="og:url" content="https://www.tinyps.top/compress-images-locally.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Compress Images Locally — Shrink Files Without Uploading">
-<meta name="twitter:description" content="Compress and shrink images locally with a quality slider, lossless passthrough and metadata stripping — no uploads, fully private.">
+<meta name="twitter:title" content="Compress Images Locally — Shrink Files, No Uploads | TinyPS">
+<meta name="twitter:description" content="Compress images locally with a quality slider, true lossless passthrough and metadata stripping. Shrink JPEG, PNG and WebP files without uploading anything.">
 <style>
 :root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -54,6 +54,8 @@ table.cmp td.no{color:#ff7a7a}
 .faq .q p{color:var(--txt3);font-size:14px;margin:0}
 footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{margin-right:14px}
+.quick{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:16px 20px;margin:0 0 26px;font-size:15.5px;color:var(--txt)}
+.quick b{color:var(--txt)}
 </style>
 
 <script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://www.tinyps.top/count.js"></script>
@@ -67,7 +69,8 @@ footer a{margin-right:14px}
 </header>
 <div class='crumb'><a href='index.html'>TinyPS</a> › Guides</div>
 <h1>Compress Images Locally — Shrink Files Without Uploading</h1>
-<p class="lead">Online compressors make you upload a file just to make it smaller. TinyPS compresses images on your device: drag a quality slider, strip metadata, and export — nothing leaves your computer.</p>
+<p class="lead">Compression usually means sending your file to a server and downloading a smaller copy. TinyPS is how you compress images locally — the slider, the encoder and the output file all stay on your machine.</p>
+<div class="quick"><b>You compress images locally when the compression runs on your own computer, so the file never travels to a server.</b> TinyPS compresses locally with a live quality slider, a lossless passthrough for files you don't actually change, metadata stripping and an optional target file size such as 200 KB.</div>
 <h2>Local compression features</h2>
 <ul class='dots'><li>Quality slider for JPEG/WebP.</li><li>True lossless passthrough — untouched images are not re-encoded (0% quality loss).</li><li>Metadata stripping to remove EXIF (location, camera).</li><li>Target file size mode that shrinks to a goal you set.</li></ul>
 <h2>How to compress without uploading</h2>
@@ -89,9 +92,12 @@ You can also convert formats (PNG to WebP, etc.) which often shrinks files furth
 <div class="faq-wrap">
 <h2 id="faq">Frequently asked questions</h2>
 <div class='faq'>
-<div class='q'><h3>Does image compression upload my file?</h3><p>No. TinyPS compresses entirely on your device; the original never leaves your computer.</p></div>
-<div class='q'><h3>What is lossless passthrough?</h3><p>If an image is already small or you change nothing, TinyPS skips re-encoding so there is literally zero quality loss.</p></div>
-<div class='q'><h3>Can I remove EXIF / location data?</h3><p>Yes. The compression panel can strip metadata so exported files carry no location or camera info.</p></div>
+<div class='q'><h3>How do I compress an image without losing quality?</h3><p>Use a moderate quality value and compare the live preview before exporting — TinyPS shows the resulting file size next to the slider, so you can stop at the smallest size that still looks right. For files you don't need to change, the lossless passthrough copies them byte-for-byte instead of re-encoding.</p></div>
+<div class='q'><h3>Can I compress images on my own computer?</h3><p>Yes, and that is the default. TinyPS compresses entirely on your device, so you can batch-compress a private photo library with the network disconnected and nothing is uploaded in the process.</p></div>
+<div class='q'><h3>Why is my compressed image bigger than the original?</h3><p>Usually because the source was already optimised and re-encoding it just adds overhead — PNG of a photo, or a JPEG saved at a very high quality. TinyPS avoids this with its lossless passthrough: if you change nothing, the original bytes are kept.</p></div>
+<div class='q'><h3>How much can I shrink a PNG file?</h3><p>A PNG of a screenshot or flat graphic can often lose 60–80% by resizing or reducing colours, but PNG is already lossless so re-saving gains little. Photographic content usually needs JPEG or WebP, where 50–80% savings are routine.</p></div>
+<div class='q'><h3>Does image compression remove EXIF metadata?</h3><p>Yes, if you switch on metadata stripping — that removes camera, location and timestamp data, which is worth doing before sharing photos publicly. Leave it off when you need the original capture data preserved.</p></div>
+<div class='q'><h3>What is the difference between lossy and lossless compression?</h3><p>Lossy discards some image detail to save more space and is what the quality slider controls. Lossless keeps every pixel identical but saves less — TinyPS uses lossless passthrough for unchanged files and lossy only where you ask for it.</p></div>
 </div>
 
 </div>
@@ -106,10 +112,10 @@ You can also convert formats (PNG to WebP, etc.) which often shrinks files furth
 </footer>
 </div>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Compress Images Locally — Shrink Files Without Uploading", "description": "Compress and shrink images locally with a quality slider, lossless passthrough and metadata stripping — no uploads, fully private.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/compress-images-locally.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Compress Images Locally — Shrink Files Without Uploading", "description": "Compress images locally with a quality slider, true lossless passthrough and metadata stripping. Shrink JPEG, PNG and WebP files without uploading anything.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-10", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/compress-images-locally.html"}}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does image compression upload my file?", "acceptedAnswer": {"@type": "Answer", "text": "No. TinyPS compresses entirely on your device; the original never leaves your computer."}}, {"@type": "Question", "name": "What is lossless passthrough?", "acceptedAnswer": {"@type": "Answer", "text": "If an image is already small or you change nothing, TinyPS skips re-encoding so there is literally zero quality loss."}}, {"@type": "Question", "name": "Can I remove EXIF / location data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The compression panel can strip metadata so exported files carry no location or camera info."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I compress an image without losing quality?", "acceptedAnswer": {"@type": "Answer", "text": "Use a moderate quality value and compare the live preview before exporting — TinyPS shows the resulting file size next to the slider, so you can stop at the smallest size that still looks right. For files you don't need to change, the lossless passthrough copies them byte-for-byte instead of re-encoding."}}, {"@type": "Question", "name": "Can I compress images on my own computer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and that is the default. TinyPS compresses entirely on your device, so you can batch-compress a private photo library with the network disconnected and nothing is uploaded in the process."}}, {"@type": "Question", "name": "Why is my compressed image bigger than the original?", "acceptedAnswer": {"@type": "Answer", "text": "Usually because the source was already optimised and re-encoding it just adds overhead — PNG of a photo, or a JPEG saved at a very high quality. TinyPS avoids this with its lossless passthrough: if you change nothing, the original bytes are kept."}}, {"@type": "Question", "name": "How much can I shrink a PNG file?", "acceptedAnswer": {"@type": "Answer", "text": "A PNG of a screenshot or flat graphic can often lose 60–80% by resizing or reducing colours, but PNG is already lossless so re-saving gains little. Photographic content usually needs JPEG or WebP, where 50–80% savings are routine."}}, {"@type": "Question", "name": "Does image compression remove EXIF metadata?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you switch on metadata stripping — that removes camera, location and timestamp data, which is worth doing before sharing photos publicly. Leave it off when you need the original capture data preserved."}}, {"@type": "Question", "name": "What is the difference between lossy and lossless compression?", "acceptedAnswer": {"@type": "Answer", "text": "Lossy discards some image detail to save more space and is what the quality slider controls. Lossless keeps every pixel identical but saves less — TinyPS uses lossless passthrough for unchanged files and lossy only where you ask for it."}}]}
 </script>
 </body>
 </html>

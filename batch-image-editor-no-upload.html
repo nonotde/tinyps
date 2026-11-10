@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Batch Image Editor That Doesn&#x27;t Upload Your Files</title>
-<meta name="description" content="Batch edit, resize and compress many images at once — locally, with no uploads. TinyPS processes every file on your device and exports a ZIP.">
+<title>Batch Image Editor — Edit Many Images At Once | TinyPS</title>
+<meta name="description" content="A batch image editor that uploads nothing: open a whole folder, crop, resize, compress or convert every file locally, then export the batch as one ZIP.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="canonical" href="https://www.tinyps.top/batch-image-editor-no-upload.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Batch Image Editor That Doesn&#x27;t Upload Your Files">
-<meta property="og:description" content="Batch edit, resize and compress many images at once — locally, with no uploads. TinyPS processes every file on your device and exports a ZIP.">
+<meta property="og:title" content="Batch Image Editor — Edit Many Images At Once | TinyPS">
+<meta property="og:description" content="A batch image editor that uploads nothing: open a whole folder, crop, resize, compress or convert every file locally, then export the batch as one ZIP.">
 <meta property="og:url" content="https://www.tinyps.top/batch-image-editor-no-upload.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Batch Image Editor That Doesn&#x27;t Upload Your Files">
-<meta name="twitter:description" content="Batch edit, resize and compress many images at once — locally, with no uploads. TinyPS processes every file on your device and exports a ZIP.">
+<meta name="twitter:title" content="Batch Image Editor — Edit Many Images At Once | TinyPS">
+<meta name="twitter:description" content="A batch image editor that uploads nothing: open a whole folder, crop, resize, compress or convert every file locally, then export the batch as one ZIP.">
 <style>
 :root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -54,6 +54,8 @@ table.cmp td.no{color:#ff7a7a}
 .faq .q p{color:var(--txt3);font-size:14px;margin:0}
 footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{margin-right:14px}
+.quick{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:16px 20px;margin:0 0 26px;font-size:15.5px;color:var(--txt)}
+.quick b{color:var(--txt)}
 </style>
 
 <script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://www.tinyps.top/count.js"></script>
@@ -66,8 +68,9 @@ footer a{margin-right:14px}
   <nav><a href='index.html'>Home</a><a href='privacy.html'>Privacy</a><a href='install.html'>Install</a><a href='support.html'>Support</a></nav>
 </header>
 <div class='crumb'><a href='index.html'>TinyPS</a> › Guides</div>
-<h1>Batch Image Editor That Doesn&#x27;t Upload Your Files</h1>
-<p class="lead">Need to resize 50 product photos or compress a folder of screenshots? Batch tools usually push your files to a server. TinyPS processes them all on your device and hands you one ZIP — nothing uploaded.</p>
+<h1>Batch Image Editor That Doesn't Upload Your Files</h1>
+<p class="lead">Editing thirty photos one by one is the slowest way to resize a folder. TinyPS is a batch image editor that applies the same edit to every file on your device — no upload, no per-image credit, no waiting.</p>
+<div class="quick"><b>A batch image editor opens many images at once and applies the same operation to all of them.</b> TinyPS does it locally: add a folder, set the crop, size or quality once, and export every page as a single ZIP. Nothing is uploaded, so batch jobs on private photos stay private.</div>
 <h2>Batch editing, locally</h2>
 TinyPS opens multiple images as separate pages. Apply per-page settings — resize, crop, compress, convert — then export them all as a single ZIP. All of it runs in your browser.
 <h2>Common batch jobs you can do privately</h2>
@@ -89,9 +92,12 @@ Cloud batch tools see every file you process. With TinyPS the folder never leave
 <div class="faq-wrap">
 <h2 id="faq">Frequently asked questions</h2>
 <div class='faq'>
-<div class='q'><h3>Does TinyPS upload my images during batch export?</h3><p>No. Every page is processed on your device and the ZIP is built locally in your browser.</p></div>
-<div class='q'><h3>Is batch editing free?</h3><p>Yes. Multi-page batch editing and ZIP export are part of the free core editor.</p></div>
-<div class='q'><h3>How many images can I batch at once?</h3><p>It depends on your device memory, but typical batches of dozens to a few hundred images work fine locally.</p></div>
+<div class='q'><h3>How do I edit many images at once?</h3><p>Open the TinyPS editor and add a whole folder or a multi-select of images — it becomes a multi-page workspace. Apply crop, resize, filters or compression to the active page, then use “apply to all pages” to propagate it. Export the batch as one ZIP.</p></div>
+<div class='q'><h3>Can I compress or resize a whole folder of photos?</h3><p>Yes, and it is the most common batch job. Set the target format, dimensions or quality once and TinyPS applies it to every page in the workspace. There is no limit on how many pages a batch can hold, apart from your device's memory.</p></div>
+<div class='q'><h3>Does batch editing upload my files?</h3><p>No. Batch processing runs on your device exactly like single-image editing. There is no server round-trip, which is what makes large batches of confidential photos practical.</p></div>
+<div class='q'><h3>What is the best free batch image editor for Chrome?</h3><p>For privacy and cost, a local extension is the practical answer: TinyPS batch-edits, compresses and converts without uploads, without a per-image credit and with no watermark. Most online batch tools require an upload and cap free usage.</p></div>
+<div class='q'><h3>Can I export a batch of edited images as a ZIP?</h3><p>Yes — every page in the workspace can be exported together as a single ZIP, with the output format of your choice (JPEG, PNG, WebP, BMP or GIF).</p></div>
+<div class='q'><h3>How many images can I edit in one batch?</h3><p>There is no fixed cap in the editor; the practical limit is your device's free memory, since all pages are held locally for instant preview. For very large folders, work in chunks.</p></div>
 </div>
 
 </div>
@@ -106,10 +112,10 @@ Cloud batch tools see every file you process. With TinyPS the folder never leave
 </footer>
 </div>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Batch Image Editor That Doesn't Upload Your Files", "description": "Batch edit, resize and compress many images at once — locally, with no uploads. TinyPS processes every file on your device and exports a ZIP.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/batch-image-editor-no-upload.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Batch Image Editor That Doesn't Upload Your Files", "description": "A batch image editor that uploads nothing: open a whole folder, crop, resize, compress or convert every file locally, then export the batch as one ZIP.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-10", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/batch-image-editor-no-upload.html"}}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does TinyPS upload my images during batch export?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every page is processed on your device and the ZIP is built locally in your browser."}}, {"@type": "Question", "name": "Is batch editing free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Multi-page batch editing and ZIP export are part of the free core editor."}}, {"@type": "Question", "name": "How many images can I batch at once?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your device memory, but typical batches of dozens to a few hundred images work fine locally."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I edit many images at once?", "acceptedAnswer": {"@type": "Answer", "text": "Open the TinyPS editor and add a whole folder or a multi-select of images — it becomes a multi-page workspace. Apply crop, resize, filters or compression to the active page, then use “apply to all pages” to propagate it. Export the batch as one ZIP."}}, {"@type": "Question", "name": "Can I compress or resize a whole folder of photos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it is the most common batch job. Set the target format, dimensions or quality once and TinyPS applies it to every page in the workspace. There is no limit on how many pages a batch can hold, apart from your device's memory."}}, {"@type": "Question", "name": "Does batch editing upload my files?", "acceptedAnswer": {"@type": "Answer", "text": "No. Batch processing runs on your device exactly like single-image editing. There is no server round-trip, which is what makes large batches of confidential photos practical."}}, {"@type": "Question", "name": "What is the best free batch image editor for Chrome?", "acceptedAnswer": {"@type": "Answer", "text": "For privacy and cost, a local extension is the practical answer: TinyPS batch-edits, compresses and converts without uploads, without a per-image credit and with no watermark. Most online batch tools require an upload and cap free usage."}}, {"@type": "Question", "name": "Can I export a batch of edited images as a ZIP?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — every page in the workspace can be exported together as a single ZIP, with the output format of your choice (JPEG, PNG, WebP, BMP or GIF)."}}, {"@type": "Question", "name": "How many images can I edit in one batch?", "acceptedAnswer": {"@type": "Answer", "text": "There is no fixed cap in the editor; the practical limit is your device's free memory, since all pages are held locally for instant preview. For very large folders, work in chunks."}}]}
 </script>
 </body>
 </html>

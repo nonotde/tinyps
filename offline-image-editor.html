@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Offline Image Editor — Edit Photos With No Internet</title>
-<meta name="description" content="A fully offline image editor that runs in your browser: crop, resize, compress, convert and add text with zero uploads and no internet required.">
+<title>Offline Image Editor — Edit Photos Without Internet | TinyPS</title>
+<meta name="description" content="An offline image editor that runs entirely in your browser: crop, resize, compress and convert with zero uploads — works even with the internet unplugged.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="canonical" href="https://www.tinyps.top/offline-image-editor.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Offline Image Editor — Edit Photos With No Internet">
-<meta property="og:description" content="A fully offline image editor that runs in your browser: crop, resize, compress, convert and add text with zero uploads and no internet required.">
+<meta property="og:title" content="Offline Image Editor — Edit Photos Without Internet | TinyPS">
+<meta property="og:description" content="An offline image editor that runs entirely in your browser: crop, resize, compress and convert with zero uploads — works even with the internet unplugged.">
 <meta property="og:url" content="https://www.tinyps.top/offline-image-editor.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Offline Image Editor — Edit Photos With No Internet">
-<meta name="twitter:description" content="A fully offline image editor that runs in your browser: crop, resize, compress, convert and add text with zero uploads and no internet required.">
+<meta name="twitter:title" content="Offline Image Editor — Edit Photos Without Internet | TinyPS">
+<meta name="twitter:description" content="An offline image editor that runs entirely in your browser: crop, resize, compress and convert with zero uploads — works even with the internet unplugged.">
 <style>
 :root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -54,6 +54,8 @@ table.cmp td.no{color:#ff7a7a}
 .faq .q p{color:var(--txt3);font-size:14px;margin:0}
 footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{margin-right:14px}
+.quick{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:16px 20px;margin:0 0 26px;font-size:15.5px;color:var(--txt)}
+.quick b{color:var(--txt)}
 </style>
 
 <script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://www.tinyps.top/count.js"></script>
@@ -67,7 +69,8 @@ footer a{margin-right:14px}
 </header>
 <div class='crumb'><a href='index.html'>TinyPS</a> › Guides</div>
 <h1>Offline Image Editor: Edit Photos With No Internet</h1>
-<p class="lead">If your work involves sensitive pictures, a web tool that phones home is a problem. TinyPS is an offline image editor that runs entirely in your browser — no server, no sync, no leak.</p>
+<p class="lead">If your work involves sensitive pictures, a web tool that phones home is a problem. TinyPS is an offline image editor that runs entirely in your browser — no server, no sync, no leak, no internet required.</p>
+<div class="quick"><b>An offline image editor is one that processes your picture on your own computer instead of uploading it to a web server.</b> TinyPS is both a Chrome/Edge extension and a free in-browser editor that run entirely locally — pull the network cable and you can still crop, resize, rotate, compress, convert, add text and export.</div>
 <h2>What “offline image editor” means here</h2>
 TinyPS loads as a Chrome/Edge extension and also as a free in-browser editor. Once open, every operation — crop, rotate, resize, layers, text, filters, compression, conversion — happens on your device. You can pull the network cable and keep editing.
 <h2>Why edit offline</h2>
@@ -89,9 +92,12 @@ Many “free editors” run in a tab but upload your file to process it. TinyPS 
 <div class="faq-wrap">
 <h2 id="faq">Frequently asked questions</h2>
 <div class='faq'>
-<div class='q'><h3>Can TinyPS really run with no internet?</h3><p>Yes. Editing, compression and conversion need no network. The only traffic is your Pro license check when you activate a paid feature.</p></div>
-<div class='q'><h3>Do I have to install anything to edit offline?</h3><p>You can install the extension for the best experience, or use the free online editor which also runs locally in your browser.</p></div>
-<div class='q'><h3>Which formats does the offline editor support?</h3><p>JPEG, PNG, WebP, BMP and GIF — including formats Chrome cannot export natively, via built-in encoders.</p></div>
+<div class='q'><h3>Is there an image editor that works without internet?</h3><p>Yes. TinyPS works fully offline: the editor UI, the codecs and the AI model are all local. The only network request the extension ever makes is an optional Pro licence check, and even that only happens when you activate a paid feature.</p></div>
+<div class='q'><h3>How do I edit a photo offline on my computer?</h3><p>Install the TinyPS extension, open any image from your disk — or right-click an image on any web page and choose “Edit image with TinyPS” — and edit it in the local editor. Export to JPEG, PNG, WebP, BMP or GIF whenever you like.</p></div>
+<div class='q'><h3>Do offline image editors really not upload my photos?</h3><p>With TinyPS, yes. Editing, compression, format conversion and background removal run in your browser, so there is no server round-trip at all. You can verify it by disconnecting from the network and continuing to edit.</p></div>
+<div class='q'><h3>Can I edit images in Chrome without installing an extension?</h3><p>Yes. The free online editor at tinyps.top/editor/ runs the same local code in a browser tab — no extension and no account needed. Installing the extension only adds the right-click entry and a toolbar button.</p></div>
+<div class='q'><h3>Which formats can an offline image editor export?</h3><p>JPEG, PNG, WebP, BMP and GIF, plus formats Chrome cannot export natively such as AVIF-compatible output handled by built-in encoders. Multi-page images can be exported together as a ZIP.</p></div>
+<div class='q'><h3>Is an offline image editor slower than an online one?</h3><p>Usually the opposite for normal images: local processing is instant because there is no upload and no queue. The one exception is AI background removal, where the model runs on your CPU and takes a few seconds per image.</p></div>
 </div>
 
 </div>
@@ -106,10 +112,10 @@ Many “free editors” run in a tab but upload your file to process it. TinyPS 
 </footer>
 </div>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Offline Image Editor: Edit Photos With No Internet", "description": "A fully offline image editor that runs in your browser: crop, resize, compress, convert and add text with zero uploads and no internet required.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/offline-image-editor.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Offline Image Editor: Edit Photos With No Internet", "description": "An offline image editor that runs entirely in your browser: crop, resize, compress and convert with zero uploads — works even with the internet unplugged.", "inLanguage": "en", "datePublished": "2026-11-05", "dateModified": "2026-11-10", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/offline-image-editor.html"}}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can TinyPS really run with no internet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Editing, compression and conversion need no network. The only traffic is your Pro license check when you activate a paid feature."}}, {"@type": "Question", "name": "Do I have to install anything to edit offline?", "acceptedAnswer": {"@type": "Answer", "text": "You can install the extension for the best experience, or use the free online editor which also runs locally in your browser."}}, {"@type": "Question", "name": "Which formats does the offline editor support?", "acceptedAnswer": {"@type": "Answer", "text": "JPEG, PNG, WebP, BMP and GIF — including formats Chrome cannot export natively, via built-in encoders."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there an image editor that works without internet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TinyPS works fully offline: the editor UI, the codecs and the AI model are all local. The only network request the extension ever makes is an optional Pro licence check, and even that only happens when you activate a paid feature."}}, {"@type": "Question", "name": "How do I edit a photo offline on my computer?", "acceptedAnswer": {"@type": "Answer", "text": "Install the TinyPS extension, open any image from your disk — or right-click an image on any web page and choose “Edit image with TinyPS” — and edit it in the local editor. Export to JPEG, PNG, WebP, BMP or GIF whenever you like."}}, {"@type": "Question", "name": "Do offline image editors really not upload my photos?", "acceptedAnswer": {"@type": "Answer", "text": "With TinyPS, yes. Editing, compression, format conversion and background removal run in your browser, so there is no server round-trip at all. You can verify it by disconnecting from the network and continuing to edit."}}, {"@type": "Question", "name": "Can I edit images in Chrome without installing an extension?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The free online editor at tinyps.top/editor/ runs the same local code in a browser tab — no extension and no account needed. Installing the extension only adds the right-click entry and a toolbar button."}}, {"@type": "Question", "name": "Which formats can an offline image editor export?", "acceptedAnswer": {"@type": "Answer", "text": "JPEG, PNG, WebP, BMP and GIF, plus formats Chrome cannot export natively such as AVIF-compatible output handled by built-in encoders. Multi-page images can be exported together as a ZIP."}}, {"@type": "Question", "name": "Is an offline image editor slower than an online one?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the opposite for normal images: local processing is instant because there is no upload and no queue. The one exception is AI background removal, where the model runs on your CPU and takes a few seconds per image."}}]}
 </script>
 </body>
 </html>
