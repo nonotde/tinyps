@@ -4,8 +4,7 @@
 
 TinyPS 是一款**完全在本地运行**的图片编辑扩展，专为重视隐私的用户设计：你的照片**永远不会上传到任何服务器**，所有处理都在浏览器/本机完成。
 
-- 英文官网：https://nonotde.github.io/tinyps/
-- 中文官网：https://pic.zxxdb.com/
+- 官网：https://www.tinyps.top/
 - Chrome 网上应用店：https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen
 - Microsoft Edge 扩展：https://microsoftedge.microsoft.com/addons/search/TinyPS
 
@@ -24,10 +23,10 @@ TinyPS 是一款**完全在本地运行**的图片编辑扩展，专为重视隐
 
 1. **Chrome 网上应用店 / Edge 扩展商店**（推荐）：点击上方商店链接，一键安装。
 2. **手动安装（zip）**：
-   - 下载扩展包：https://pic.zxxdb.com/downloads/tinyps-extension.zip
+   - 下载扩展包：https://www.tinyps.top/downloads/tinyps-extension.zip
    - 解压得到 `tinyps-extension` 文件夹。
    - 打开浏览器「扩展管理」→ 开启「开发者模式」→「加载已解压的扩展程序」→ 选择该文件夹。
-   - 详细图文步骤见：https://nonotde.github.io/tinyps/install.html
+   - 详细图文步骤见：https://www.tinyps.top/install.html
 
 ## 使用方式
 

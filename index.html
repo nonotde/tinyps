@@ -9,16 +9,16 @@
 <meta name="description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <!-- SEO / GEO: canonical + Open Graph + Twitter Card -->
-<link rel="canonical" href="https://nonotde.github.io/tinyps/">
+<link rel="canonical" href="https://www.tinyps.top/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TinyPS — Local-first Image Editor for Chrome & Edge">
 <meta property="og:description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.">
-<meta property="og:url" content="https://nonotde.github.io/tinyps/">
-<meta property="og:image" content="https://nonotde.github.io/tinyps/assets/screenshot1.png">
+<meta property="og:url" content="https://www.tinyps.top/">
+<meta property="og:image" content="https://www.tinyps.top/assets/screenshot1.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TinyPS — Local-first Image Editor for Chrome & Edge">
 <meta name="twitter:description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images — 100% in your browser. Nothing is ever uploaded.">
-<meta name="twitter:image" content="https://nonotde.github.io/tinyps/assets/screenshot1.png">
+<meta name="twitter:image" content="https://www.tinyps.top/assets/screenshot1.png">
 <style>
 :root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -26,7 +26,8 @@ body{font:15px/1.7 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang 
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 a{color:var(--acc);text-decoration:none}
 header{padding:26px 0;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px;color:var(--txt)}
+.logo:hover{opacity:.85}
 .logo .mark{width:30px;height:30px;border-radius:8px;object-fit:cover;display:inline-block}
 nav a{margin-left:18px;color:var(--txt3)}
 nav a:hover{color:var(--acc)}
@@ -69,26 +70,14 @@ footer a{margin-right:16px}
 .faq .q a{font-weight:600}
 </style>
 
-<!-- TinyPS analytics v3: baidu (cn only) + goatcounter (all, self-hosted count.js) -->
-<script>
-if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
-  var _hmt = _hmt || [];
-  (function(){
-    var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?29f3fa897cfa1b515a8464d06e62c065';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-}
-</script>
-<script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://nonotde.github.io/tinyps/count.js"></script>
+<script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://www.tinyps.top/count.js"></script>
 
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <div class="logo"><img class="mark" src="assets/logo.png" alt="TinyPS logo">Tiny<span style="color:var(--acc)">PS</span></div>
+  <a class="logo" href="/" aria-label="TinyPS home"><img class="mark" src="assets/logo.png" alt="TinyPS logo">Tiny<span style="color:var(--acc)">PS</span></a>
   <nav>
     <a href="#features">Features</a>
     <a href="support.html">Support</a>
@@ -111,7 +100,7 @@ if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
   <div class="cta">
     <a class="btn" href="https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen">Install for Chrome</a>
     <a class="btn outline" href="https://microsoftedge.microsoft.com/addons/search/TinyPS">Install for Edge</a>
-    <a class="btn outline" href="https://pic.zxxdb.com/downloads/tinyps-extension.zip" download>⬇ Download (.zip)</a>
+    <a class="btn outline" href="https://www.tinyps.top/downloads/tinyps-extension.zip" download>⬇ Download (.zip)</a>
   </div>
   <p class="note" style="margin-bottom:14px">Can't reach the Chrome Web Store? <a href="install.html">📖 Manual install guide (with screenshots)</a><br>Also via right-click → “Edit image with TinyPS” on any web image.</p>
   <div class="cta" style="margin-bottom:34px">
@@ -226,7 +215,7 @@ if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
   "name": "TinyPS",
   "operatingSystem": ["Chrome", "Edge", "Windows", "macOS", "Linux"],
   "applicationCategory": "PhotoApplication",
-  "url": "https://nonotde.github.io/tinyps/",
+  "url": "https://www.tinyps.top/",
   "description": "Local-first image editor for Chrome and Edge: crop, resize, compress, convert and remove backgrounds with on-device AI. 100% in your browser, nothing uploaded.",
   "offers": [
     {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"},

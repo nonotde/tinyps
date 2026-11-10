@@ -22,3 +22,12 @@ downloads/
 
 # 扩展可读源码（仅本地开发，严禁推送到公开 GitHub 仓库）
 extension/
+
+# Google 服务账号密钥等敏感凭据，切勿提交
+credentials/
+*.service-account.json
+*-service-account*.json
+gsc-*.json
+
+# 打包产物（含产品源码/模型，禁止提交到公开仓库）
+*.zip

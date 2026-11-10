@@ -4,8 +4,7 @@
 
 TinyPS is a fully local-running image editing extension built for privacy-conscious users: your photos **never leave your device**. All processing happens in the browser / on your machine — no uploads, no servers, no accounts.
 
-- English site: https://nonotde.github.io/tinyps/
-- Chinese site: https://pic.zxxdb.com/
+- Website: https://www.tinyps.top/
 - Chrome Web Store: https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen
 - Microsoft Edge Add-ons: https://microsoftedge.microsoft.com/addons/search/TinyPS
 
@@ -24,10 +23,10 @@ TinyPS is a fully local-running image editing extension built for privacy-consci
 
 1. **Chrome Web Store / Edge Add-ons** (recommended): use the store links above for one-click install.
 2. **Manual install (zip)**:
-   - Download the extension package: https://pic.zxxdb.com/downloads/tinyps-extension.zip
+   - Download the extension package: https://www.tinyps.top/downloads/tinyps-extension.zip
    - Unzip to get the `tinyps-extension` folder.
    - Open your browser's Extensions page → enable "Developer mode" → "Load unpacked" → select that folder.
-   - Step-by-step illustrated guide: https://nonotde.github.io/tinyps/install.html
+   - Step-by-step illustrated guide: https://www.tinyps.top/install.html
 
 ## How to Use
 

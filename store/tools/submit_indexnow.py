@@ -2,13 +2,11 @@
 """Submit URLs to Bing via IndexNow for TinyPS sites.
 
 Usage:
-    python3 submit_indexnow.py all            # submit both sites (homepage from sitemap)
-    python3 submit_indexnow.py github         # submit only the GitHub/TinyPS site
-    python3 submit_indexnow.py cn             # submit only the Chinese site
+    python3 submit_indexnow.py primary        # submit the primary site (homepage)
     python3 submit_indexnow.py all --sitemap  # submit every URL listed in each sitemap
 
 IndexNow API: POST https://api.indexnow.org/indexnow
-Requires: the key file must be reachable at keyLocation (already deployed on both sites).
+Requires: the key file must be reachable at keyLocation (deployed at the site root).
 """
 import sys
 import json
@@ -17,19 +15,12 @@ import urllib.error
 import xml.etree.ElementTree as ET
 
 SITES = {
-    "github": {
-        "host": "nonotde.github.io",
-        "key": "e5b339c1a32b4612a499912c504e129a",
-        "keyLocation": "https://nonotde.github.io/tinyps/e5b339c1a32b4612a499912c504e129a.txt",
-        "home": "https://nonotde.github.io/tinyps/",
-        "sitemap": "https://nonotde.github.io/tinyps/sitemap.xml",
-    },
-    "cn": {
-        "host": "pic.zxxdb.com",
-        "key": "31bd23025ed14062acbf7b37b49b7b4d",
-        "keyLocation": "https://pic.zxxdb.com/31bd23025ed14062acbf7b37b49b7b4d.txt",
-        "home": "https://pic.zxxdb.com/",
-        "sitemap": "https://pic.zxxdb.com/sitemap.xml",
+    "primary": {
+        "host": "www.tinyps.top",
+        "key": "d6444433debfa6db7c9accfc5a9b5968",
+        "keyLocation": "https://www.tinyps.top/d6444433debfa6db7c9accfc5a9b5968.txt",
+        "home": "https://www.tinyps.top/",
+        "sitemap": "https://www.tinyps.top/sitemap.xml",
     },
 }
 

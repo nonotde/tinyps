@@ -1,4 +1,10 @@
+# TinyPS — https://www.tinyps.top
+# 主域名 canonical 为 https://www.tinyps.top/（裸域名 tinyps.top 已 301 到 www）
+
 User-agent: *
 Allow: /
 
-Sitemap: https://nonotde.github.io/tinyps/sitemap.xml
+# / 与 /index.html 为同一页面，避免重复收录
+Disallow: /index.html
+
+Sitemap: https://www.tinyps.top/sitemap.xml

@@ -9,7 +9,7 @@
 - **产品名**：TinyPS
 - **品类**：图片编辑器 / 照片编辑器 / AI 去背景工具 / Chrome 扩展
 - **EN 落地页**：https://nonotde.github.io/tinyps/
-- **CN 落地页**：https://pic.zxxdb.com/
+- **落地页**：https://www.tinyps.top/
 - **商店页**：Chrome Web Store（扩展内跳转）
 - **AlternativeTo**：https://alternativeto.net/software/tinyps/
 
