@@ -199,13 +199,14 @@ const T = {
     title: "TinyPS — Local-first Image Editor for Chrome & Edge",
     desc: "Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.",
     nav: {features:"Features", pro:"Pro", install:"Install", activate:"Activate", privacy:"Privacy"},
+    installPage: "install-en.html",
     heroH1: 'Edit, compress &amp; convert images<br>— entirely inside your browser',
     heroSub: "TinyPS is a local-first image editor for Chrome and Edge. Resize, crop, fill, watermark, and remove backgrounds with on-device AI — then export to JPEG, PNG, WebP, BMP or GIF. Your images never leave your device.",
     badges: ["🔒 100% on-device","🚫 No uploads · No tracking","🤖 Local AI background removal","🌍 10 languages","🆓 Free core, optional Pro"],
     ctaChrome: "Install for Chrome",
     ctaEdge: "Install for Edge",
     ctaDownload: "⬇ Download (.zip)",
-    note: "Can't reach the Chrome Web Store? <a href='install.html'>📖 Manual install guide (with screenshots)</a><br>Also via right-click → \"Edit image with TinyPS\" on any web image.",
+    note: "Can't reach the Chrome Web Store? <a href='install-en.html'>📖 Manual install guide (with screenshots)</a><br>Also via right-click → \"Edit image with TinyPS\" on any web image.",
     ctaEditor: "🛠️ Edit Online — no install, same features as the extension",
     featuresTitle: "Everything a quick image tool should do",
     features: [
@@ -244,6 +245,7 @@ const T = {
     title: "TinyPS — 全程本地的图片编辑器（Chrome / Edge 扩展）",
     desc: "浏览器内完成图片编辑、压缩、格式转换与本地 AI 去除背景——JPEG/PNG/WebP/BMP/GIF 全支持，图片永不离开你的设备。",
     nav: {features:"功能", pro:"Pro", install:"安装教程", activate:"激活", privacy:"隐私"},
+    installPage: "install.html",
     heroH1: "编辑 · 压缩 · 格式转换<br>—— 全部在你的浏览器里完成",
     heroSub: "TinyPS 是一款纯本地运行的图片编辑器扩展（Chrome / Edge）。缩放、裁剪、填充、文字图层、本地 AI 去除背景，导出 JPEG、PNG、WebP、BMP、GIF——图片永远不会离开你的设备。",
     badges: ["🔒 100% 本地处理","🚫 不上传 · 不追踪","🤖 本地 AI 去除背景","🌍 10 种语言","🆓 核心功能免费"],
@@ -301,6 +303,8 @@ function render(lang){
   document.getElementById('navFeatures').textContent = nav.features;
   document.getElementById('navPro').textContent = nav.pro;
   document.getElementById('navInstall').textContent = nav.install;
+  document.getElementById('navInstall').href = d.installPage;
+  document.getElementById('navInstall').setAttribute('hreflang', lang==='zh' ? 'zh-Hans' : 'en');
   document.getElementById('navActivate').textContent = nav.activate;
   document.getElementById('navPrivacy').textContent = nav.privacy;
 
@@ -332,6 +336,7 @@ function render(lang){
   document.getElementById('footCopy').innerHTML = d.footCopy;
   const fl = d.flinks;
   document.getElementById('fInstall').textContent = fl.install;
+  document.getElementById('fInstall').href = d.installPage;
   document.getElementById('fSupport').textContent = fl.support;
   document.getElementById('fActivate').textContent = fl.activate;
   document.getElementById('fPrivacy').textContent = fl.privacy;
