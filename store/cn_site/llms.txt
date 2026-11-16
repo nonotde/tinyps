@@ -1,0 +1,31 @@
+# TinyPS 图片编辑器
+
+> TinyPS 是一款本地优先的图片编辑器，以 Chrome 和 Edge 浏览器扩展形式提供。它可在浏览器内完成图片压缩、缩放、裁剪、添加文字、本地 AI 去除背景以及格式转换（JPEG、PNG、WebP、BMP、GIF），图片文件永不上传到任何服务器。
+
+TinyPS 是一款免费、注重隐私的图片处理工具，所有操作 100% 在设备本地完成。与在线修图网站不同，它没有上传后端：每一步都在浏览器扩展内本地执行，适合需要快速、私密修图、又不想注册账号或把照片发给第三方的用户。安装后可离线使用，同时支持 Chrome 和 Edge（Manifest V3）。
+
+## 核心事实
+- 处理方式：100% 本地 / 设备端处理，不上传、不上云
+- 支持平台：Chrome 与 Edge 浏览器扩展（Manifest V3）
+- 支持格式：JPEG、PNG、WebP、BMP、GIF
+- 主要功能：压缩、缩放、裁剪、填充画布、添加文字、本地 AI 去除背景、格式转换
+- 账号：无需注册、无需登录
+- 离线：安装后可断网使用
+- 价格：免费
+
+## 核心页面
+- [首页](https://pic.zxxdb.com/)：产品概览与下载入口
+- [在线编辑器](https://pic.zxxdb.com/editor/index.html)：启动浏览器内编辑器
+- [安装教程](https://pic.zxxdb.com/install.html)：如何安装 Chrome / Edge 扩展
+- [激活教程](https://pic.zxxdb.com/activate.html)：如何激活 TinyPS
+- [使用帮助](https://pic.zxxdb.com/support.html)：帮助与常见问题
+- [隐私政策](https://pic.zxxdb.com/privacy.html)：隐私与数据处理说明
+- [服务条款](https://pic.zxxdb.com/terms.html)：使用条款
+
+## 使用指南
+- [不上传图片去除背景](https://pic.zxxdb.com/remove-background-without-uploading.html)
+- [离线图片编辑器](https://pic.zxxdb.com/offline-image-editor.html)
+- [不上传的批量图片编辑器](https://pic.zxxdb.com/batch-image-editor-no-upload.html)
+- [免注册的私密图片编辑器](https://pic.zxxdb.com/private-photo-editor-no-signup.html)
+- [本地压缩图片](https://pic.zxxdb.com/compress-images-locally.html)
+- [免费图片编辑器 Chrome 扩展](https://pic.zxxdb.com/free-photo-editor-chrome-extension.html)

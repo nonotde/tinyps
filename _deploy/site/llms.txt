@@ -1,0 +1,31 @@
+# TinyPS
+
+> TinyPS is a local-first image editor available as a Chrome and Edge browser extension. It compresses, resizes, crops, adds text, removes backgrounds with on-device AI, and converts images (JPEG, PNG, WebP, BMP, GIF) entirely inside your browser — image files are never uploaded to any server.
+
+TinyPS is a free, privacy-focused image editing tool that runs 100% on-device. Unlike online editors, it has no backend upload: every operation happens locally in the browser via a browser extension. It is designed for users who need fast, private image editing without signing up or sending photos to a third party. Works offline after installation, on both Chrome and Edge (Manifest V3).
+
+## Key facts
+- Processing location: 100% local / on-device, no upload, no cloud
+- Platforms: Chrome and Edge browser extensions (Manifest V3)
+- Supported formats: JPEG, PNG, WebP, BMP, GIF
+- Features: compress, resize, crop, fill/canvas, add text, remove background (on-device AI), format conversion
+- Account: none required, no sign-up, no login
+- Offline: works without an internet connection after install
+- Pricing: free
+
+## Core pages
+- [Homepage](https://www.tinyps.top/): product overview and download links
+- [Online editor](https://www.tinyps.top/editor/): launch the in-browser editor
+- [Install guide](https://www.tinyps.top/install.html): how to install the Chrome/Edge extension
+- [Activate guide](https://www.tinyps.top/activate.html): how to activate TinyPS
+- [Support](https://www.tinyps.top/support.html): help and FAQ
+- [Privacy policy](https://www.tinyps.top/privacy.html): privacy and data-handling practices
+- [Terms of service](https://www.tinyps.top/terms.html): terms of use
+
+## Guides
+- [Remove image background without uploading](https://www.tinyps.top/remove-background-without-uploading.html)
+- [Offline image editor](https://www.tinyps.top/offline-image-editor.html)
+- [Batch image editor with no upload](https://www.tinyps.top/batch-image-editor-no-upload.html)
+- [Private photo editor with no sign-up](https://www.tinyps.top/private-photo-editor-no-signup.html)
+- [Compress images locally](https://www.tinyps.top/compress-images-locally.html)
+- [Free photo editor Chrome extension](https://www.tinyps.top/free-photo-editor-chrome-extension.html)
