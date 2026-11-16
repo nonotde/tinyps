@@ -4,7 +4,30 @@
 User-agent: *
 Allow: /
 
-# / 与 /index.html 为同一页面，避免重复收录
-Disallow: /index.html
+# AI / LLM crawlers — explicitly welcomed for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# /index.html 与 / 为同一页面，已由首页 <link rel="canonical" href="https://www.tinyps.top/"> 规范化，无需 robots 屏蔽
 Sitemap: https://www.tinyps.top/sitemap.xml

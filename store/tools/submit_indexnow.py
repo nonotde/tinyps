@@ -22,6 +22,13 @@ SITES = {
         "home": "https://www.tinyps.top/",
         "sitemap": "https://www.tinyps.top/sitemap.xml",
     },
+    "cn": {
+        "host": "pic.zxxdb.com",
+        "key": "9a07793d68b943b0846747c62c2d0c30",
+        "keyLocation": "https://pic.zxxdb.com/9a07793d68b943b0846747c62c2d0c30.txt",
+        "home": "https://pic.zxxdb.com/",
+        "sitemap": "https://pic.zxxdb.com/sitemap.xml",
+    },
 }
 
 API = "https://api.indexnow.org/indexnow"

@@ -30,8 +30,20 @@ import xml.etree.ElementTree as ET
 
 BW = "https://ssl.bing.com/webmaster/api.svc/json"
 KEY_FILE = os.path.expanduser("~/.workbuddy/credentials/bing-api-key.txt")
-SITE = "https://www.tinyps.top/"          # 与 Bing 登记条目一致
-DEFAULT_FEED = "https://www.tinyps.top/sitemap.xml"
+
+# 支持多站点：默认 tinyps.top，可用 --site cn 切到 pic.zxxdb.com
+SITES = {
+    "top": {
+        "site": "https://www.tinyps.top/",
+        "feed": "https://www.tinyps.top/sitemap.xml",
+    },
+    "cn": {
+        "site": "https://pic.zxxdb.com/",
+        "feed": "https://pic.zxxdb.com/sitemap.xml",
+    },
+}
+SITE = SITES["top"]["site"]
+DEFAULT_FEED = SITES["top"]["feed"]
 
 
 def get_key():
@@ -74,7 +86,18 @@ def main():
     if len(sys.argv) < 2:
         print(__doc__)
         return 1
-    cmd = sys.argv[1]
+    args = sys.argv[1:]
+    # 解析可选的 --site cn / --site top
+    global SITE, DEFAULT_FEED
+    if "--site" in args:
+        i = args.index("--site")
+        key = args[i + 1]
+        if key not in SITES:
+            print(f"[x] 未知站点 {key}，可选: {', '.join(SITES)}")
+            return 1
+        SITE, DEFAULT_FEED = SITES[key]["site"], SITES[key]["feed"]
+        args = args[:i] + args[i + 2:]
+    cmd = args[0]
 
     if cmd == "sites":
         for s in call("GetUserSites").get("d", []):
@@ -85,7 +108,7 @@ def main():
             print(f"  · {f.get('Url')}  状态={f.get('Status')}  URL数={f.get('UrlCount')}")
 
     elif cmd == "submit-sitemap":
-        feed = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_FEED
+        feed = args[1] if len(args) > 1 else DEFAULT_FEED
         call("SubmitFeed", {"siteUrl": SITE, "feedUrl": feed})
         print(f"  ✓ 已提交 {feed}")
 
@@ -108,14 +131,15 @@ def main():
             print(f"  · {r.get('Query') or r.get('Url')}  曝光={r.get('Impressions')} 点击={r.get('Clicks')} 位置={r.get('AvgClickPosition')}")
 
     elif cmd == "inspect":
-        url = sys.argv[2] if len(sys.argv) > 2 else SITE
+        url = args[1] if len(args) > 1 else SITE
         d = call("GetUrlInfo", query={"siteUrl": SITE, "url": url}).get("d", {})
         for k in ("Url", "HttpStatus", "IsPage", "AnchorCount", "DiscoveryDate", "LastCrawlDate", "IndexStatus"):
             if k in d:
                 print(f"  {k}: {d[k]}")
 
     elif cmd == "indexnow":
-        os.system(f'python3 "{os.path.join(os.path.dirname(__file__), "submit_indexnow.py")}" primary --sitemap')
+        target = "cn" if SITE == SITES["cn"]["site"] else "primary"
+        os.system(f'python3 "{os.path.join(os.path.dirname(__file__), "submit_indexnow.py")}" {target} --sitemap')
 
     else:
         print(__doc__)
