@@ -9,9 +9,6 @@
 <link rel="stylesheet" href="editor.css">
 <meta name="description" content="Edit, compress, crop, resize and convert images directly in your browser with TinyPS — no install, no uploads, your files never leave your device.">
 <link rel="canonical" href="https://www.tinyps.top/editor/">
-    <link rel="alternate" hreflang="en" href="https://www.tinyps.top/editor/">
-<link rel="alternate" hreflang="zh-CN" href="https://pic.zxxdb.com/editor/index.html">
-<link rel="alternate" hreflang="x-default" href="https://www.tinyps.top/editor/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TinyPS">
 <meta property="og:title" content="TinyPS — Free Online Image Editor (No Install Needed)">
@@ -64,7 +61,7 @@
       <div class="panel">
         <div class="panel-title" data-i18n="panel.compression">Compression</div>
         <div class="ctrl">
-          <div class="ctrl-label"><span data-i18n="ctrl.quality">Quality</span><span class="ctrl-val" id="qVal">85%</span></div>
+          <div class="ctrl-label"><span data-i18n="ctrl.quality">Quality</span><span class="ctrl-val" id="qVal">85%</span><span class="na-hint" id="qNaHint" data-i18n="hint.losslessFmt" style="display:none"></span></div>
           <input type="range" id="qSlider" min="1" max="100" value="85">
         </div>
         <label class="toggle"><input type="checkbox" id="losslessToggle" checked><span data-i18n="ctrl.lossless">Lossless</span></label>
@@ -222,7 +219,8 @@
           <button class="btn btn-outline" id="base64Btn" disabled data-i18n-title="btn.base64">🔤</button>
         </div>
         <div style="display:flex;gap:4px;margin-top:4px">
-          <button class="btn btn-outline btn-sm" id="downloadAllBtn" disabled data-i18n="btn.downloadAll" style="width:100%">📦 Batch ZIP</button>
+          <button class="btn btn-outline btn-sm" id="downloadAllBtn" disabled data-i18n="btn.downloadAll" style="flex:1">📦 Batch ZIP</button>
+          <button class="btn btn-outline btn-sm" id="exportGifBtn" disabled data-i18n="btn.exportGif" data-i18n-title="btn.exportGif" style="flex:1">🎞 Animated GIF</button>
         </div>
       </div>
       <div class="shortcut-hint" id="shortcutHint"></div>
