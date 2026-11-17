@@ -133,6 +133,11 @@
           <button class="btn btn-sm btn-outline" data-flip="v">↕ V</button>
           <button class="btn btn-sm btn-outline" id="freeRotBtn" data-i18n="rot.free">Free</button>
         </div>
+        <div class="nudge-row">
+          <button class="btn btn-sm btn-outline nudge" id="rotL1Btn" title="↺ 1°">↺</button>
+          <button class="btn btn-sm btn-outline nudge" id="rotR1Btn" title="↻ 1°">↻</button>
+          <input type="number" class="inp nudge-inp" id="rotDegInp" min="0" max="359" step="1" value="0"><span class="nudge-unit">°</span>
+        </div>
       </div>
       <div class="panel" data-pro>
         <div class="panel-title" data-i18n="panel.fill">Fill</div>
@@ -187,6 +192,13 @@
           <input type="color" id="wmColor" class="color-inp" value="#808080" data-i18n-title="ctrl.fillColor">
           <input type="number" class="inp" id="wmSize" min="8" max="200" value="36"><span>px</span>
           <input type="number" class="inp" id="wmOpacity" min="0" max="100" value="100" data-i18n-title="ctrl.fillOpacity"><span>%</span>
+        </div>
+      </div>
+      <div class="panel" id="macroPanel" style="display:none">
+        <div class="panel-title" data-i18n="panel.macro">One-click Process</div>
+        <div id="macroList" class="macro-list"></div>
+        <div class="ctrl">
+          <button class="btn btn-green btn-sm" id="macroRunBtn" style="width:100%" data-i18n="btn.macroRun">⚡ One-click Process</button>
         </div>
       </div>
     </div>
