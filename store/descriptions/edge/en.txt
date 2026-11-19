@@ -1,0 +1,84 @@
+TinyPS is a free, lightweight, fully offline image editor browser extension — a simplified Photoshop in your browser. Crops, compression, conversion, watermarks, GIF editing and AI background removal all run 100% locally. Your photos never leave your device. No servers, accounts or tracking.
+
+Why You Need an Offline Image Editor?
+Most "online photo editors" upload your images to servers first, where they're processed, indexed and sometimes used to train AI. TinyPS does the opposite: a Photoshop alternative running entirely on your machine — sensitive photos stay private. Local processing is protection: TinyPS never sends personal data to third parties or stores files on servers, complying with the "minimum necessary" privacy principle.
+
+Create with Real Layers
+TinyPS is a true multi-layer editor:
+- Paste any image as a new layer, add text layers, and reorder, lock, hide and merge them freely
+- Transform each layer: scale, move, rotate 90/180/270°, flip, reset — with 10-step undo
+- Crop presets (1:1, 4:3, 16:9, 3:2, 9:16) are free; free crop is Pro and adds Keep Inside / Keep Outside: the former keeps only the selected area, the latter deletes inside the box and keeps the surroundings. Bands stitch back automatically; cut-outs reveal a transparent background
+- Free Rotate (Pro): drag the canvas-center icon to rotate around the image center to any angle, with a 90° magnetic snap
+- Rotation fine-tuning (Pro): nudge exactly 1° with ◀/▶ or type any angle 0–359°; a selected layer rotates around its own center, non-destructively
+- Watermark text opacity is adjustable (100% by default); new text inherits the previous rotation angle
+- Edit an animated GIF frame by frame: drop in a GIF, it splits into one page per frame with delays preserved; Animated GIF export sits next to Batch ZIP
+- Work with live thumbnails of every layer and move elements precisely with mouse or keyboard
+Layers enable full compositing: business cards, social graphics, product collages, or cutting out a subject onto a new background. Overlay a logo as a layer and adjust it anytime without risking the original.
+
+Compression and Conversion Without Losing Quality
+- Lossless pass-through: unedited files are copied byte for byte, with no re-encoding loss
+- Hit an exact target file size, strip EXIF metadata, and fine-tune quality with one slider
+- Convert between all common formats, now with AVIF export
+- Batch-export every page into a single ZIP, no external tools
+- AVIF export uses a local WASM encoder, lazy-loaded on first use, so it never slows startup
+A 5 MB product photo becomes 300 KB with no visible difference. An exact target size sets the size-versus-sharpness trade-off, and AVIF export makes files smaller still.
+
+Remove Backgrounds on Your Device
+TinyPS Pro includes AI background removal powered by u2netp and ONNX Runtime WebAssembly. It runs on your CPU in the browser: no cloud, no API calls, no uploads. Get transparent PNG and WebP in seconds, even offline.
+Not sure yet? Free users can run the real removal before paying: the subject stays sharp in a circular window while the rest blurs and dims, with a "Pro preview" badge and buttons to Upgrade or start a free 3-day trial that applies the cutout immediately. The canvas stays untouched.
+
+Built for Everyday Use
+- Multi-page workspace with live thumbnails
+- 10 interface languages: English, Simplified/Traditional Chinese, Japanese, Korean, Persian, Arabic (RTL), French, German, Russian
+- Dark and light themes, plus full keyboard shortcuts
+- Fill, watermark, position and size settings are remembered across photos and sessions; a new image reuses the last canvas size
+- Batch Process (Pro): every adjustment to a text or fill layer is recorded and one click replays it on all pages
+- Permissions limited to contextMenus and clipboardWrite — no access to your files, network or web content
+TinyPS asks only for the rights essential to editing. Right-click any image to open it in TinyPS.
+
+Free and Pro
+Free forever: layers, crop presets, scaling, 90/180/270° rotation, compression, format conversion (including AVIF), filters, text, watermark opacity, GIF frame editing, batch export, and a free background-removal preview.
+TinyPS Pro: free crop (Keep Inside / Keep Outside), Free Rotate, rotation fine-tuning, fill layers (solid colour, mosaic, colour picker), Batch Process, and AI background removal with saving. One-time purchase or subscription via Creem by card, PayPal, Alipay or WeChat Pay.
+Every Pro feature has a free 3-day trial — no card, offline up to 24 hours. One license covers three devices. Pro is for professional cutouts or maximum cropping flexibility.
+
+Common Use Cases
+- E-commerce: batch-compress product photos to a uniform size, convert to WebP or AVIF
+- Social posts: crop to 3:4 or 9:16, add a text layer for prices and selling points
+- Covers: one-tap 1:1 or 16:9 presets, with a logo layer that leaves the original untouched
+- ID photos: remove the background with Pro, add a solid colour layer, get a white- or blue-background photo
+- Collages: arrange multiple images as layers and export one long image or a ZIP
+- Stickers and memes: remove the background, add text, done locally in seconds
+- Crooked photos: use Pro's Free Rotate to straighten to any angle, with 90° magnetic snap
+- Local erasing: choose Keep Outside in free crop to delete an unwanted patch, with bands stitched back
+- Animated GIFs: split into frames, edit individual frames, export back as a GIF — all on your machine
+- Bulk watermarking: set it up once with Batch Process and stamp every product photo in one action
+How It Compares to Online Tools, 美图秀秀 and Canva
+Online tools need uploads, so privacy isn't guaranteed; 美图秀秀 and Canva are mobile-first, account-based with paid features. TinyPS is fully local and offline, with no limits, paywalls or accounts — it excels at crop → compress → convert → remove background → export.
+
+Frequently Asked Questions
+Does TinyPS upload my images? No. Editing makes zero network requests; images are never transmitted, stored or analyzed. Only loading a URL image or activating Pro sends data (license key + device ID via our proxy).
+Can I use it offline? Yes. Once installed, all editing — including background removal and GIF editing — works offline.
+Can it replace Photoshop for quick tasks? For cropping, resizing, compression, conversion, text, cutouts and quick GIF edits, yes — but no brushes, masks or CMYK.
+Does it support WebP and AVIF? WebP can be read and written; AVIF export works via a local WASM encoder. AVIF can't yet be opened as a source image.
+Will AVIF export slow it down? No. The encoder loads on demand at first use, adds no startup time, and never connects online.
+Can I edit animated GIFs? Yes. A GIF splits into one page per frame with delays preserved (up to 60) and exports back as a GIF. Rendering and encoding are local.
+What is Batch Process? A Pro feature that records text and fill-layer changes (text, colour, size, opacity, position, fill, rotation) and replays them on all pages with one click.
+Can I try Pro before paying? Yes, every Pro feature has a free 3-day trial with no card, offline up to 24 hours.
+Can I try background removal free? Yes. Free users get a real removal preview: the subject sharp in a circular window, the rest blurred and dimmed. Upgrade to save, start the trial, or close unchanged.
+What do Keep Inside / Keep Outside mean? Keep Inside leaves only the selected area; Keep Outside deletes inside the box and keeps the surroundings. Bands stitch back; cut-outs turn transparent.
+Can Free Rotate turn to any angle? Yes. In Pro, drag the canvas-center icon to rotate around the image center to any angle, with a 90° magnetic snap; no conflict with free 90/180/270° rotation.
+What does rotation fine-tuning add? It nudges the image or selected layer by exactly 1°, or you can type any angle 0–359°. A selected layer rotates around its own center without baking pixels, so undo is clean.
+Can I adjust watermark text opacity? Yes, 100% by default and adjustable. New text inherits the previous rotation angle, so diagonal watermarks need no repositioning.
+Why is the quality slider greyed out? Expected: quality applies only to lossy formats (JPEG, WebP, AVIF); PNG, BMP and GIF are lossless.
+Will my settings carry over? Yes. Fill colours, opacity, mosaic, watermark text, size and angle are remembered across pages and sessions; a new image reuses the last canvas size. Refreshing resets the interface but keeps your license.
+Is there a batch mode? Yes. Open multiple images, adjust each page, then export them all into one ZIP.
+Is Pro a subscription? Buy a lifetime license or choose monthly/annual plans; one license covers three devices.
+Is my license secure? Activation sends only the license key and an anonymous device ID through a proxy. No image data is transmitted.
+Does it work on Mac/Windows/Linux? Yes, on all common desktop systems in Microsoft Edge and other Chromium-based browsers.
+Is there a Chinese interface? Yes, both Simplified and Traditional Chinese are among the 10 built-in languages.
+Is the free version enough? For most everyday tasks — compression, conversion, cropping, text, collages, GIF edits — yes. Pro is needed only for AI background removal with saving, free crop, Free Rotate, rotation fine-tuning, fill layers and Batch Process.
+Will it slow down? Processing is local, so speed depends on your computer; typical compression and conversion is instant, background removal takes seconds.
+
+Your Privacy, Guaranteed by Design
+TinyPS sends no network requests during editing. Sensitive photos, ID documents, screenshots and client drafts stay on your machine. Where cloud tools ask for trust, TinyPS proves privacy through its architecture: with no connection, images can't leak out.
+Install TinyPS and edit your first photo fully offline in seconds. No sign-up, no uploads, zero risk. Try it free — professional cutouts are a click away with a 3-day Pro trial.

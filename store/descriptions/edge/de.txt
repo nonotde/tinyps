@@ -1,0 +1,84 @@
+TinyPS ist eine kostenlose, schlanke Browser-Erweiterung – ein vereinfachtes Photoshop, das offline im Browser läuft. Zuschneiden, Skalieren, Drehen, Komprimieren, Konvertieren, Wasserzeichen, GIF-Bearbeitung und KI-Hintergrundentfernung laufen zu 100 % lokal. Ihre Fotos verlassen Ihr Gerät nie. Keine Server, Konten oder Tracking.
+
+Warum ein Offline-Bildeditor?
+Die meisten „Online-Bildbearbeitungs“-Tools laden Ihre Bilder auf fremde Server, verarbeiten und indizieren sie – mitunter für KI-Training. TinyPS macht das Gegenteil: eine Photoshop-Alternative, vollständig auf Ihrem Rechner. Private Fotos bleiben privat. Lokale Verarbeitung ist Schutz: TinyPS übermittelt keine Daten an Dritte und erfüllt das Prinzip minimal notwendiger Datenverarbeitung.
+
+Gestalten mit echten Ebenen
+TinyPS ist ein echter Multi-Ebenen-Editor:
+- Beliebige Bilder als neue Ebene einfügen, Textebenen hinzufügen, Ebenen anordnen, sperren, ausblenden, zusammenführen
+- Jede Ebene transformieren: skalieren, verschieben, 90/180/270° drehen, spiegeln, zurücksetzen – mit 10 Schritten Rückgängig
+- Zuschnitt-Vorlagen (1:1, 4:3, 16:9, 3:2, 9:16) sind gratis; freier Zuschnitt (Pro) bietet „Innen/Außen behalten“: nur den markierten Bereich behalten oder den Rahmeninhalt löschen. Streifen werden zusammengefügt, Löcher zeigen transparenten Hintergrund
+- Freie Drehung (Pro): Symbol in der Bildmitte ziehen, um auf jeden Winkel zu drehen; nahe 90° rastet das Magnetraster ein
+- Feinjustierung (Pro): mit ◀/▶ exakt 1° nachstellen oder 0–359° eingeben; eine Ebene dreht sich um ihren Mittelpunkt, verlustfrei ohne Pixeländerung
+- Wasserzeichen-Texttransparenz ist anpassbar (Standard 100 %); neuer Text übernimmt den Drehwinkel des vorherigen
+- Animierte GIFs Bild für Bild: eine GIF-Datei wird in Seiten pro Frame aufgeteilt, Verzögerung bleibt; Export „Animiertes GIF“ neben „Stapel als ZIP“
+- Mit Live-Miniaturansichten aller Ebenen arbeiten, Elemente per Maus oder Tastatur präzise verschieben
+Ebenen ermöglichen Kompositionen: Visitenkarten, Social-Grafiken, Collages oder ein freigestelltes Motiv auf neuem Grund. Ein Logo als eigene Ebene über das Foto legen – ohne das Original zu beschädigen.
+
+Komprimieren und konvertieren – ohne Qualitätsverlust
+- Verlustfreier Durchlauf: unveränderte Dateien werden Byte für Byte kopiert
+- Zielgröße exakt ansteuern, EXIF entfernen, Qualität mit einem Regler einstellen
+- Zwischen gängigen Formaten konvertieren, neu mit AVIF-Export
+- Alle Seiten in ein ZIP exportieren – ohne externe Tools
+- AVIF-Export nutzt einen lokalen WASM-Encoder, bei Bedarf geladen, ohne Einfluss auf die Startzeit
+Ein Produktfoto wird von 5 MB auf 300 KB komprimiert – ohne sichtbaren Unterschied, dafür lädt Ihre Seite schneller. Eine exakte Zielgröße lässt Sie über Größe und Schärfe entscheiden; AVIF macht Dateien noch kleiner.
+
+Hintergründe direkt auf Ihrem Gerät entfernen
+TinyPS Pro bietet KI-Hintergrundentfernung mit u2netp und ONNX Runtime WebAssembly. Das Modell läuft lokal im Browser auf der CPU: keine Cloud, keine API, kein Upload. In Sekunden transparente PNGs und WebPs – offline.
+Noch unsicher? Die Gratisversion zeigt das Ergebnis: Die Vorschau hält Ihr Motiv im runden Fenster scharf, der Rest ist weich und dunkel – mit „Pro-Vorschau“-Abzeichen und den Buttons „Upgraden zum Speichern“ sowie „3 Tage testen“, das die Freistellung sofort anwendet. Die Leinwand bleibt unverändert.
+
+Für den täglichen Einsatz entwickelt
+- Arbeitsbereich mit mehreren Seiten und Live-Miniaturansichten
+- 10 Sprachen: Englisch, vereinfachtes/traditionelles Chinesisch, Japanisch, Koreanisch, Persisch, Arabisch (RTL), Französisch, Deutsch, Russisch
+- Dunkles und helles Design, vollständige Tastenkürzel
+- Füllung, Wasserzeichen, Position und Größe werden gemerkt; neue Bilder übernehmen die letzte Leinwandgröße
+- Stapelverarbeitung (Pro): Änderungen an Text-/Füllebenen werden aufgezeichnet und mit einem Klick auf alle Seiten angewandt
+- Berechtigungen nur contextMenus und clipboardWrite – kein Zugriff auf Dateien, Netzwerk oder Webseiten
+TinyPS fordert nur nötige Rechte. Ein Rechtsklick öffnet ein Bild in TinyPS.
+
+Kostenlos und Pro
+Gratis: Ebenen, Zuschnitt-Vorlagen, Skalieren, 90/180/270°-Drehung, Komprimierung, Konvertierung (mit AVIF), Filter, Text, Wasserzeichen-Transparenz, GIF, Stapel-Export und Hintergrundentfernungs-Vorschau.
+TinyPS Pro: freier Zuschnitt („Innen/Außen behalten“), Freie Drehung, Feinjustierung, Füllebenen (Vollton, Mosaik, Pipette), Stapelverarbeitung und KI-Hintergrundentfernung mit Speichern. Einmalkauf oder Abo über Creem per Karte, PayPal, 支付宝, 微信支付.
+Jede Pro-Funktion: 3 kostenlose Testtage ohne Karte, offline bis 24 Stunden. Eine Lizenz gilt für drei Geräte. Pro ist für professionelles Freistellen oder maximale Zuschnittflexibilität.
+
+Typische Anwendungsfälle
+- E-Commerce: Produktfotos auf einheitliche Größe komprimieren, in WebP oder AVIF umwandeln – schnellere Ladezeiten
+- 小红书/抖音: auf 3:4 oder 9:16 zuschneiden, Preise als Textebene ergänzen, posten
+- 公众号: mit 1:1- oder 16:9-Vorlage zuschneiden, Logo-Ebene darüberlegen, Original bleibt unberührt
+- Passfotos: Hintergrund mit Pro entfernen, Füllebene (Vollton) einsetzen – weißer oder blauer Grund
+- Collagen: mehrere Bilder als Ebenen, Export als langes Bild oder ZIP
+- Memes: Hintergrund entfernen, Text hinzufügen – in Sekunden lokal
+- Schiefe Fotos: mit Freier Drehung auf jeden Winkel begradigen, 90°-Magnetraster
+- Partielles Entfernen: im freien Zuschnitt „Außen behalten“ wählen, Bereich löschen – Streifen werden zusammengefügt
+- Animierte GIFs: in Frames zerlegen, einzelne bearbeiten, als GIF exportieren – lokal
+- Wasserzeichen in Serie: einmal mit Stapelverarbeitung einrichten, auf alle Produktfotos anwenden
+Der Unterschied zu Online-Tools, 美图秀秀 und Canva
+Online-Tools verlangen einen Upload – die Privatsphäre leidet. 美图秀秀 und Canva sind mobil, setzen Konto und Internet voraus. TinyPS ist lokal, offline, ohne Limits, Bezahlschranke oder Konto. Statt „Beauty-Filter“ macht TinyPS einen Workflow solide: Zuschneiden – Komprimieren – Konvertieren – Freistellen – Exportieren.
+
+Häufige Fragen
+Werden Bilder hochgeladen? Nein. Die Bearbeitung macht keine Netzwerkanfragen. Daten fließen nur beim Laden eines URL-Bildes oder bei Pro-Aktivierung (Lizenzschlüssel + Geräte-ID via Proxy). Bilder werden nie übertragen oder analysiert.
+Offline nutzbar? Ja. Nach der Installation funktionieren Zuschneiden, Komprimieren, Konvertieren, Hintergrundentfernung und GIF-Bearbeitung ohne Netzwerk.
+Photoshop-Ersatz für schnelle Aufgaben? Für Zuschneiden, Skalieren, Komprimieren, Text und Freistellen: ja – kein Pinsel, keine Masken, kein CMYK.
+WebP und AVIF? WebP lesbar und schreibbar; AVIF-Export via lokalem WASM-Encoder. AVIF noch nicht als Quellbild öffnbar.
+Verlangsamt AVIF-Export? Nein. Der Encoder wird nur bei erster Verwendung geladen, ohne Einfluss auf Startzeit und ohne Netzwerk.
+Animierte GIFs bearbeiten? Ja. Eine GIF-Datei wird in Seiten pro Frame aufgeteilt, Verzögerungen bleiben, bis zu 60 Bilder; Export als animierte GIF – lokal.
+Stapelverarbeitung? Eine Pro-Funktion, die Änderungen an Text-/Füllebenen (Text, Farbe, Größe, Deckkraft, Position, Füllung, Drehung) aufzeichnet und mit einem Klick auf alle Seiten anwendet.
+Pro vor dem Kauf testen? Ja, jede Pro-Funktion hat 3 kostenlose Testtage ohne Karte, offline bis 24 Stunden.
+Hintergrundentfernung gratis testen? Ja. Gratisnutzer sehen eine echte Vorschau: Motiv im runden Fenster scharf, Rest weich und dunkel. Upgraden, testen oder schließen – ohne Bildänderung.
+„Innen/Außen behalten“? „Innen“ lässt nur den markierten Bereich; „Außen“ entfernt den Rahmeninhalt und behält die Umgebung. Streifen werden gefügt, Löcher zeigen Transparenz.
+Freie Drehung auf jeden Winkel? Ja. In Pro das Symbol in der Bildmitte ziehen und drehen; nahe 90° rastet das Magnetraster ein – kein Konflikt mit 90/180/270°.
+Feinjustierung? Bild oder Ebene exakt 1° nachstellen oder 0–359° eingeben. Eine Ebene dreht sich um ihren Mittelpunkt ohne Pixeländerung, widerrufbar.
+Wasserzeichen-Transparenz anpassen? Ja, standardmäßig 100 %, beliebig verringerbar; neuer Text übernimmt den Drehwinkel des vorherigen.
+Warum Qualitätsregler manchmal grau? Erwartet: Qualität wirkt nur auf verlustbehaftete Formate (JPEG, WebP, AVIF); PNG, BMP und GIF sind verlustfrei.
+Einstellungen bleiben? Ja. Farbe, Deckkraft, Mosaik, Text, Größe und Winkel bleiben über Seiten und Sitzungen; neue Bilder übernehmen die letzte Leinwandgröße. Neuladen setzt die Oberfläche zurück, behält aber die Lizenz.
+Stapelmodus? Ja. Mehrere Bilder öffnen, jede Seite anpassen, alle als ZIP exportieren.
+Pro ein Abo? Lebeslange Lizenz oder Monats-/Jahres-Abo; eine Lizenz gilt für drei Geräte.
+Ist die Lizenz sicher? Aktivierung über Proxy sendet nur Lizenzschlüssel und anonyme Geräte-ID. Keine Bilddaten.
+Mac/Windows/Linux? Ja, auf allen gängigen Desktop-Systemen in Microsoft Edge und anderen Chromium-Browsern.
+Chinesische Oberfläche? Ja, vereinfachtes und traditionelles Chinesisch sind unter den 10 Sprachen.
+Reicht die Gratisversion? Für die meisten Alltagsaufgaben – Komprimieren, Konvertieren, Zuschneiden, Text, GIF – ja. Pro nur für KI-Hintergrundentfernung mit Speichern, freien Zuschnitt, Freie Drehung, Feinjustierung, Füllebenen und Stapelverarbeitung.
+Langsam? Verarbeitung läuft lokal, die Geschwindigkeit hängt vom Rechner ab; Komprimierung und Konvertierung sind sofort, Hintergrundentfernung dauert Sekunden.
+
+Ihre Privatsphäre – durch das Design garantiert
+TinyPS sendet während der Bearbeitung keine Netzwerkanfragen. Sensible Fotos, Ausweise und Screenshots bleiben auf Ihrem Rechner. Wo Cloud-Tools um Vertrauen bitten, beweist TinyPS Schutz durch seine Architektur: ohne Verbindung gibt es keinen Kanal für Ihre Bilder.
+Installieren Sie TinyPS und bearbeiten Sie Ihr erstes Foto in Sekunden offline. Keine Registrierung, kein Upload, kein Risiko. Gratis testen – professionelles Freistellen ist mit 3 Pro-Testtagen einen Klick entfernt.

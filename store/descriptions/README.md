@@ -1,6 +1,10 @@
-# TinyPS — Chrome Web Store 详情（长描述）
+# TinyPS — 商店详情（长描述）
 
-本目录存放 Chrome 网上应用店「详情」（long description）的 10 种语言版本，用于粘贴进开发者后台各语种的「详情」框（上限 16000 字符）。
+本目录存放商店「详情」（long description）的 10 种语言版本：
+- **根目录 `*.txt`** → Chrome Web Store（详情框上限 16000 字符，v1.4.1 功能）
+- **`edge/*.txt`** → Microsoft Edge Add-ons（描述框 **250–10000 字符**，v1.4.1 功能）
+
+两套独立，按目标商店选对应文件，不要混用。
 
 以**商店在用的中文原版详情**为基准全文修订并翻译，10 个语言文件内容与结构一一对应：每个文件均为 78 行、10 个小节标题、23 个列表项、15 个 FAQ 问答。
 
@@ -47,3 +51,43 @@
 各非中文语言里保留了 8 个中国平台／支付名原样（闲鱼、转转、小红书、抖音、公众号、美图秀秀、支付宝、微信支付），忠实对应中文原文。若面向海外用户，可考虑替换为通用表达（如 Alipay、WeChat Pay、Chinese resale marketplaces、social platforms）以提升可读性。此项未改动，按需再调。
 
 > 注：manifest 内 132 字符的短描述（`__MSG_extDesc__`）与此处的「详情」是两套字段，互不影响。
+
+---
+
+## Microsoft Edge Add-ons 描述（`edge/` 子目录，2026-11-19 新增）
+
+Edge 与 Chrome 有两处硬性差异，故单独维护一套：
+
+| 差异 | Chrome Web Store | Microsoft Edge Add-ons |
+|---|---|---|
+| 描述字段长度 | 上限 16000 字符 | **最少 250、最多 10000 字符** |
+| "Chrome"字样 | 无限制 | **认证会拒绝**名称/描述含"Chrome"，必须清除 |
+
+`edge/` 内 10 个文件从根目录 Chrome 版派生并做两点处理：
+1. **去除全部"Chrome"字样**：开头"Chrome 扩展/extension/Erweiterung…"改为通用的"浏览器扩展/browser extension/Browser-Erweiterung…"；兼容性问答改为"Microsoft Edge 及其他基于 Chromium 的浏览器"。
+2. **精简到 10000 字符以内**（en/de/fr/ru/ar/fa 六种原版超限），保留 10 小节 + 29 列表项 + 22 FAQ 结构和全部 v1.4.1 功能事实。
+
+### Edge 版文件对照（均 <10000 字符、无"Chrome"、结构对齐）
+
+| 文件 | 语言 | 字符数 |
+|---|---|---|
+| `edge/en.txt` | English | 9977 |
+| `edge/de.txt` | Deutsch | 9987 |
+| `edge/fr.txt` | Français | 9988 |
+| `edge/ru.txt` | Русский | 9960 |
+| `edge/ko.txt` | 한국어 | 9144 |
+| `edge/ja.txt` | 日本語 | 7874 |
+| `edge/ar.txt` | العربية (RTL) | 7733 |
+| `edge/fa.txt` | فارسی (RTL) | 8134 |
+| `edge/zh_CN.txt` | 简体中文 | 5264 |
+| `edge/zh_TW.txt` | 繁體中文 | 5297 |
+
+### 用法（Edge）
+1. 打开 Microsoft Partner Center → 对应扩展 →「Details」页。
+2. 每种语言把 `edge/` 下对应 `.txt` 全文粘贴进「Description」框（须 ≥250 且 ≤10000 字符）。
+3. 短描述（Short description）来自 manifest，须在扩展包里改后重新上传，**不是**这里的长描述。
+4. RTL 语言（ar/fa）直接粘贴纯文本，后台按语言方向显示。
+
+### 顺带修复
+- `ko.txt`（Chrome 版）曾有一条重复 FAQ（Photoshop 替代问答重复两次），已去重（23→22）。
+- `ja.txt`（Chrome 版）原缺 2 条 FAQ（质量滑块灰色、设置记忆），已补齐（20→22）。两处修正同步到 Edge 版。

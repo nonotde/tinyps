@@ -1,0 +1,84 @@
+TinyPS est une extension de navigateur gratuite et légère de retouche d'images — un Photoshop simplifié fonctionnant entièrement hors ligne. Recadrage, redimensionnement, rotation, compression, conversion, filigranes, montage de GIF et suppression de fond par IA s'effectuent à 100 % localement. Vos photos ne quittent jamais votre appareil. Aucun serveur, compte ou pistage.
+
+Pourquoi un éditeur d'images hors ligne ?
+La plupart des outils de « retouche en ligne » envoient vos images sur leurs serveurs, où elles sont traitées, indexées, conservées — parfois pour entraîner des modèles d'IA. TinyPS fait l'inverse : une alternative à Photoshop qui tourne sur votre machine. Le traitement local est une protection : TinyPS ne transmet aucune donnée à des tiers et respecte le « minimum nécessaire ».
+
+Créez avec de vrais calques
+TinyPS est un véritable éditeur multi-calques :
+- Collez n'importe quelle image comme nouveau calque, ajoutez des calques de texte, réorganisez, verrouillez, masquez et fusionnez librement
+- Transformez chaque calque : redimensionner, déplacer, pivoter à 90/180/270°, retourner, réinitialiser — avec 10 étapes d'annulation
+- Recadrages prédéfinis (1:1, 4:3, 16:9, 3:2, 9:16) gratuits ; le recadrage libre (Pro) ajoute « Conserver l'intérieur / l'extérieur » : garder la zone choisie ou supprimer le contenu du cadre. Les bandes se recollent, les trous laissent apparaître un fond transparent
+- Rotation libre (Pro) : faites glisser l'icône au centre pour pivoter à n'importe quel angle ; l'aimantage à 90° s'active à l'approche
+- Ajustement fin (Pro) : inclinez de 1° exact avec ◀/▶ ou saisissez 0–359° ; un calque sélectionné tourne autour de son centre, sans altérer les pixels
+- L'opacité du filigrane est réglable (100 % par défaut) ; le nouveau texte hérite de l'angle du précédent
+- GIF animés image par image : déposez un GIF, il est scindé en pages avec les délais conservés ; export « GIF animé » à côté de « ZIP en lot »
+- Miniatures en temps réel de tous les calques et déplacement précis à la souris ou au clavier
+Les calques permettent des compositions : cartes de visite, visuels sociaux, collages ou un sujet détouré sur nouveau fond. Superposez un Logo en calque indépendant sans abîmer l'original.
+
+Compresser et convertir sans perte de qualité
+- Copie directe sans perte : les fichiers non modifiés sont reproduits octet par octet
+- Visez une taille cible précise, supprimez les métadonnées (EXIF), ajustez la qualité d'un seul curseur
+- Convertissez entre formats courants, avec l'export AVIF
+- Exportez toutes les pages en un seul ZIP, sans outil externe
+- L'export AVIF utilise un encodeur WASM local, chargé à la première utilisation, sans ralentir le démarrage
+Une photo produit passe de 5 Mo à 300 Ko sans différence visible : vos pages chargent plus vite. Une taille cible fixe le compromis poids/netteté ; l'AVIF va plus loin.
+
+Supprimez le fond sur votre appareil
+TinyPS Pro intègre la suppression de fond par IA (u2netp et ONNX Runtime WebAssembly). Le modèle tourne sur le CPU dans le navigateur : aucun cloud, API ou envoi. Obtenez en quelques secondes un PNG ou WebP transparent, même hors ligne, sans envoyer l'image nulle part.
+Pas convaincu ? Les gratuits lancent le vrai traitement et voient le résultat : l'avant-première garde le sujet net dans une fenêtre circulaire, le reste flouté — avec badge « Aperçu Pro », « Mettre à niveau pour enregistrer » et « Essai gratuit 3 jours » qui applique le détourage. Le canevas reste inchangé.
+
+Conçu pour un usage quotidien
+- Espace de travail multipage avec miniatures en temps réel
+- 10 langues : anglais, chinois simplifié/traditionnel, japonais, coréen, persan, arabe (RTL), français, allemand, russe
+- Thèmes sombre et clair, raccourcis clavier complets
+- Remplissage, filigrane, position et taille sont mémorisés ; une nouvelle image réutilise la dernière taille de canevas
+- Traitement par lot (Pro) : chaque modification d'un calque texte/remplissage est enregistrée et rejouée d'un clic sur toutes les pages
+- Autorisations limitées à contextMenus et clipboardWrite — aucun accès aux fichiers, réseau ou pages web
+TinyPS ne demande que les droits nécessaires. Un clic droit sur une image l'ouvre dans TinyPS.
+
+Gratuit et Pro
+Gratuit à jamais : calques, recadrages prédéfinis, redimensionnement, rotation 90/180/270°, compression, conversion (avec AVIF), filtres, texte, opacité du filigrane, montage GIF, export par lot et aperçu de suppression de fond.
+TinyPS Pro : recadrage libre (intérieur/extérieur), rotation libre, ajustement fin, calques de remplissage (aplat, mosaïque, pipette), traitement par lot et suppression de fond par IA avec enregistrement. Achat unique ou abonnement via Creem par carte, PayPal, 支付宝, 微信支付.
+Chaque fonction Pro offre 3 jours d'essai gratuit sans carte, hors ligne jusqu'à 24 h. Une licence couvre trois appareils. Pro s'adresse à ceux qui veulent un détourage professionnel ou une souplesse maximale.
+
+Cas d'usage courants
+- E-commerce : compressez des dizaines de photos produit à une taille uniforme, convertissez en WebP ou AVIF
+- 小红书/抖音 : recadrez en 3:4 ou 9:16, ajoutez un calque texte pour prix et arguments
+- 公众号 : recadrage 1:1 ou 16:9 en un clic, calque Logo sans abîmer l'original
+- Photos d'identité : retirez le fond avec Pro, ajoutez un calque aplat — fond blanc ou bleu
+- Collages : disposez plusieurs images en calques, exportez une longue image ou un ZIP
+- Mèmes et stickers : retirez le fond, ajoutez du texte, en quelques secondes localement
+- Photos de travers : redressez avec la rotation libre, aimantage à 90°
+- Effacement local : choisissez « Conserver l'extérieur » pour supprimer une zone, les bandes se recollent
+- GIF animés : divisez en images, modifiez-les, réexportez en GIF — tout localement
+- Filigranes en série : configurez une fois avec le traitement par lot, appliquez à toutes les photos
+Comparaison avec les outils en ligne, 美图秀秀 et Canva
+Les outils en ligne exigent un envoi — la vie privée souffre. 美图秀秀 et Canva sont mobiles, avec compte et Internet. TinyPS est local, hors ligne, sans limites ni compte. Plutôt que les « filtres beauté », TinyPS maîtrise un flux : recadrer — compresser — convertir — retirer le fond — exporter.
+
+Questions fréquentes
+TinyPS télécharge mes images ? Non. Aucune requête réseau pendant la retouche. Les données ne sortent que pour charger une URL ou activer Pro (clé + ID via proxy). Les images ne sont jamais transmises ni analysées.
+Hors ligne ? Oui. Après installation, recadrage, compression, conversion, suppression de fond et montage GIF fonctionnent sans réseau.
+Photoshop pour des tâches rapides ? Pour recadrage, redimensionnement, compression, texte et détourage, oui — mais ni pinceau, ni masques, ni CMYK.
+WebP et AVIF ? WebP lisible et inscriptible ; export AVIF via un encodeur WASM local. L'AVIF ne peut pas encore être ouvert comme image source.
+L'export AVIF ralentit-il l'extension ? Non. L'encodeur se charge à la première utilisation, sans impact sur le démarrage ni sur le réseau.
+Montage de GIF animés ? Oui. Un GIF est divisé en pages par image, délais conservés, jusqu'à 60 images, réexporté en GIF — rendu et encodage locaux.
+Traitement par lot ? Une fonction Pro qui enregistre les modifications des calques (texte, couleur, taille, opacité, position, remplissage, rotation) et les rejoue d'un clic sur toutes les pages.
+Essayer Pro avant de payer ? Oui, chaque fonction Pro offre 3 jours sans carte, hors ligne jusqu'à 24 h.
+Détourage gratuit ? Oui. Les gratuits voient un vrai aperçu : sujet net, reste flouté. Mettez à niveau, lancez l'essai ou fermez sans modifier.
+« Intérieur / extérieur » ? L'intérieur garde la zone choisie ; l'extérieur supprime le cadre et garde autour. Bandes recollées, trous transparents.
+Rotation libre jusqu'à tout angle ? Oui. En Pro, glissez l'icône au centre ; l'aimantage à 90° s'active. Aucun conflit avec le 90/180/270° gratuit.
+Apport de l'ajustement fin ? Inclinez de 1° ou saisissez 0–359°. Un calque tourne autour de son centre sans altérer les pixels, annulable proprement.
+Opacité du filigrane réglable ? Oui, 100 % par défaut, réductible ; le nouveau texte hérite de l'angle précédent.
+Pourquoi le curseur de qualité est-il grisé ? Comportement normal : la qualité ne s'applique qu'aux formats avec perte (JPEG, WebP, AVIF) ; PNG, BMP et GIF sont sans perte.
+Les réglages sont-ils conservés ? Oui. Couleurs, opacité, mosaïque, texte, taille et angle persistent entre pages et sessions ; une nouvelle image réutilise la dernière taille.
+Mode lot ? Oui. Ouvrez plusieurs images, ajustez chaque page, exportez-les en un seul ZIP.
+Pro est-il un abonnement ? Licence à vie ou formule mensuelle/annuelle ; une licence couvre trois appareils.
+La licence est-elle sûre ? L'activation envoie seulement la clé et un ID d'appareil anonyme via un proxy. Aucune donnée d'image.
+Mac/Windows/Linux ? Oui, sur tous les systèmes de bureau courants avec Microsoft Edge et autres navigateurs Chromium.
+Interface chinoise ? Oui, chinois simplifié et traditionnel parmi les 10 langues intégrées.
+Version gratuite suffit ? Pour la plupart des tâches — compression, conversion, recadrage, texte, collages, GIF — oui. Pro seulement pour détourage IA avec enregistrement, recadrage libre, rotation libre, ajustement fin, calques et traitement par lot.
+Lenteur ? Le traitement est local, la vitesse dépend de votre machine ; compression et conversion sont instantanées, le détourage prend quelques secondes.
+
+Votre vie privée, garantie par la conception
+TinyPS n'envoie aucune requête réseau pendant la retouche. Photos sensibles, pièces d'identité et captures restent sur votre machine. Là où les outils cloud demandent votre confiance, TinyPS la prouve par son architecture : sans connexion, aucune fuite n'est possible.
+Installez TinyPS et retouchez votre première photo hors ligne en secondes. Sans inscription, sans envoi, sans risque. Essayez gratuitement — le détourage pro est à un clic avec 3 jours d'essai.
