@@ -86,7 +86,13 @@
   </url>
   <url>
     <loc>https://www.tinyps.top/batch-image-editor-no-upload.html</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tinyps.top/gif-editor.html</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

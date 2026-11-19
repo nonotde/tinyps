@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TinyPS — Local-first Image Editor for Chrome &amp; Edge</title>
-<meta name="description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.">
+<meta name="description" content="Compress, resize, crop, edit GIF frames, batch-process layers and remove backgrounds locally in your browser — 100% on-device, nothing uploaded. Chrome &amp; Edge.">
 <meta name="google-site-verification" content="LlfvL1QF4Wg5wbzpXN4Tfuir1Xw4NoEJ7FkbSSOLYpw" />
 <meta name="msvalidate.01" content="53383504394F93F4EA798406907B89A8" />
 <link rel="canonical" href="https://www.tinyps.top/">
@@ -13,12 +13,12 @@
 <link rel="alternate" hreflang="x-default" href="https://www.tinyps.top/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TinyPS — Local-first Image Editor for Chrome & Edge">
-<meta property="og:description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images — 100% in your browser. Nothing is ever uploaded.">
+<meta property="og:description" content="Compress, resize, crop, edit GIF frames, batch-process layers and remove backgrounds locally in your browser — 100% on-device, nothing uploaded.">
 <meta property="og:url" content="https://www.tinyps.top/">
 <meta property="og:image" content="https://www.tinyps.top/assets/screenshot1.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TinyPS — Local-first Image Editor for Chrome & Edge">
-<meta name="twitter:description" content="Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images — 100% in your browser. Nothing is ever uploaded.">
+<meta name="twitter:description" content="Compress, resize, crop, edit GIF frames, batch-process layers and remove backgrounds locally in your browser — 100% on-device, nothing uploaded.">
 <meta name="twitter:image" content="https://www.tinyps.top/assets/screenshot1.png">
 <style>
 :root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
@@ -131,6 +131,8 @@ footer a{margin-right:16px}
   <div class="feat"><b>🗜️ Smart compression</b><p>Quality slider, true lossless passthrough (0% re-encoding when untouched), metadata stripping, target file size.</p></div>
   <div class="feat"><b>🔁 Format conversion</b><p>JPEG · PNG · WebP · BMP · GIF — including formats Chrome cannot export natively, via built-in encoders.</p></div>
   <div class="feat"><b>📦 Multi-page batch</b><p>Work on many images with per-page settings, then export them all as one ZIP.</p></div>
+  <div class="feat"><b>🎞️ GIF frame editor</b><p>Split an animated GIF into editable frames (up to 60), edit each one, and export a real animated GIF — all local.</p></div>
+  <div class="feat"><b>⚡ One-click batch <span style='color:var(--acc)'>Pro</span></b><p>Record text and fill-layer edits, then replay them on every page with a single click.</p></div>
   <div class="feat"><b>🧱 Canvas &amp; fill <span style='color:var(--acc)'>Pro</span></b><p>Custom canvas sizes with transparency, solid-color and mosaic fill layers, eyedropper picking.</p></div>
   <div class="feat"><b>↩️ Full history</b><p>Undo / redo / reset for every operation, isolated per page.</p></div>
 </div>
@@ -200,7 +202,7 @@ footer a{margin-right:16px}
 const T = {
   en: {
     title: "TinyPS — Local-first Image Editor for Chrome & Edge",
-    desc: "Compress, resize, crop, fill, add text, remove backgrounds with on-device AI, and convert images (JPEG/PNG/WebP/BMP/GIF) — 100% in your browser. Nothing is ever uploaded.",
+    desc: "Compress, resize, crop, edit GIF frames, batch-process layers and remove backgrounds locally in your browser — 100% on-device, nothing uploaded. Chrome & Edge.",
     nav: {features:"Features", pro:"Pro", install:"Install", activate:"Activate", privacy:"Privacy"},
     pages: {
       install: "install.html",
@@ -225,6 +227,8 @@ const T = {
       {t:"🗜️ Smart compression", d:"Quality slider, true lossless passthrough (0% re-encoding when untouched), metadata stripping, target file size."},
       {t:"🔁 Format conversion", d:"JPEG · PNG · WebP · BMP · GIF — including formats Chrome cannot export natively, via built-in encoders."},
       {t:"📦 Multi-page batch", d:"Work on many images with per-page settings, then export them all as one ZIP."},
+      {t:"🎞️ GIF frame editor", d:"Split an animated GIF into editable frames (up to 60), edit each one, and export a real animated GIF — all local."},
+      {t:"⚡ One-click batch <span style='color:var(--acc)'>Pro</span>", d:"Record text and fill-layer edits, then replay them on every page with a single click."},
       {t:"🧱 Canvas &amp; fill <span style='color:var(--acc)'>Pro</span>", d:"Custom canvas sizes with transparency, solid-color and mosaic fill layers, eyedropper picking."},
       {t:"↩️ Full history", d:"Undo / redo / reset for every operation, isolated per page."}
     ],
@@ -277,6 +281,8 @@ const T = {
       {t:"🗜️ 智能压缩", d:"质量滑杆、真·无损直通（未修改零损耗）、去除元数据、目标体积自动压缩。"},
       {t:"🔁 格式转换", d:"JPEG · PNG · WebP · BMP · GIF——包含浏览器原生不支持导出的格式（自研编码器）。"},
       {t:"📦 多页批量", d:"多张图片独立设置，一次性打包成 ZIP 下载。"},
+      {t:"🎞️ GIF 逐帧编辑", d:"把动画 GIF 拆成可编辑的帧（最多 60 帧），逐帧修改后导出真正的动画 GIF，全程本地。"},
+      {t:"⚡ 一键批量处理 <span style='color:var(--acc)'>Pro</span>", d:"录制对文字 / 填充图层的操作，一键重放到所有页面。"},
       {t:"🧱 画布与填充 <span style='color:var(--acc)'>Pro</span>", d:"自定义画布尺寸（透明外扩）、纯色 / 马赛克填充图层、吸管取色。"},
       {t:"↩️ 完整历史", d:"每一步操作可撤销 / 重做 / 一键重置，按页面隔离。"}
     ],

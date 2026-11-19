@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Edit GIF Frame by Frame Locally | TinyPS</title>
+<meta name="description" content="Edit GIF frames without uploading: split an animated GIF into editable pages, change each frame, then export a real animated GIF. Up to 60 frames, 100% local in your browser.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://www.tinyps.top/gif-editor.html">
+<link rel="alternate" hreflang="en" href="https://www.tinyps.top/gif-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://www.tinyps.top/gif-editor.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Edit GIF Frame by Frame Locally | TinyPS">
+<meta property="og:description" content="Split an animated GIF into editable frames, edit each one, and export a real animated GIF. Up to 60 frames, 100% local, nothing uploaded.">
+<meta property="og:url" content="https://www.tinyps.top/gif-editor.html">
+<meta property="og:image" content="https://www.tinyps.top/assets/pro-demo-gif.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edit GIF Frame by Frame Locally | TinyPS">
+<meta name="twitter:description" content="Split an animated GIF into editable frames, edit each one, and export a real animated GIF. Up to 60 frames, 100% local, nothing uploaded.">
+<style>
+:root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.8 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--txt)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+a{color:var(--acc);text-decoration:none}
+header{padding:24px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo .mark{width:30px;height:30px;border-radius:8px;object-fit:cover;display:inline-block}
+nav a{margin-left:18px;color:var(--txt3);font-size:14px}
+nav a:hover{color:var(--acc)}
+.crumb{color:var(--txt3);font-size:13px;margin:6px 0 26px}
+.crumb a{color:var(--txt3)}
+.crumb a:hover{color:var(--acc)}
+h1{font-size:32px;line-height:1.35;margin-bottom:14px}
+.lead{color:var(--txt3);font-size:17px;margin-bottom:28px}
+h2{font-size:22px;margin:30px 0 12px}
+p{margin:12px 0;color:#cdd2d8}
+p.note{color:var(--txt3);font-size:14px}
+ol.steps{margin:12px 0 12px 22px;color:#cdd2d8}
+ol.steps li{margin:8px 0}
+ul.dots{margin:12px 0 12px 20px;color:#cdd2d8}
+ul.dots li{margin:8px 0}
+.cta{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:20px 22px;margin:28px 0;text-align:center}
+.cta h3{font-size:18px;margin-bottom:10px}
+.cta .btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 22px;font-weight:600;margin:6px 6px 0}
+.cta .btn.outline{background:transparent;border:1px solid var(--border);color:var(--txt)}
+table.cmp{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+table.cmp th,table.cmp td{border:1px solid var(--border);padding:9px 12px;text-align:left}
+table.cmp th{background:var(--bg2);color:var(--txt)}
+table.cmp td.ok{color:#5fd38a}
+table.cmp td.no{color:#ff7a7a}
+.related{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:34px 0}
+.related h3{font-size:16px;margin-bottom:10px}
+.related a{display:block;padding:5px 0;color:var(--acc)}
+.faq{margin:26px 0 10px}
+.faq .q{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:12px}
+.faq .q h3{font-size:16px;margin-bottom:6px;color:var(--txt)}
+.faq .q p{color:var(--txt3);font-size:14px;margin:0}
+footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{margin-right:14px}
+.quick{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:16px 20px;margin:0 0 26px;font-size:15.5px;color:var(--txt)}
+.quick b{color:var(--txt)}
+.shot{width:100%;max-width:560px;border:1px solid var(--border);border-radius:var(--radius);display:block;margin:18px 0}
+</style>
+
+<script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://www.tinyps.top/count.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><img class="mark" src="assets/logo.png" alt="TinyPS logo">Tiny<span style="color:var(--acc)">PS</span></div>
+  <nav><a href='index.html'>Home</a><a href='privacy.html'>Privacy</a><a href='install.html'>Install</a><a href='support.html'>Support</a></nav>
+</header>
+<div class='crumb'><a href='index.html'>TinyPS</a> › Guides</div>
+<h1>Edit GIF Frame by Frame, Without Uploading</h1>
+<p class="lead">An animated GIF is just a stack of frames. TinyPS splits the GIF into separate editable pages, lets you change each one, and writes everything back as a real animated GIF — all locally in your browser.</p>
+<div class="quick"><b>A GIF frame editor lets you open an animation, work on individual frames, and export the result as an animated GIF.</b> TinyPS does this inside a browser extension: every frame becomes a page you can crop, rotate, watermark or compress. Up to 60 frames, no upload, no sign-up.</div>
+
+<img class="shot" src="assets/pro-demo-gif.png" alt="TinyPS GIF frame editing workspace showing per-frame pages">
+
+<h2>How to edit GIF frames in TinyPS</h2>
+<ol class='steps'><li>Install the TinyPS extension and open the editor.</li><li>Drag in an animated GIF. TinyPS decodes it and puts each frame on its own page, keeping the original frame delay.</li><li>Edit any page — crop, resize, rotate, add text or a watermark, apply a filter, or remove a background.</li><li>Click <b>Export animated GIF</b>. TinyPS renders every page through the full editing pipeline and writes a real animated GIF back to your device.</li></ol>
+
+<h2>What makes this different from a web GIF editor</h2>
+<p>Most GIF frame editors are websites: you upload the file, edit in a tab, and download. TinyPS is a browser extension, so the GIF editor lives alongside your normal photo tools in one multi-page workspace.</p>
+<table class="cmp">
+<tr><th>Capability</th><th>TinyPS</th><th>Typical web GIF tool</th></tr>
+<tr><td>Where frames are processed</td><td class="ok">On your device, nothing uploaded</td><td class="no">Uploaded to a server</td></tr>
+<tr><td>Works offline</td><td class="ok">Yes, after install</td><td class="no">Needs a connection</td></tr>
+<tr><td>Frame-level editing tools</td><td class="ok">Crop, rotate, text, watermark, filters, background removal</td><td class="no">Usually delete / reorder / retime only</td></tr>
+<tr><td>Max frames</td><td>60 frames per animation</td><td>Varies</td></tr>
+<tr><td>Export</td><td class="ok">Animated GIF or a ZIP of frames</td><td>Animated GIF</td></tr>
+</table>
+<p class="note">Frame limit: animations longer than 60 frames are truncated with a notice. All frame editing happens in memory on your machine.</p>
+
+<h2>Common GIF frame edits</h2>
+<ul class='dots'><li>Delete a slow opening or a messy final frame by removing that page.</li><li>Crop or resize every frame at once so the whole animation fits a new size.</li><li>Rotate a shaky clip a fraction of a degree with the 1° fine nudge.</li><li>Add a text caption or watermark to selected frames as a layer.</li><li>Compress a heavy GIF by re-encoding frames before export.</li></ul>
+
+<h2>Why local GIF editing matters</h2>
+<p>GIFs often contain screenshots, private moments or unreleased work. With TinyPS the frames never leave your device and there is no account to sign up for. Processing uses your browser's own decoder and a local encoder, so the editor also works with no internet connection once installed.</p>
+
+<div class='cta'><h3>Try TinyPS — edit GIFs locally, nothing uploaded</h3><a class='btn' href='https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen'>Install for Chrome</a><a class='btn outline' href='editor/'>Open free online editor</a></div>
+<div class='related'><h3>More TinyPS guides</h3>
+<a href='batch-image-editor-no-upload.html'>Batch Image Editor — Edit Many Images At Once</a>
+<a href='remove-background-without-uploading.html'>Remove Image Background Without Uploading a Single Pixel</a>
+<a href='offline-image-editor.html'>Offline Image Editor: Edit Photos With No Internet</a>
+<a href='compress-images-locally.html'>Compress Images Locally — Shrink Files Without Uploading</a>
+<a href='free-photo-editor-chrome-extension.html'>Free Photo Editor Chrome Extension — Local, No Watermark</a>
+</div>
+
+<div class="faq-wrap">
+<h2 id="faq">Frequently asked questions</h2>
+<div class='faq'>
+<div class='q'><h3>How do I edit a GIF frame by frame?</h3><p>Open the GIF in TinyPS. Each frame becomes a separate page in the multi-page workspace. Edit the pages you want, then choose Export animated GIF to write them back into one animation.</p></div>
+<div class='q'><h3>Does the GIF editor upload my animation?</h3><p>No. Decoding, editing and GIF encoding all happen in your browser on your device. There is no server round-trip and no account required.</p></div>
+<div class='q'><h3>How many frames can TinyPS handle?</h3><p>Up to 60 frames per animation. Longer GIFs are truncated to the first 60 frames with a clear notice, so the editor stays responsive.</p></div>
+<div class='q'><h3>Can I delete or reorder GIF frames?</h3><p>Yes. Because every frame is a page, you can remove a frame by deleting that page and rearrange frames by reordering pages in the thumbnail strip.</p></div>
+<div class='q'><h3>Can I add text or a watermark to a GIF?</h3><p>Yes. Text and fill layers work on each frame just like on a still image. Add a caption or watermark as a layer and keep it editable until export.</p></div>
+<div class='q'><h3>Does the export keep my edits and frame timing?</h3><p>Yes. TinyPS renders each edited page through its normal pipeline and encodes the result with a real LZW GIF encoder, preserving the animation and frame delays.</p></div>
+<div class='q'><h3>Can I use the GIF editor offline?</h3><p>Yes. TinyPS runs locally and keeps working without an internet connection after the extension is installed.</p></div>
+</div>
+
+</div>
+<footer>
+  <div>© 2026 TinyPS</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="install.html">Install</a>
+    <a href="support.html">Support</a>
+  </div>
+</footer>
+</div>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Edit GIF Frame by Frame, Without Uploading", "description": "Split an animated GIF into editable frames, edit each one, and export a real animated GIF. Up to 60 frames, 100% local in your browser.", "inLanguage": "en", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.tinyps.top/gif-editor.html"}, "about": {"@type": "SoftwareApplication", "name": "TinyPS", "applicationCategory": "ImageEditor", "operatingSystem": "Chrome, Edge", "url": "https://www.tinyps.top/"}, "mentions": [{"@type": "Thing", "name": "GIF frame editor"}, {"@type": "Thing", "name": "Animated GIF"}, {"@type": "Thing", "name": "Local image processing"}, {"@type": "Thing", "name": "No upload / privacy"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "HowTo", "name": "How to edit a GIF frame by frame without uploading", "description": "Split an animated GIF into editable pages, change individual frames, and export a real animated GIF locally.", "step": [{"@type": "HowToStep", "name": "Install and open TinyPS", "text": "Install the TinyPS extension and open the editor."}, {"@type": "HowToStep", "name": "Load the GIF", "text": "Drag in an animated GIF; each frame becomes a separate page with its original delay."}, {"@type": "HowToStep", "name": "Edit frames", "text": "Crop, resize, rotate, add text or a watermark, apply filters or remove a background on any page."}, {"@type": "HowToStep", "name": "Export the animation", "text": "Click Export animated GIF to render every page and write a real animated GIF locally."}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I edit a GIF frame by frame?", "acceptedAnswer": {"@type": "Answer", "text": "Open the GIF in TinyPS. Each frame becomes a separate page in the multi-page workspace. Edit the pages you want, then choose Export animated GIF to write them back into one animation."}}, {"@type": "Question", "name": "Does the GIF editor upload my animation?", "acceptedAnswer": {"@type": "Answer", "text": "No. Decoding, editing and GIF encoding all happen in your browser on your device. There is no server round-trip and no account required."}}, {"@type": "Question", "name": "How many frames can TinyPS handle?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 60 frames per animation. Longer GIFs are truncated to the first 60 frames with a clear notice, so the editor stays responsive."}}, {"@type": "Question", "name": "Can I delete or reorder GIF frames?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Because every frame is a page, you can remove a frame by deleting that page and rearrange frames by reordering pages in the thumbnail strip."}}, {"@type": "Question", "name": "Can I add text or a watermark to a GIF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Text and fill layers work on each frame just like on a still image. Add a caption or watermark as a layer and keep it editable until export."}}, {"@type": "Question", "name": "Does the export keep my edits and frame timing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TinyPS renders each edited page through its normal pipeline and encodes the result with a real LZW GIF encoder, preserving the animation and frame delays."}}, {"@type": "Question", "name": "Can I use the GIF editor offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TinyPS runs locally and keeps working without an internet connection after the extension is installed."}}]}
+</script>
+</body>
+</html>

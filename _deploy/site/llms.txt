@@ -8,10 +8,12 @@ TinyPS is a free, privacy-focused image editing tool that runs 100% on-device. U
 - Processing location: 100% local / on-device, no upload, no cloud
 - Platforms: Chrome and Edge browser extensions (Manifest V3)
 - Supported formats: JPEG, PNG, WebP, BMP, GIF
-- Features: compress, resize, crop, fill/canvas, add text, remove background (on-device AI), format conversion
+- Features: compress, resize, crop, fill/canvas, add text, remove background (on-device AI), format conversion, GIF frame-by-frame editing (up to 60 frames, export animated GIF), one-click batch processing (replay recorded text and fill-layer edits on all pages), fine rotation adjustment (1-degree steps or 0-359 degrees, non-destructive on selected layers)
 - Account: none required, no sign-up, no login
 - Offline: works without an internet connection after install
-- Pricing: free
+- Pricing: free core, optional Pro (every Pro feature has a free 3-day trial, no credit card)
+- GIF editing: yes — split an animated GIF into editable frames, edit each frame, export a real animated GIF, 100% local
+- Batch processing: yes — open many images as pages, apply the same edits, one-click replay of layer operations, export as one ZIP
 
 ## Core pages
 - [Homepage](https://www.tinyps.top/): product overview and download links
@@ -25,7 +27,8 @@ TinyPS is a free, privacy-focused image editing tool that runs 100% on-device. U
 ## Guides
 - [Remove image background without uploading](https://www.tinyps.top/remove-background-without-uploading.html)
 - [Offline image editor](https://www.tinyps.top/offline-image-editor.html)
-- [Batch image editor with no upload](https://www.tinyps.top/batch-image-editor-no-upload.html)
+- [Edit GIF frames without uploading](https://www.tinyps.top/gif-editor.html): split an animated GIF into editable frames, edit each one, export an animated GIF locally (up to 60 frames)
+- [Batch image editor with no upload](https://www.tinyps.top/batch-image-editor-no-upload.html): apply one edit to many images and replay recorded text / fill-layer operations on all pages
 - [Private photo editor with no sign-up](https://www.tinyps.top/private-photo-editor-no-signup.html)
 - [Compress images locally](https://www.tinyps.top/compress-images-locally.html)
 - [Free photo editor Chrome extension](https://www.tinyps.top/free-photo-editor-chrome-extension.html)
