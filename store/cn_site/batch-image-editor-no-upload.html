@@ -88,8 +88,10 @@ if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
 <div class="quick"><b>不上传的批量图片编辑器，会在你的设备上逐张处理图片，最后打包成 ZIP，全程不上传任何文件。</b>TinyPS 可一次批量缩放、压缩、转换几十张产品图或截图，统一设定尺寸与质量，导出一个 ZIP；本地运行、免费、免注册、支持断网。</div>
 <h2>本地批量编辑</h2>
 TinyPS 把多张图片作为独立页面打开。设置每页的缩放、裁剪、压缩、转换，再一次性导出为单个 ZIP，全程在你的浏览器里完成。
+<h2>一键批量处理文字与图层</h2>
+除了把同一设置套用到每页，TinyPS 还能<b>录制一串编辑操作，再一键重放到所有页面</b>。改好文字或填充图层的文字、颜色、大小、不透明度、位置、填充或微调角度，点一下就能把整段操作在所有页上重做一遍，并告诉你处理了多少页。给一批证书编号、产品图标注，或任何需要每张图都写同样文字的文件夹批量处理时，这个功能非常省时间，而多数批量编辑器根本没有。
 <h2>你可以私密完成的常见批量任务</h2>
-<ul class='dots'><li>把一整个文件夹缩放成网站用的固定宽度。</li><li>发邮件前压缩一批截图。</li><li>把 PNG 批量转成更省空间的 WebP。</li><li>给多张图片统一加上水印或文字图层。</li></ul>
+<ul class='dots'><li>把一整个文件夹缩放成网站用的固定宽度。</li><li>发邮件前压缩一批截图。</li><li>把 PNG 批量转成更省空间的 WebP。</li><li>给多张图片统一加文字或水印，并一键回放这套编辑。</li><li>逐帧导出动画 GIF，或把静态图打包成一个 ZIP。</li></ul>
 <h2>如何不上传地批量编辑</h2>
 <ol class='steps'><li>打开 TinyPS，载入所有要处理的图片。</li><li>为每页设置缩放/裁剪/压缩（或统一用同一设置）。</li><li>在缩略图条里逐页检查。</li><li>点导出，TinyPS 在设备上把全部内容打包成一个 ZIP。</li></ol>
 <h2>本地批量为什么优于云端批量</h2>
@@ -97,6 +99,7 @@ TinyPS 把多张图片作为独立页面打开。设置每页的缩放、裁剪�
 
 <div class='cta'><h3>试试 TinyPS——本地编辑，什么都不上传</h3><a class='btn' href='https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen'>前往 Chrome 商店安装</a><a class='btn outline' href='editor/'>打开免费在线编辑器</a></div>
 <div class='related'><h3>更多 TinyPS 指南</h3>
+<a href='gif-editor.html'>逐帧编辑 GIF，一个字节都不上传</a>
 <a href='remove-background-without-uploading.html'>本地去背景，照片一个像素都不上传</a>
 <a href='offline-image-editor.html'>离线图片编辑器：不联网也能修图</a>
 <a href='private-photo-editor-no-signup.html'>隐私图片编辑器：免注册、不追踪</a>
@@ -109,7 +112,11 @@ TinyPS 把多张图片作为独立页面打开。设置每页的缩放、裁剪�
 <div class='faq'>
 <div class='q'><h3>TinyPS 批量导出时会上传我的图片吗？</h3><p>不会。每一页都在你的设备上处理，ZIP 也在浏览器本地生成。</p></div>
 <div class='q'><h3>批量编辑免费吗？</h3><p>免费。多页批量编辑与 ZIP 导出都属于免费核心功能。</p></div>
+<div class='q'><h3>什么是一键批量处理？</h3><p>它会录制你对文字或填充图层的改动（文字、颜色、大小、不透明度、位置、填充、微调角度），再一键把整段操作重放到所有页面，并报告处理了多少页。给整批图片套用相同标题或标签时特别省事。</p></div>
 <div class='q'><h3>一次能批量处理多少张？</h3><p>取决于你的设备内存，本地处理几十到几百张通常都没问题。</p></div>
+<div class='q'><h3>能把整个文件夹缩放或压缩到统一尺寸吗？</h3><p>可以。设定一次目标格式、尺寸或质量，TinyPS 就套用到工作区每一页，页数只受设备内存限制。</p></div>
+<div class='q'><h3>能导出成一个 ZIP 吗？</h3><p>可以。工作区每一页都能一起导出为一个 ZIP，输出格式可选 JPEG、PNG、WebP、BMP 或 GIF。</p></div>
+<div class='q'><h3>云端批量和本地批量有什么区别？</h3><p>云端工具会看到你处理的每个文件；TinyPS 让文件夹始终留在你的设备上，对客户稿、证件照和未发布产品图更安心，而且断网也能用。</p></div>
 </div>
 
 </div>
@@ -123,11 +130,7 @@ TinyPS 把多张图片作为独立页面打开。设置每页的缩放、裁剪�
   </div>
 </footer>
 </div>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "批量图片编辑器，文件一个都不上传", "description": "一次性批量编辑、缩放、压缩多张图片——全程本地，不上传。TinyPS 在设备上处理每张图并导出 ZIP。", "inLanguage": "zh-CN", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pic.zxxdb.com/batch-image-editor-no-upload.html"}, "about": {"@type": "SoftwareApplication", "name": "TinyPS", "applicationCategory": "ImageEditor", "operatingSystem": "Chrome, Edge", "url": "https://pic.zxxdb.com/"}, "mentions": [{"@type": "Thing", "name": "本地图片处理"}, {"@type": "Thing", "name": "不上传 / 隐私"}, {"@type": "Thing", "name": "离线图片编辑"}]}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "TinyPS 批量导出时会上传我的图片吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。每一页都在你的设备上处理，ZIP 也在浏览器本地生成。"}}, {"@type": "Question", "name": "批量编辑免费吗？", "acceptedAnswer": {"@type": "Answer", "text": "免费。多页批量编辑与 ZIP 导出都属于免费核心功能。"}}, {"@type": "Question", "name": "一次能批量处理多少张？", "acceptedAnswer": {"@type": "Answer", "text": "取决于你的设备内存，本地处理几十到几百张通常都没问题。"}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "批量图片编辑器，文件一个都不上传", "description": "一次性批量编辑、缩放、压缩多张图片——全程本地，不上传。TinyPS 在设备上处理每张图并导出 ZIP。", "inLanguage": "zh-CN", "datePublished": "2026-11-05", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pic.zxxdb.com/batch-image-editor-no-upload.html"}, "about": {"@type": "SoftwareApplication", "name": "TinyPS", "applicationCategory": "ImageEditor", "operatingSystem": "Chrome, Edge", "url": "https://pic.zxxdb.com/"}, "mentions": [{"@type": "Thing", "name": "本地图片处理"}, {"@type": "Thing", "name": "不上传 / 隐私"}, {"@type": "Thing", "name": "离线图片编辑"}, {"@type": "Thing", "name": "一键批量处理"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "TinyPS 批量导出时会上传我的图片吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。每一页都在你的设备上处理，ZIP 也在浏览器本地生成。"}}, {"@type": "Question", "name": "批量编辑免费吗？", "acceptedAnswer": {"@type": "Answer", "text": "免费。多页批量编辑与 ZIP 导出都属于免费核心功能。"}}, {"@type": "Question", "name": "一次能批量处理多少张？", "acceptedAnswer": {"@type": "Answer", "text": "取决于你的设备内存，本地处理几十到几百张通常都没问题。"}}, {"@type": "Question", "name": "什么是一键批量处理？", "acceptedAnswer": {"@type": "Answer", "text": "它会录制你对文字或填充图层的改动（文字、颜色、大小、不透明度、位置、填充、微调角度），再一键把整段操作重放到所有页面，并报告处理了多少页。给整批图片套用相同标题或标签时特别省事。"}}, {"@type": "Question", "name": "能把整个文件夹缩放或压缩到统一尺寸吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。设定一次目标格式、尺寸或质量，TinyPS 就套用到工作区每一页，页数只受设备内存限制。"}}, {"@type": "Question", "name": "能导出成一个 ZIP 吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。工作区每一页都能一起导出为一个 ZIP，输出格式可选 JPEG、PNG、WebP、BMP 或 GIF。"}}, {"@type": "Question", "name": "云端批量和本地批量有什么区别？", "acceptedAnswer": {"@type": "Answer", "text": "云端工具会看到你处理的每个文件；TinyPS 让文件夹始终留在你的设备上，对客户稿、证件照和未发布产品图更安心，而且断网也能用。"}}]}</script>
 </body>
 </html>

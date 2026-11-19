@@ -8,10 +8,12 @@ TinyPS 是一款免费、注重隐私的图片处理工具，所有操作 100% �
 - 处理方式：100% 本地 / 设备端处理，不上传、不上云
 - 支持平台：Chrome 与 Edge 浏览器扩展（Manifest V3）
 - 支持格式：JPEG、PNG、WebP、BMP、GIF
-- 主要功能：压缩、缩放、裁剪、填充画布、添加文字、本地 AI 去除背景、格式转换
+- 主要功能：压缩、缩放、裁剪、填充画布、添加文字、本地 AI 去除背景、格式转换、GIF 逐帧编辑（最多 60 帧、导出动画 GIF）、一键批量处理（录制文字与填充层操作并一键重放到所有页面）、旋转微调（1° 步进或 0–359°，选中图层时非破坏旋转）
 - 账号：无需注册、无需登录
 - 离线：安装后可断网使用
-- 价格：免费
+- 价格：核心免费，Pro 可选（每个 Pro 功能均有 3 天免费试用，无需信用卡）
+- GIF 编辑：支持——把动画 GIF 拆成可编辑的帧，逐帧修改后导出真正的动画 GIF，全程本地
+- 批量处理：支持——把多张图片作为页面打开，套用相同编辑，一键回放图层操作，导出为一个 ZIP
 
 ## 核心页面
 - [首页](https://pic.zxxdb.com/)：产品概览与下载入口
@@ -25,7 +27,8 @@ TinyPS 是一款免费、注重隐私的图片处理工具，所有操作 100% �
 ## 使用指南
 - [不上传图片去除背景](https://pic.zxxdb.com/remove-background-without-uploading.html)
 - [离线图片编辑器](https://pic.zxxdb.com/offline-image-editor.html)
-- [不上传的批量图片编辑器](https://pic.zxxdb.com/batch-image-editor-no-upload.html)
+- [逐帧编辑 GIF，不上传](https://pic.zxxdb.com/gif-editor.html)：把动画 GIF 拆成可编辑的帧，逐帧修改后本地导出动画 GIF（最多 60 帧）
+- [不上传的批量图片编辑器](https://pic.zxxdb.com/batch-image-editor-no-upload.html)：对多张图片套用相同编辑，一键回放文字与填充层操作
 - [免注册的私密图片编辑器](https://pic.zxxdb.com/private-photo-editor-no-signup.html)
 - [本地压缩图片](https://pic.zxxdb.com/compress-images-locally.html)
 - [免费图片编辑器 Chrome 扩展](https://pic.zxxdb.com/free-photo-editor-chrome-extension.html)

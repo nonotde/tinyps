@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>GIF 逐帧编辑器，不上传本地处理 | TinyPS</title>
+<meta name="description" content="不上传地逐帧编辑 GIF：把动画拆成可编辑的帧，逐帧修改后导出真正的动画 GIF。最多 60 帧，全程本地浏览器处理。">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://pic.zxxdb.com/gif-editor.html">
+<link rel="alternate" hreflang="en" href="https://www.tinyps.top/gif-editor.html">
+<link rel="alternate" hreflang="zh-CN" href="https://pic.zxxdb.com/gif-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://www.tinyps.top/gif-editor.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIF 逐帧编辑器，不上传本地处理 | TinyPS">
+<meta property="og:description" content="把动画 GIF 拆成可编辑的帧，逐帧修改后导出真正的动画 GIF。最多 60 帧，全程本地，什么都不上传。">
+<meta property="og:url" content="https://pic.zxxdb.com/gif-editor.html">
+<meta property="og:image" content="https://pic.zxxdb.com/assets/pro-demo-gif.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GIF 逐帧编辑器，不上传本地处理 | TinyPS">
+<meta name="twitter:description" content="把动画 GIF 拆成可编辑的帧，逐帧修改后导出真正的动画 GIF。最多 60 帧，全程本地，什么都不上传。">
+<style>
+:root{--bg:#14161a;--bg2:#1d2026;--txt:#e8eaed;--txt3:#9aa0a8;--acc:#4da3ff;--accBg:rgba(77,163,255,.12);--border:#2c313a;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.8 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--txt)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+a{color:var(--acc);text-decoration:none}
+header{padding:24px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo .mark{width:30px;height:30px;border-radius:8px;object-fit:cover;display:inline-block}
+nav a{margin-left:18px;color:var(--txt3);font-size:14px}
+nav a:hover{color:var(--acc)}
+.crumb{color:var(--txt3);font-size:13px;margin:6px 0 26px}
+.crumb a{color:var(--txt3)}
+.crumb a:hover{color:var(--acc)}
+h1{font-size:32px;line-height:1.35;margin-bottom:14px}
+.lead{color:var(--txt3);font-size:17px;margin-bottom:28px}
+h2{font-size:22px;margin:30px 0 12px}
+p{margin:12px 0;color:#cdd2d8}
+p.note{color:var(--txt3);font-size:14px}
+ol.steps{margin:12px 0 12px 22px;color:#cdd2d8}
+ol.steps li{margin:8px 0}
+ul.dots{margin:12px 0 12px 20px;color:#cdd2d8}
+ul.dots li{margin:8px 0}
+.cta{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:20px 22px;margin:28px 0;text-align:center}
+.cta h3{font-size:18px;margin-bottom:10px}
+.cta .btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:10px 22px;font-weight:600;margin:6px 6px 0}
+.cta .btn.outline{background:transparent;border:1px solid var(--border);color:var(--txt)}
+table.cmp{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+table.cmp th,table.cmp td{border:1px solid var(--border);padding:9px 12px;text-align:left}
+table.cmp th{background:var(--bg2);color:var(--txt)}
+table.cmp td.ok{color:#5fd38a}
+table.cmp td.no{color:#ff7a7a}
+.related{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:34px 0}
+.related h3{font-size:16px;margin-bottom:10px}
+.related a{display:block;padding:5px 0;color:var(--acc)}
+.faq{margin:26px 0 10px}
+.faq .q{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:12px}
+.faq .q h3{font-size:16px;margin-bottom:6px;color:var(--txt)}
+.faq .q p{color:var(--txt3);font-size:14px;margin:0}
+footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--txt3);font-size:13px;margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{margin-right:14px}
+.quick{background:var(--accBg);border:1px solid rgba(77,163,255,.35);border-radius:var(--radius);padding:16px 20px;margin:0 0 26px;font-size:15.5px;color:var(--txt)}
+.quick b{color:var(--txt)}
+.shot{width:100%;max-width:560px;border:1px solid var(--border);border-radius:var(--radius);display:block;margin:18px 0}
+</style>
+
+<!-- TinyPS analytics: baidu + goatcounter -->
+<script>
+if (location.hostname.indexOf('pic.zxxdb.com') !== -1) {
+  var _hmt = _hmt || [];
+  (function(){
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?29f3fa897cfa1b515a8464d06e62c065';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+}
+</script>
+<script data-goatcounter="https://tinyps.goatcounter.com/count" async src="https://pic.zxxdb.com/count.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><img class="mark" src="assets/logo.png" alt="TinyPS logo">Tiny<span style="color:var(--acc)">PS</span></div>
+  <nav><a href='index.html'>首页</a><a href='privacy.html'>隐私</a><a href='install.html'>安装</a><a href='support.html'>支持</a></nav>
+</header>
+<div class='crumb'><a href='index.html'>TinyPS</a> › 指南</div>
+<h1>逐帧编辑 GIF，一个字节都不上传</h1>
+<p class="lead">动画 GIF 其实就是一叠帧。TinyPS 把 GIF 拆成一页一帧，让你逐帧修改，再写回真正的动画 GIF——全程在浏览器本地完成。</p>
+<div class="quick"><b>GIF 逐帧编辑器，就是能打开动画、逐帧处理、再导出成动画 GIF 的工具。</b>TinyPS 把它做在浏览器扩展里：每一帧都是一页，可裁剪、旋转、加水印、压缩。最多 60 帧，不上传、免注册。</div>
+
+<img class="shot" src="assets/pro-demo-gif.png" alt="TinyPS GIF 逐帧编辑工作区，每一帧是一页">
+
+<h2>如何在 TinyPS 里逐帧编辑 GIF</h2>
+<ol class='steps'><li>安装 TinyPS 扩展，打开编辑器。</li><li>拖入动画 GIF。TinyPS 会解码并把每一帧放到独立页面，保留原来的帧延迟。</li><li>逐页编辑——裁剪、缩放、旋转、加文字或水印、套滤镜、去背景。</li><li>点「导出动画 GIF」。TinyPS 把每一页走完整编辑管线，在本地写回一个真正的动画 GIF。</li></ol>
+
+<h2>和网页版 GIF 工具有什么不同</h2>
+<p>多数 GIF 逐帧工具是网站，你要上传文件、在网页里编辑、再下载。TinyPS 是浏览器扩展，GIF 编辑和你平时的修图工具在同一个多页工作区里。</p>
+<table class="cmp">
+<tr><th>能力</th><th>TinyPS</th><th>常见网页 GIF 工具</th></tr>
+<tr><td>帧在哪里处理</td><td class="ok">本机处理，什么都不上传</td><td class="no">上传到服务器</td></tr>
+<tr><td>能否离线用</td><td class="ok">装好后可以</td><td class="no">需要联网</td></tr>
+<tr><td>逐帧编辑手段</td><td class="ok">裁剪、旋转、文字、水印、滤镜、去背景</td><td class="no">通常只能删除/排序/改时长</td></tr>
+<tr><td>最大帧数</td><td>每段动画 60 帧</td><td>不定</td></tr>
+<tr><td>导出</td><td class="ok">动画 GIF，或逐帧 ZIP</td><td>动画 GIF</td></tr>
+</table>
+<p class="note">帧数上限：超过 60 帧的动画会截取前 60 帧并给出提示。所有帧编辑都在你本机的内存里完成。</p>
+
+<h2>常见的 GIF 逐帧处理</h2>
+<ul class='dots'><li>删掉开头拖沓或结尾混乱的帧，直接删除对应页面即可。</li><li>对每一帧统一裁剪或缩放，让整段动画适配新尺寸。</li><li>用 1° 微调把抖动的片段转正一点点。</li><li>给指定帧加文字字幕或水印图层。</li><li>导出前重新编码压缩，给体积过大的 GIF 瘦身。</li></ul>
+
+<h2>为什么本地处理 GIF 更重要</h2>
+<p>GIF 里常有截图、私人瞬间或未发布的内容。用 TinyPS，帧永远不离开你的设备，也不用注册账号。处理用的是浏览器自带解码器和本地编码器，装好扩展后断网也能用。</p>
+
+<div class='cta'><h3>试试 TinyPS——本地编辑 GIF，什么都不上传</h3><a class='btn' href='https://chromewebstore.google.com/detail/knlnllmbmcjglhnphedilklcnmhbggen'>前往 Chrome 商店安装</a><a class='btn outline' href='editor/'>打开免费在线编辑器</a></div>
+<div class='related'><h3>更多 TinyPS 指南</h3>
+<a href='batch-image-editor-no-upload.html'>批量图片编辑器，一次编辑多张图</a>
+<a href='remove-background-without-uploading.html'>本地去背景，照片一个像素都不上传</a>
+<a href='offline-image-editor.html'>离线图片编辑器：不联网也能修图</a>
+<a href='compress-images-locally.html'>本地压缩图片——缩小文件不上传</a>
+<a href='free-photo-editor-chrome-extension.html'>免费的 Chrome 图片编辑扩展——本地、无水印</a>
+</div>
+
+<div class="faq-wrap">
+<h2 id="faq">常见问题</h2>
+<div class='faq'>
+<div class='q'><h3>如何逐帧编辑 GIF？</h3><p>用 TinyPS 打开 GIF，每一帧会变成多页工作区里的一页。改好要改的页，再选「导出动画 GIF」写回一整段动画。</p></div>
+<div class='q'><h3>GIF 编辑器会上传我的动画吗？</h3><p>不会。解码、编辑、GIF 编码都在你设备的浏览器里完成，没有服务器往返，也不需要账号。</p></div>
+<div class='q'><h3>TinyPS 最多能处理多少帧？</h3><p>每段动画最多 60 帧。更长的 GIF 会截取前 60 帧并明确提示，这样编辑器能保持流畅。</p></div>
+<div class='q'><h3>能删除或调整帧的顺序吗？</h3><p>可以。因为每一帧就是一页，删除那一页即可去掉该帧，在缩略图条里拖动就能调整帧顺序。</p></div>
+<div class='q'><h3>能给 GIF 加文字或水印吗？</h3><p>可以。文字和填充图层在每一帧上都和静态图片一样好用，导出前都保持可编辑。</p></div>
+<div class='q'><h3>导出后我的修改和帧时长会保留吗？</h3><p>会。TinyPS 把每一页走完正常编辑管线，用真正的 LZW GIF 编码器写回，保留动画和帧延迟。</p></div>
+<div class='q'><h3>可以离线使用 GIF 编辑器吗？</h3><p>可以。TinyPS 本地运行，扩展装好后无需联网也能编辑。</p></div>
+<div class='q'><h3>GIF 里有些帧我想微调角度，能做到吗？</h3><p>可以。Pro 的旋转微调支持每次精确 1°，或输入 0 到 359° 的任意角度；选中图层时绕图层自身中心非破坏旋转，随时归零不留损。</p></div>
+</div>
+
+</div>
+<footer>
+  <div>© 2026 TinyPS · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">京ICP备11038848号</a></div>
+  <div>
+    <a href="index.html">首页</a>
+    <a href="privacy.html">隐私</a>
+    <a href="install.html">安装</a>
+    <a href="support.html">支持</a>
+  </div>
+</footer>
+</div>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "逐帧编辑 GIF，一个字节都不上传", "description": "把动画 GIF 拆成可编辑的帧，逐帧修改后导出真正的动画 GIF。最多 60 帧，全程本地浏览器处理。", "inLanguage": "zh-CN", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "TinyPS"}, "publisher": {"@type": "Organization", "name": "TinyPS"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pic.zxxdb.com/gif-editor.html"}, "about": {"@type": "SoftwareApplication", "name": "TinyPS", "applicationCategory": "ImageEditor", "operatingSystem": "Chrome, Edge", "url": "https://pic.zxxdb.com/"}, "mentions": [{"@type": "Thing", "name": "GIF 逐帧编辑器"}, {"@type": "Thing", "name": "动画 GIF"}, {"@type": "Thing", "name": "本地图片处理"}, {"@type": "Thing", "name": "不上传 / 隐私"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "HowTo", "name": "如何不上传地逐帧编辑 GIF", "description": "把动画 GIF 拆成可编辑的页面，逐帧修改，导出真正的动画 GIF，全程本地。", "step": [{"@type": "HowToStep", "name": "安装并打开 TinyPS", "text": "安装 TinyPS 扩展并打开编辑器。"}, {"@type": "HowToStep", "name": "载入 GIF", "text": "拖入动画 GIF，每一帧成为独立页面并保留原帧延迟。"}, {"@type": "HowToStep", "name": "编辑帧", "text": "对任意页面裁剪、缩放、旋转、加文字或水印、套滤镜或去背景。"}, {"@type": "HowToStep", "name": "导出动画", "text": "点击导出动画 GIF，渲染每一页并在本地写回动画 GIF。"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "如何逐帧编辑 GIF？", "acceptedAnswer": {"@type": "Answer", "text": "用 TinyPS 打开 GIF，每一帧会变成多页工作区里的一页。改好要改的页，再选「导出动画 GIF」写回一整段动画。"}}, {"@type": "Question", "name": "GIF 编辑器会上传我的动画吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。解码、编辑、GIF 编码都在你设备的浏览器里完成，没有服务器往返，也不需要账号。"}}, {"@type": "Question", "name": "TinyPS 最多能处理多少帧？", "acceptedAnswer": {"@type": "Answer", "text": "每段动画最多 60 帧。更长的 GIF 会截取前 60 帧并明确提示，这样编辑器能保持流畅。"}}, {"@type": "Question", "name": "能删除或调整帧的顺序吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。因为每一帧就是一页，删除那一页即可去掉该帧，在缩略图条里拖动就能调整帧顺序。"}}, {"@type": "Question", "name": "能给 GIF 加文字或水印吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。文字和填充图层在每一帧上都和静态图片一样好用，导出前都保持可编辑。"}}, {"@type": "Question", "name": "导出后我的修改和帧时长会保留吗？", "acceptedAnswer": {"@type": "Answer", "text": "会。TinyPS 把每一页走完正常编辑管线，用真正的 LZW GIF 编码器写回，保留动画和帧延迟。"}}, {"@type": "Question", "name": "可以离线使用 GIF 编辑器吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。TinyPS 本地运行，扩展装好后无需联网也能编辑。"}}, {"@type": "Question", "name": "GIF 里有些帧我想微调角度，能做到吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。Pro 的旋转微调支持每次精确 1°，或输入 0 到 359° 的任意角度；选中图层时绕图层自身中心非破坏旋转，随时归零不留损。"}}]}
+</script>
+</body>
+</html>
